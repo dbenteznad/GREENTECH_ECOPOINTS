@@ -1,20 +1,34 @@
 import { useState } from "react";
 import Navbar from "./Navbar";
+import axios from "axios";
 
 
 
 
 function Home() {
 
-  const [email, setEmail] = useState("");
-  const [password, setPassWord] = useState("");
+  const [correo_electronico, setEmail] = useState("");
+  const [contrasena, setPassWord] = useState("");
   const [login, setLogin] = useState(false);
 
   const handleSubmit = (e) => {
     // Evitar que el formulario actualice toda la página
     e.preventDefault();
-    // Crear una alerta emergente que muestre el texto "enviado"
-    alert("Enviado");
+
+    // Establecer la configuración de la solicitud al backend
+    const configuration = {
+      method: "post",
+      url: "http://localhost:5000/api/v1/usuarios/register",
+      data: {
+        correo_electronico,
+        contrasena,
+      },
+    };
+
+    // Realizar la llamada a la API usando axios
+    axios(configuration)
+      .then((result) => { console.log(result); })
+      .catch((error) => { console.log(error); })
   }
 
   return (
@@ -42,8 +56,8 @@ function Home() {
             <input
               id="email"
               type="email"
-              name="email"
-              value={email}
+              name="correo_electronico"
+              value={correo_electronico}
               onChange={e => setEmail(e.target.value)}
               className=" mb-5 border-2 w-full p-2 mt-2  placeholder-gray-400 border-  rounded-md"
               placeholder="Correo Electronico"></input>
@@ -57,8 +71,8 @@ function Home() {
             <input
               id="password"
               type="password"
-              name="password"
-              value={password}
+              name="contrasena"
+              value={contrasena}
               onChange={e => setPassWord(e.target.value)}
               className=" mb-5 border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
               placeholder="Contraseña"></input>
@@ -69,8 +83,8 @@ function Home() {
             type="submit"
             className=" py-2 px-2 bg-green-700 w-full p-3 text-white uppercase font-bold rounded-md hover:scale-105 cursor-pointer"
             onClick={(e) => handleSubmit(e)}
-            >
-              ¡Regístrate y recicla!
+          >
+            ¡Regístrate y recicla!
           </button>
           {/* <input
             type="submit"
