@@ -2,19 +2,9 @@
 
 const bcrypt = require('bcrypt');
 const Usuario = require('../models/usuarios.model.js');
+const jwt = require('jsonwebtoken');
 
-exports.findAll = async function (req, res) {
-    try {
-        const usuarios = await Usuario.findAll();
-        console.log('controller', usuarios);
-        res.json(usuarios);
-    } catch (error) {
-        console.error('Error al obtener todos los usuarios:', error);
-        res.status(500).json({ error: true, message: 'Error al obtener todos los usuarios' });
-    }
-};
-
-exports.create = async function (req, res) {
+exports.register = async function (req, res) {
     try {
         const { correo_electronico, contrasena } = req.body;
 
@@ -32,6 +22,61 @@ exports.create = async function (req, res) {
     } catch (error) {
         console.error('Error al crear el usuario:', error);
         res.status(500).json({ error: true, message: 'Error al crear el usuario' });
+    }
+};
+
+exports.login = async function (req, res) {
+    try {
+        // Verificar si el email existe
+        const user = await Usuario.findOne({ correo_electronico: req.body.correo_electronico });
+
+        // Si el correo existe
+        if (user) {
+            // Comparar la contraseña ingresada y la contraseña cifrada encontrada
+            const passwordCheck = await bcrypt.compare(req.body.contrasena, user.contrasena);
+
+            // Si hay match en la contraseña
+            if (passwordCheck) {
+                // Crear JWT token
+                const token = jwt.sign(
+                    {
+                        userId: user.id_usuario,
+                        userEmail: user.correo_electronico,
+                    },
+                    "RANDOM-TOKEN",
+                    { expiresIn: "24h" }
+                );
+
+                // Devolver respuesta exitosa
+                res.status(200).send({
+                    message: "Login satisfactorio",
+                    email: user.correo_electronico,
+                    token,
+                });
+            } else {
+                res.status(400).send({
+                    message: "La contraseña no coincide",
+                });
+            }
+        } else {
+            res.status(404).send({
+                message: "Correo electrónico no encontrado",
+            });
+        }
+    } catch (error) {
+        console.error("Error en el proceso de login:", error);
+        res.status(500).json({ error: true, message: 'Error en el proceso de login' });
+    }
+};
+
+exports.findAll = async function (req, res) {
+    try {
+        const usuarios = await Usuario.findAll();
+        console.log('controller', usuarios);
+        res.json(usuarios);
+    } catch (error) {
+        console.error('Error al obtener todos los usuarios:', error);
+        res.status(500).json({ error: true, message: 'Error al obtener todos los usuarios' });
     }
 };
 
