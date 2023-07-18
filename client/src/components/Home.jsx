@@ -1,33 +1,21 @@
-
-import { useState } from "react"
-import Navbar from "./Navbar"
+import { useState } from "react";
+import Navbar from "./Navbar";
 
 
 
 
 function Home() {
-  // 
-  // 
-  // 
 
-  const [password, setPassWord] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassWord] = useState("");
+  const [login, setLogin] = useState(false);
+
   const handleSubmit = (e) => {
+    // Evitar que el formulario actualice toda la página
     e.preventDefault();
-    if (email == "") {
-      alert("Introduce tu Correo");
-      return;
-    }
-
-    if (password == "") {
-      alert("Introduce tu Contraseña");
-      return;
-    }
+    // Crear una alerta emergente que muestre el texto "enviado"
+    alert("Enviado");
   }
-
-
-
-
 
   return (
     <div className="  h-full bg-public scroll-auto" >
@@ -39,9 +27,8 @@ function Home() {
           <h2 className=" text-center font-bold text-6xl text-white mt-6">Sé un héroe verde y desbloquea premios mientras salvas al planeta.</h2>
           <img className="h-1/2 md:h-1/3 py-5 " src="bolsa_basura.png" />
         </div>
+
         {/* Formulario */}
-
-
         <form className="ml-0 col-span-1 bg-white p-4 mr-8 rounded-md"
           onSubmit={handleSubmit}>
 
@@ -53,10 +40,11 @@ function Home() {
               Correo Electronico
             </label>
             <input
-              id="Correo_electonico"
+              id="email"
               type="email"
+              name="email"
               value={email}
-              onChange={ev => setEmail(ev.target.value)}
+              onChange={e => setEmail(e.target.value)}
               className=" mb-5 border-2 w-full p-2 mt-2  placeholder-gray-400 border-  rounded-md"
               placeholder="Correo Electronico"></input>
           </div>
@@ -67,22 +55,29 @@ function Home() {
               Contraseña
             </label>
             <input
-              id="Password"
+              id="password"
               type="password"
+              name="password"
               value={password}
-              onChange={ev => setPassWord(ev.target.value)}
+              onChange={e => setPassWord(e.target.value)}
               className=" mb-5 border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
               placeholder="Contraseña"></input>
           </div>
 
-
-          <input
+          <button
+            variant="primay"
             type="submit"
-
-            className=" py-2 px-2 bg-green-700 w-full p-3 text-white uppercase font-bold rounded-md hover:scale-105 cursor-pointer" />
+            className=" py-2 px-2 bg-green-700 w-full p-3 text-white uppercase font-bold rounded-md hover:scale-105 cursor-pointer"
+            onClick={(e) => handleSubmit(e)}
+            >
+              ¡Regístrate y recicla!
+          </button>
+          {/* <input
+            type="submit"
+            className=" py-2 px-2 bg-green-700 w-full p-3 text-white uppercase font-bold rounded-md hover:scale-105 cursor-pointer" /> */}
         </form>
       </div  >
-      
+
       {/* Informacion */}
       <div className="  mb-2"
         id='Por_que_proyecto'>
@@ -115,7 +110,7 @@ function Home() {
           <img className=" mb-20 mx-auto py-5 px-5 " src="Grafico.jpeg" />
 
         </div>
-       
+
       </div>
       <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" ></div>
       {/* Como Funciona */}
@@ -225,4 +220,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Home;
