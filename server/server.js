@@ -1,22 +1,32 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
-const User = require('./models/usuarios.model.js');
 
-// Create express app 
+// Crear la app con Express.js 
 const app = express();
+
 // Setup server port 
 const port = process.env.PORT || 5000;
-// Parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }))
-// Parse requests of content-type - application/json
-app.use(bodyParser.json())
-// Define a root route 
+
+// Configurar body-parser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// Definir la ruta de origen
 app.get('/', (req, res) => {
     res.send("Hello World");
 });
 
-// listen for requests 
+// Configurar las rutas
+const usuariosRoutes = require("./routes/usuarios.routes.js");
+const registerRoutes = require('./routes/register.routes.js');
+
+// Utilizando el enrutador como middleware
+app.use('/api/v1/usuarios', usuariosRoutes);
+app.use('/api/v1/register', registerRoutes);
+
+// Escuchando las peticiones 
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
 });
+
+module.exports = app;
