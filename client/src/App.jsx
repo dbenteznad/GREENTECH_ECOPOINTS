@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Router, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Blog from "./components/Blog";
 import Sesion from "./components/Sesion";
@@ -16,22 +16,21 @@ import ProtectedRoutes from "./components/ProtectedRoutes";
 function App() { 
   return (
     <>
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/Registro" element={<Registro />} />
-          <Route path="/Login"  element={<Login/>}/>
-          <ProtectedRoutes path="Sesion" element={<Sesion />} />
-          <Route path="/Prueba" element={<Prueba />} />
-          <Route path="/Blog" element={<Blog />} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/Registro" component={Registro} />
+          <Route exact path="/Login"  component={Login}/>
+          <ProtectedRoutes path="/Sesion" component={Sesion} />
+          <Route exact path="/Prueba" component={Prueba} />
+          <Route exact path="/Blog" component={Blog} />
           {/* <Route path="/Sesion" element={<Sesion/>}/> */}
-          <Route path="/Premios" element={<Premios/>}/>
-          <Route path="/Foro" element={<Foro/>}/>
-          <Route path="/Mapa" element={<Mapa/>}/>
-          <Route path="/Formulario" element={<Formulario/>}/>
-          <Route path="/Perfil" element={<Perfil/>}/>
+          <Route exact path="/Premios" component={Premios}/>
+          <Route exact path="/Foro" component={Foro}/>
+          <Route exact path="/Mapa" component={Mapa}/>
+          <Route exact path="/Formulario" component={Formulario}/>
+          <Route exact path="/Perfil" component={Perfil}/>
           
-        </Routes>
+        </Switch>
     </>
   );
 };

@@ -22,7 +22,7 @@ export default function ProtectedRoutes({ component: Component, ...rest }) {
           return (
             <Redirect
               to={{
-                pathname: "/Sesion",
+                pathname: "/",
                 state: {
                   // Establece la ubicación a la que un usuario estaba a punto de acceder antes de ser redirigido para iniciar sesión
                   from: props.location,
