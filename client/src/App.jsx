@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Router, Route } from "react-router-dom";
 import Home from "./components/Home";
-
 import Blog from "./components/Blog";
 import Sesion from "./components/Sesion";
 import Premios from "./components/Premios";
@@ -11,6 +10,7 @@ import Formulario from "./components/Formulario";
 import Perfil from "./components/Perfil";
 import Login from "./components/Login";
 import Registro from "./components/Registro";
+import Prueba from "./components/Prueba";
 
 function App() { 
   return (
@@ -18,7 +18,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
-          <Route path="/Home" element={<Home />} /> 
+          <Route path="/" element={<Home />} />
+          <Route path="/Prueba" element={<Prueba />} />
           <Route path="/Blog" element={<Blog />} />
           <Route path="/Sesion" element={<Sesion/>}/>
           <Route path="/Premios" element={<Premios/>}/>
