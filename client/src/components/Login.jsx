@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
 import axios from "axios";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
 function Login() {
   const [correo_electronico, setEmail] = useState("");
@@ -21,7 +23,12 @@ function Login() {
     
     axios(configuration)
       .then((result) => {
-        setRegister(true);
+        // Envia la cookie
+        cookies.set("TOKEN", result.data.token, {
+          path: "/",
+        });
+        // Redirige al usuario a la página principal del usuario
+        window.location.href = "/Sesion";
       })
       .catch((error) => {
         error = new Error();
