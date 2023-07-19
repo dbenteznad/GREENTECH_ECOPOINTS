@@ -10,6 +10,7 @@ function Home() {
   const [correo_electronico, setEmail] = useState("");
   const [contrasena, setPassWord] = useState("");
   const [login, setLogin] = useState(false);
+  const [register, setRegister] = useState(false);
 
   const handleSubmit = (e) => {
     // Evitar que el formulario actualice toda la página
@@ -27,8 +28,12 @@ function Home() {
 
     // Realizar la llamada a la API usando axios
     axios(configuration)
-      .then((result) => { console.log(result); })
-      .catch((error) => { console.log(error); })
+      .then((result) => {
+        setRegister(true);
+      })
+      .catch((error) => {
+        error = new Error();
+      });
   }
 
   return (
@@ -86,9 +91,6 @@ function Home() {
           >
             ¡Regístrate y recicla!
           </button>
-          {/* <input
-            type="submit"
-            className=" py-2 px-2 bg-green-700 w-full p-3 text-white uppercase font-bold rounded-md hover:scale-105 cursor-pointer" /> */}
         </form>
       </div  >
 

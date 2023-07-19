@@ -28,7 +28,11 @@ exports.register = async function (req, res) {
 exports.login = async function (req, res) {
     try {
         // Verificar si el email existe
-        const user = await Usuario.findOne({ correo_electronico: req.body.correo_electronico });
+        const user = await Usuario.findOne({
+            where: {
+                correo_electronico: req.body.correo_electronico
+            }
+        });
 
         // Si el correo existe
         if (user) {
