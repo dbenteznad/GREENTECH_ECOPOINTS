@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Router, Route } from "react-router-dom";
+import { Routes, Router, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Blog from "./components/Blog";
 import Sesion from "./components/Sesion";
@@ -15,10 +15,12 @@ import Prueba from "./components/Prueba";
 function App() { 
   return (
     <>
-      <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
           <Route path="/" element={<Home />} />
+          <Route path="/Registro" element={<Registro />} />
+          <Route path="/Login"  element={<Login/>}/>
+
           <Route path="/Prueba" element={<Prueba />} />
           <Route path="/Blog" element={<Blog />} />
           <Route path="/Sesion" element={<Sesion/>}/>
@@ -26,11 +28,9 @@ function App() {
           <Route path="/Foro" element={<Foro/>}/>
           <Route path="/Mapa" element={<Mapa/>}/>
           <Route path="/Formulario" element={<Formulario/>}/>
-           <Route path="/Registro" element={<Registro/>}/>
           <Route path="/Perfil" element={<Perfil/>}/>
-          <Route path="/Login"  element={<Login/>}/>
+          
         </Routes>
-      </BrowserRouter>
     </>
   );
 };
