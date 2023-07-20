@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
-import openMenu from './Menu';
-import openPerfil from './Menu_perfil';
+import openMenu from './Menu_Burguer_Home';
+import openPerfil from './Menu_Burguer_Perfil';
 
 function NavBar_sesion() {
 
