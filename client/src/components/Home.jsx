@@ -39,12 +39,14 @@ function Home() {
   return (
     <div className="  h-full bg-public scroll-auto" >
       <Navbar />
+      <div className=" mx-auto grid md:grid-cols-1 items-center bg-green-500">
+        <h1 className=" text-center font-bold text-5xl text-white mt-6" >¡Descarga nuestra app!</h1></div>
       <div className=" mx-auto grid md:grid-cols-2 items-center bg-green-500">
 
         <div className="ml-0 col-span-1 ">
-          <h2 className=" text-center font-bold text-6xl text-white mt-6">¡Descarga nuestra app!</h2>
           <h2 className=" text-center font-bold text-6xl text-white mt-6">Sé un héroe verde y desbloquea premios mientras salvas al planeta.</h2>
-          <img className="h-1/2 md:h-1/3 py-5 " src="bolsa_basura.png" />
+          <img className="h-1/3 md:h-1/3 py-5 hover:scale-105 ease-in duration-300 " src="bolsa_basura.png" />
+
         </div>
 
         {/* Formulario */}
@@ -95,79 +97,74 @@ function Home() {
       </div  >
 
       {/* Informacion */}
+      <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10 mt-10" id='Por_que_proyecto' ></div>
       <div className="  mb-2"
-        id='Por_que_proyecto'>
-        <h1 className=" text-center items-center text-7xl py-5 font-mono mb-10 mt-10 ">Sabias Que</h1>
-        <p className="text-center items-center text-xl py-5 font-mono">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus eum vitae, deleniti ut illo esse et perspiciatis
-          tempore voluptatibus aspernatur ratione corrupti itaque corporis temporibus sapiente laudantium fugit ea dicta cum. Atque consequuntur
-          nostrum doloremque aliquid nulla vitae repudiandae explicabo acfqwecewvwrgqrgvrqegqregqr</p>
+      >
+        <h1 className=" text-center items-center text-8xl py-5 font-mono mb-10 mt-10 ">¡Sabias Qué!</h1>
+        <p className="text-center items-center text-xl py-5 font-mono">Optar por una app de gestión de residuos ofrece numerosos beneficios. En primer lugar, proporciona información precisa y actualizada sobre la separación y el manejo adecuado de los residuos, lo que ayuda a evitar errores y maximizar el reciclaje. Además, estas aplicaciones suelen ser intuitivas y fáciles de usar, lo que facilita su adopción por parte de los usuarios.
+          Al utilizar una app de gestión de residuos, contribuimos activamente a cuidar el medio ambiente y promover prácticas sostenibles en nuestra comunidad.</p>
       </div>
       {/* Graficos  */}
-      <div className="container mx-auto items-center hover:bg-green-400 rounded-md " >
+      <div className="container mx-auto items-center  rounded-md " >
         <div >
-          <img className="  mx-auto py-5 px-5 " src="grafico_Cataluña.jpeg" />
+        <h2 className=" text-center items-center text-5xl py-5 font-mono mb-10 mt-10 ">Evolución Reciclaje España</h2>
+        </div  >
+        
 
-        </div>
+        
 
       </div>
-      <div className="container mx-auto items-center hover:bg-green-400 rounded-md " >
+      <div className="container mx-auto items-center col rounded-md " >
         <div >
-          <img className="  mx-auto py-5 px-5 " src="grafico_España.jpeg" />
-
+        <h2 className=" text-center items-center text-5xl py-5 font-mono mb-10 mt-10 ">Evolución Reciclaje Cataluña</h2>
         </div>
-
       </div>
-
-
-
-      <div className="container mx-auto items-center  bg-green-500 rounded-md " >
+      <div className="container mx-auto items-center  rounded-md " >
         <div >
 
-          <img className=" mb-20 mx-auto py-5 px-5 " src="Grafico.jpeg" />
-
+        <h2 className=" text-center items-center text-5xl py-5 font-mono mb-10 mt-10 ">Predicción % Residuos Selectivos</h2>
         </div>
-
       </div>
-      <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" ></div>
+      <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" id="Como_funciona" ></div>
       {/* Como Funciona */}
       <div>
-        <h1 id="Como_funciona" className="text-center items-center text-7xl py-5 font-mono mb-20">Como Funciona</h1>
+        <h1 className="text-center items-center text-9xl py-5 font-mono mb-20">Como Funciona</h1>
 
         <div className="  mb-20 grid md:grid-cols-6 rounded-md " >
           <div >
-            <img className=" w-1/3 py-2 px-2 mx-auto mb-2 " src="ecological-house.png" />
+            <img className=" w-1/3 py-2 px-2 mx-auto mb-2 hover:scale-105 " src="ecological-house.png" />
             <p className="text-center text-xl mb-4 sm:text-xl font-mono font-bold">Recicla</p>
           </div>
           <div >
-            <img className="w-1/3 py-2 px-2 mx-auto mb-2" src="loupe.png" />
+            <img className="w-1/3 py-2 px-2 mx-auto mb-2 hover:scale-105 " src="loupe.png" />
             <p className="text-center text-xl sm:text-xl font-mono font-bold">Busca tu Contenedor EcoPoint mas Cercano</p>
           </div>
           <div >
-            <img className="w-1/3 py-2 px-2 mx-auto mb-2" src="qr-code.png" />
+            <img className="w-1/3 py-2 px-2 mx-auto mb-2 hover:scale-105 " src="qr-code.png" />
             <p className="text-center text-xl sm:text-xl font-mono font-bold">Escanea el Qr</p>
           </div>
           <div >
-            <img className="w-1/3 py-2 px-2 mx-auto mb-2" src="contenedor-de-basura.png" />
+            <img className="w-1/3 py-2 px-2 mx-auto mb-2 hover:scale-105 " src="contenedor-de-basura.png" />
             <p className="text-center text-xl sm:text-xl font-mono font-bold">Tira La basura reciclada en el contenedor EcoPont</p>
           </div>
           <div >
-            <img className="w-1/3 py-2 px-2 mx-auto mb-2 " src="Coin_EcoPoints.png" />
+            <img className="w-1/3 py-2 px-2 mx-auto mb-2 hover:scale-105 " src="Coin_EcoPoints.png" />
             <p className="text-center text-xl sm:text-xl font-mono font-bold">Gana Puntos</p>
           </div>
           <div >
-            <img className="w-1/3 py-2 px-2 mx-auto mb-2" src="gift.png" />
+            <img className="w-1/3 py-2 px-2 mx-auto mb-2 hover:scale-105 " src="gift.png" />
             <p className="text-center text-xl sm:text-xl font-mono font-bold ">Recibe tu recompensa por reciclar</p>
 
           </div>
         </div>
       </div>
 
-      <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" ></div>
+      <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" id="sobre_nosotros"  ></div>
 
       {/* Sobre Nosotros */}
-      <h1 id="sobre_nosotros" className="text-center items-center text-7xl py-5 font-mono mb-10">Sobre Nosotros</h1>
+      <h1 className="text-center items-center text-9xl py-5 font-mono mb-10">Sobre Nosotros</h1>
 
-      <div className="container mx-auto grid md:grid-cols-2 items-center  mb-40 hover:bg-green-400 rounded-md" >
+      <div className="container mx-auto grid md:grid-cols-2 items-center  mb-40  rounded-md" >
         <div >
           <img className="h-1/2 py-2 px-2 " src="Empresa.jpeg" />
         </div>
@@ -232,8 +229,14 @@ function Home() {
         </div>
 
       </footer >
+     
     </div >
+    
   )
+  
 }
+
+
+
 
 export default Home;
