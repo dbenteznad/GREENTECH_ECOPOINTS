@@ -21,18 +21,18 @@ function Login() {
       },
     };
     
-    axios(configuration)
-      .then((result) => {
-        // Envia la cookie
-        cookies.set("TOKEN", result.data.token, {
-          path: "/",
-        });
-        // Redirige al usuario a la página principal del usuario
-        window.location.href = "/Sesion";
-      })
-      .catch((error) => {
-        error = new Error();
-      });
+    // axios(configuration)
+    //   .then((result) => {
+    //     // Envia la cookie
+    //     cookies.set("TOKEN", result.data.token, {
+    //       path: "/",
+    //     });
+    //     // Redirige al usuario a la página principal del usuario
+    //     window.location.href = "/Sesion";
+    //   })
+    //   .catch((error) => {
+    //     error = new Error();
+    //   });
   }
 
   return (

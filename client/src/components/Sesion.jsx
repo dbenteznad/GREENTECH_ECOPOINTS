@@ -12,7 +12,7 @@ function Sesion() {
             <div id="Sesion"  className=" bg-green-500">
 
 
-                <div className="mb-5 rounded-2xl mx-auto p-20 sm:p-5 bg-[url('/public/Tarjeta.png')] grid md:grid-cols-2  py-10 sm:py-5 sm:w-1/2 md:w-1/2 lg:w-1/2  border border-solid  border-green-700">
+                <div className="mb-5 rounded-2xl mx-auto p-20 sm:p-5 bg-[url('/public/Tarjeta.png')] grid md:grid-cols-2  py-8 sm:py-5 sm:w-1/2 md:w-1/2 lg:w-1/2  border border-solid  border-green-700">
 
 
                     <div className="sm:col-span-1  mt-10 mb-10">

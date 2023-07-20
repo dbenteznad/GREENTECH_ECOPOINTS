@@ -1,11 +1,21 @@
 import { useState } from "react";
 import Navbar from "./Navbar";
 import axios from "axios";
+import Prueba from "./GraficaCat";
 
 
 
 
 function Home() {
+
+
+
+
+
+
+
+
+
 
   const [correo_electronico, setEmail] = useState("");
   const [contrasena, setPassWord] = useState("");
@@ -39,18 +49,19 @@ function Home() {
   return (
     <div className="  h-full bg-public scroll-auto" >
       <Navbar />
-      <div className=" mx-auto grid md:grid-cols-1 items-center bg-green-500">
-        <h1 className=" text-center font-bold text-5xl text-white mt-6" >¡Descarga nuestra app!</h1></div>
+
+
       <div className=" mx-auto grid md:grid-cols-2 items-center bg-green-500">
 
         <div className="ml-0 col-span-1 ">
-          <h2 className=" text-center font-bold text-6xl text-white mt-6">Sé un héroe verde y desbloquea premios mientras salvas al planeta.</h2>
-          <img className="h-1/3 md:h-1/3 py-5 hover:scale-105 ease-in duration-300 " src="bolsa_basura.png" />
+          <h1 className=" text-center font-bold text-5xl text-white mt-6" >¡Descarga nuestra app!</h1>
+          <h2 className=" text-center font-bold  font-mono text-2xl text-white mt-6">Sé un héroe verde y desbloquea premios mientras salvas al planeta.</h2>
+          <img className="w-2/3 md:h-1/3 py-5 hover:scale-105 ease-in duration-300 " src="bolsa_basura.png" />
 
         </div>
 
         {/* Formulario */}
-        <form className="ml-0 col-span-1 bg-white p-4 mr-8 rounded-md"
+        <form className="ml-4 mr-4  col-span-1 bg-white p-4 rounded-md "
           onSubmit={handleSubmit}>
 
 
@@ -97,40 +108,47 @@ function Home() {
       </div  >
 
       {/* Informacion */}
-      <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10 mt-10" id='Por_que_proyecto' ></div>
+      <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-8 mt-8" id='Por_que_proyecto' ></div>
       <div className="  mb-2"
       >
-        <h1 className=" text-center items-center text-8xl py-5 font-mono mb-10 mt-10 ">¡Sabias Qué!</h1>
+        <h1 className=" text-center items-center text-8xl py-5 font-mono ">¡Sabias Qué!</h1>
         <p className="text-center items-center text-xl py-5 font-mono">Optar por una app de gestión de residuos ofrece numerosos beneficios. En primer lugar, proporciona información precisa y actualizada sobre la separación y el manejo adecuado de los residuos, lo que ayuda a evitar errores y maximizar el reciclaje. Además, estas aplicaciones suelen ser intuitivas y fáciles de usar, lo que facilita su adopción por parte de los usuarios.
           Al utilizar una app de gestión de residuos, contribuimos activamente a cuidar el medio ambiente y promover prácticas sostenibles en nuestra comunidad.</p>
       </div>
       {/* Graficos  */}
       <div className="container mx-auto items-center  rounded-md " >
         <div >
-        <h2 className=" text-center items-center text-5xl py-5 font-mono mb-10 mt-10 ">Evolución Reciclaje España</h2>
+          <h2 className=" text-center items-center mx-auto text-5xl py-5 font-mono mb-10 mt-10 ">Evolución Reciclaje España</h2>
         </div  >
-        
-
-        
-
       </div>
-      <div className="container mx-auto items-center col rounded-md " >
+
+      <div  >
+
         <div >
-        <h2 className=" text-center items-center text-5xl py-5 font-mono mb-10 mt-10 ">Evolución Reciclaje Cataluña</h2>
+          <h2 className=" text-center w-1/2 items-center text-5xl  mx-auto py-5 font-mono mb-10 mt-10 ">Evolución Reciclaje Cataluña</h2>
         </div>
+        <div>
+
+          <Prueba />
+         
+     
+        </div>
+
+
       </div>
+
       <div className="container mx-auto items-center  rounded-md " >
         <div >
 
-        <h2 className=" text-center items-center text-5xl py-5 font-mono mb-10 mt-10 ">Predicción % Residuos Selectivos</h2>
+          <h2 className=" text-center items-center text-5xl py-5 font-mono mb-10 mt-10 ">Predicción % Residuos Selectivos</h2>
         </div>
       </div>
       <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" id="Como_funciona" ></div>
       {/* Como Funciona */}
       <div>
-        <h1 className="text-center items-center text-9xl py-5 font-mono mb-20">Como Funciona</h1>
 
-        <div className="  mb-20 grid md:grid-cols-6 rounded-md " >
+        <h1 className=" text-center items-center text-8xl py-5 font-mono ">Como Funciona</h1>
+        <div className="  mb-20 grid md:flex-auto md:grid-cols-6 rounded-md " >
           <div >
             <img className=" w-1/3 py-2 px-2 mx-auto mb-2 hover:scale-105 " src="ecological-house.png" />
             <p className="text-center text-xl mb-4 sm:text-xl font-mono font-bold">Recicla</p>
@@ -162,7 +180,8 @@ function Home() {
       <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" id="sobre_nosotros"  ></div>
 
       {/* Sobre Nosotros */}
-      <h1 className="text-center items-center text-9xl py-5 font-mono mb-10">Sobre Nosotros</h1>
+      <h1 className=" text-center items-center text-8xl py-5 font-mono ">Sobre Nosotros</h1>
+
 
       <div className="container mx-auto grid md:grid-cols-2 items-center  mb-40  rounded-md" >
         <div >
@@ -191,7 +210,7 @@ function Home() {
             </ul>
             <ul className="">
               <li>
-                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-white'>Inicio</a>
+                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-white'>Blog</a>
               </li>
             </ul>
           </div>
@@ -229,11 +248,11 @@ function Home() {
         </div>
 
       </footer >
-     
+
     </div >
-    
+
   )
-  
+
 }
 
 
