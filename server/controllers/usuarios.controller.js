@@ -8,6 +8,15 @@ exports.register = async function (req, res) {
     try {
         const { correo_electronico, contrasena } = req.body;
 
+        // Verificar si el correo electrónico ya existe en la base de datos
+        const existingUser = await Usuario.findOne({ where: { correo_electronico } });
+
+        if (existingUser) {
+            // Si ya existe un usuario con el mismo correo electrónico, devolver un error
+            return res.status(400).json({ error: true, message: 'El correo electrónico ya está en uso' });
+        }
+
+
         // Hashear la contraseña antes de crear el usuario
         const hashedPassword = await bcrypt.hash(contrasena, 10);
 
@@ -95,12 +104,12 @@ exports.findById = async function (req, res) {
     }
 };
 
-exports.updateById = async function (req, res) {
+exports.updateByEmail = async function (req, res) {
     try {
-        const idUsuario = req.params.id;
+        const email = req.params.id;
         const datosActualizados = req.body; // Datos actualizados enviados en el cuerpo de la solicitud
         const opciones = {
-            where: { id_usuario: idUsuario } // Especificamos la cláusula where con el ID del usuario a actualizar
+            where: { correo_electronico: email } // Especificamos la cláusula where con el ID del usuario a actualizar
         };
 
         // Llamamos a Usuario.update() con los datos actualizados y las opciones

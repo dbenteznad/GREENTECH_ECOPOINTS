@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
+import Navbar from "./Navbar_WelcomePage";
 import axios from "axios";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
@@ -28,7 +28,7 @@ function Login() {
           path: "/",
         });
         // Redirige al usuario a la página principal del usuario
-        window.location.href = "/Sesion";
+        window.location.href = "/home";
       })
       .catch((error) => {
         error = new Error();

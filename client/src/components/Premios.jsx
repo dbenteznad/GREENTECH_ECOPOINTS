@@ -1,4 +1,4 @@
-import NavBar_sesion from "./NavBar_sesion"
+import NavBar_sesion from "./NavBar_Home"
 function Premios() {
 
     return (
