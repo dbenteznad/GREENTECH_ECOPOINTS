@@ -103,7 +103,7 @@ function WelcomePage() {
       <div id='Por_que_proyecto' className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" ></div>
       <div id="about-project" className="  mb-2"
       >
-        <h1 className=" text-center items-center text-6xl py-5">Sabías que...?</h1>
+        <h1 className=" text-center items-center text-6xl py-5 font-bold">Sabías que...?</h1>
         <p className="text-center items-center text-xl py-5">Optar por una app de gestión de residuos ofrece numerosos beneficios. En primer lugar, proporciona información precisa y actualizada sobre la separación y el manejo adecuado de los residuos, lo que ayuda a evitar errores y maximizar el reciclaje. Además, estas aplicaciones suelen ser intuitivas y fáciles de usar, lo que facilita su adopción por parte de los usuarios.
           Al utilizar una app de gestión de residuos, contribuimos activamente a cuidar el medio ambiente y promover prácticas sostenibles en nuestra comunidad.</p>
       </div>
@@ -139,7 +139,7 @@ function WelcomePage() {
       {/* Como Funciona */}
       <div>
 
-        <h1 className=" text-center items-center text-6xl py-5 mb-20">Cómo funciona</h1>
+        <h1 className=" text-center items-center text-6xl py-5 mb-20 font-bold">¿Cómo funciona?</h1>
         <div className="  mb-20 grid md:flex-auto md:grid-cols-6 rounded-md " >
           <div >
             <img className=" w-1/4 py-2 px-2 mx-auto mb-2 hover:scale-105 " src="ecological-house.png" />
@@ -147,7 +147,7 @@ function WelcomePage() {
           </div>
           <div >
             <img className="w-1/4 py-2 px-2 mx-auto mb-2 hover:scale-105 " src="loupe.png" />
-            <p className="text-center text-xl sm:text-xl ">Busca el contenedor ECOPOINT más cercano</p>
+            <p className="text-center text-xl sm:text-xl ">Busca el contenedor <b>ECOPOINT</b> más cercano</p>
           </div>
           <div >
             <img className="w-1/4 py-2 px-2 mx-auto mb-2 hover:scale-105 " src="qr-code.png" />
@@ -159,7 +159,7 @@ function WelcomePage() {
           </div>
           <div >
             <img className="w-1/4 py-2 px-2 mx-auto mb-2 hover:scale-105 " src="Coin_EcoPoints.png" />
-            <p className="text-center text-xl sm:text-xl ">Acumula ECOPOINTS</p>
+            <p className="text-center text-xl sm:text-xl ">Acumula <b>ECOPOINTS</b></p>
           </div>
           <div >
             <img className="w-1/4 py-2 px-2 mx-auto mb-2 hover:scale-105 " src="gift.png" />
@@ -172,17 +172,17 @@ function WelcomePage() {
       <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" id="sobre_nosotros"  ></div>
 
       {/* Sobre Nosotros */}
-      <h1 className=" text-center items-center text-6xl py-5 mb-5 ">Un proyecto de GreenTech</h1>
+      <h1 className=" text-center items-center text-6xl py-5 mb-5 font-bold ">Un proyecto de GreenTech</h1>
 
 
       <div className="container mx-auto grid md:grid-cols-2 items-center  mb-40  rounded-md" >
         <div >
           <img id="img-empresa"  src="Empresa.png" />
         </div>
-        <p id="frase-greentech" className="col-span-1  text-right items-center">EcoPoints es una iniciativa de GreenTech, una empresa dedicada a la sostenibilidad, que premia 
-        tu responsabilidad medioambiental a través de un Sistema de Devolución y Recompensa (SDR). Cada vez que reciclas en nuestros contenedores de tu ciudad, recibes EcoPoints, que puedes canjear por premios. 
+        <p id="frase-greentech" className="col-span-1  text-right items-center"><b>EcoPoints</b> es una iniciativa de <b>GreenTech</b>, una empresa IoT dedicada a la sostenibilidad, que premia 
+        tu responsabilidad medioambiental a través de un Sistema de Devolución y Recompensa. Cada vez que reciclas en nuestros contenedores de tu ciudad, recibes <b>EcoPoints</b>, que puedes canjear por premios. 
         <br/> <br/> Nuestro enfoque combina la tecnología con el compromiso de construir un mundo más sostenible a través del reciclaje inteligente y accesible para todos. 
-        Con EcoPoints ganas tú y gana el medio ambiente, porque cada pequeña acción cuenta en la construcción de un mundo más verde y sostenible. Únete a la comunidad EcoPoints y sé parte 
+        Con <b>EcoPoints</b> ganas tú y gana el medio ambiente, porque cada pequeña acción cuenta en la construcción de un mundo más verde y sostenible. Únete a la comunidad <b>EcoPoints</b> y sé parte 
         del cambio hacia un futuro mejor.</p>
  
       </div>

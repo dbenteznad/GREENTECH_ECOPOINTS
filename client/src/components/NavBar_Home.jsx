@@ -1,7 +1,7 @@
-
 import { Link } from 'react-router-dom';
 import openMenu from './Menu_Burguer_Home';
 import openPerfil from './Menu_Burguer_Perfil';
+import '../styles/Navbar_Home.css'
 import axios from "axios";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
@@ -21,12 +21,12 @@ function NavBar_Home() {
 
     return (
         <>
-            <nav className=' py-6 sticky bg-green-500  top-0 '>
+            <nav className=' py-4 bg-green-500 sticky top-0 pt-3 shadow-md  '>
 
                 <div className='container mx-auto flex px-8 lg:px-0 '>
 
                     <div className='flex flex-grow items-center'>
-                        <img className='h-14' src='EcoPointsLogo.png' />
+                        <img id='EcoPointsLogo' className='hover:scale-110' src='EcoPointsLogo.png' />
                     </div>
 
                     <div className='flex lg:hidden'>
@@ -40,10 +40,10 @@ function NavBar_Home() {
                     <div id='menu' className=' lg:flex hidden flex-grow justify-between absolute lg:relative lg:top-0 top-20 left-0 bg-green-500
         w-full lg:w-auto items-center py-14 lg:py-0 px-8 sm:px-24 lg:px-0 font-bold'>
                         <div className='flex flex-col lg:flex-row mb-8 lg:mb-0'>
-                            <a href='Premios' className='text-white uppercase  hover:text-black lg:mr-7 mb-8 lg:mb-0'>Premios</a>
-                            <a href='#' className='text-white uppercase hover:text-black lg:mr-7 mb-8 lg:mb-0 '>Mapa</a>
-                            <a href='Foro' className='text-white uppercase hover:text-black lg:mr-7 mb-8 lg:mb-0 '>Foro</a>
-                            <a href='#' className='text-white  uppercase hover:text-black '>ChatBot</a>
+                            <a href='Premios' className='text-black  hover:text-white lg:mr-7 mb-8 lg:mb-0 uppercase'>Premios</a>
+                            <a href='#' className='text-black  hover:text-white lg:mr-7 mb-8 lg:mb-0 uppercase'>Mapa</a>
+                            <a href='Foro' className='text-black  hover:text-white lg:mr-7 mb-8 lg:mb-0 uppercase'>Foro</a>
+                            <a href='#' className='text-black   hover:text-white '>ChatBot</a>
 
                         </div>
 

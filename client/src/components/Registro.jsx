@@ -44,10 +44,10 @@ function Registro() {
         className="rounded-lg bg-green-500 py-10 px-5 mb-10 w-1/2 items-center mt-10 mx-auto"
         onSubmit={handleSubmit}
       >
-        <h1 className="text-center text-5xl mb-10">Registrarse</h1>
+        <h1 className="text-center text-5xl mb-10 font-bold">¡Regístrate y únete al nuevo reciclaje!</h1>
 
         <div id="Registro" className="">
-          <label className="block text-white uppercase font-bold">
+          <label className="block text-black uppercase font-bold">
             Correo Electronico
           </label>
           <input
@@ -62,7 +62,7 @@ function Registro() {
         </div>
 
         <div className="">
-          <label className="block text-white uppercase font-bold">Contraseña</label>
+          <label className="block text-black uppercase font-bold">Contraseña</label>
           <input
             id="Password"
             type="password"
@@ -77,7 +77,7 @@ function Registro() {
         <button
             variant="primay"
             type="submit"
-            className="py-2 px-2 bg-green-700 w-full p-3 text-white uppercase font-bold rounded-md hover:scale-105 cursor-pointer"
+            className="py-2 px-2 bg-emerald-800 w-full p-3 text-white uppercase font-bold rounded-md hover:scale-105 cursor-pointer"
             onClick={(e) => handleSubmit(e)}
           >
             ¡Regístrate!
