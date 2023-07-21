@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import Registro from "./components/Registro";
 import Prueba from "./components/Prueba";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import Prediccion from "./components/Prediccion";
 
 function App() { 
   return (
@@ -20,6 +21,7 @@ function App() {
           <ProtectedRoutes path="/home" component={Home} />
           <Route exact path="/prueba" component={Prueba} />
           <Route exact path="/premios" component={Premios}/>
+          <Route exact path="/prediccion" component={Prediccion}/>
         </Switch>
     </>
   );
