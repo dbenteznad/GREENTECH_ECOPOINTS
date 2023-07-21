@@ -11,7 +11,7 @@ function Navbar_WelcomePage() {
         <div className='container mx-auto flex px-8 lg:px-0 ' >
           <button
            className='flex flex-grow items-center'>
-           <Link to="/" rel="stylesheet" href='Home' > <img id='EcoPointsLogo' className='hover:scale-110' src='EcoPointsLogo.png' /> </Link>
+           <Link to="/" rel="stylesheet" href='Home' > <img className='hover:scale-110 h-40' src='EcoPointsLogo.png' /> </Link>
           </button>
           <div className='flex lg:hidden'>
             <img id='menu-burguer' className='h-10 hover:scale-110' src='menu.png' onClick={openMenu} />
@@ -19,10 +19,10 @@ function Navbar_WelcomePage() {
           <div id='menu' className=' lg:flex hidden flex-grow justify-between absolute lg:relative lg:top-0 top-20 left-0 bg-green-500
             w-full lg:w-auto items-center py-14 lg:py-0 px-8 sm:px-24 lg:px-0'>
             <div className='flex flex-col lg:flex-row mb-8 lg:mb-0 font-bold'>
-              <a href='#Por_que_proyecto'  className='  hover:text-white lg:mr-7 mb-8 lg:mb-0 text-black  '>Por qué el proyecto</a>
-              <a href='#Como_funciona' className=' hover:text-white lg:mr-7 mb-8 lg:mb-0 text-black'>Cómo funciona</a>
-              <a href='#sobre_nosotros' className=' hover:text-white lg:mr-7 mb-8 lg:mb-0 text-black'>Sobre nosotros </a>
-              <a href='Blog' className='  hover:text-white text-black '>Blog</a>
+              <a href='#Por_que_proyecto'  className='  hover:text-black lg:mr-7 mb-8 lg:mb-0 text-white  '>Por qué el proyecto</a>
+              <a href='#Como_funciona' className=' hover:text-black lg:mr-7 mb-8 lg:mb-0 text-white'>Cómo funciona</a>
+              <a href='#sobre_nosotros' className=' hover:text-black lg:mr-7 mb-8 lg:mb-0 text-white'>Sobre nosotros </a>
+              <a href='Blog' className='  hover:text-black text-white '>Blog</a>
             </div>
             <div className='flex flex-col lg:flex-row text-center font-bold'>
               <a className='  text-white   py-2.5 px-4 rounded-md bg-emerald-800  hover:scale-110 lg:mr-4 mb-8 lg:mb-0' href='Login'>Iniciar sesión</a>

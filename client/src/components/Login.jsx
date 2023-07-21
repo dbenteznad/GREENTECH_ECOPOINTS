@@ -23,6 +23,7 @@ function Login() {
     
     axios(configuration)
       .then((result) => {
+        setLogin(true);
         // Envia la cookie
         cookies.set("TOKEN", result.data.token, {
           path: "/",
@@ -38,11 +39,11 @@ function Login() {
   return (
     <div>
       <div className="py-10 px-5 mb-10 w-1/2 items-center mt-10  mx-auto rounded-lg bg-green-500 ">
-        <h1 className="text-center text-5xl mb-10 font-bold">Bienvenido de nuevo</h1>
+        <h1 className="text-center text-5xl mb-10 font-bold text-black">¡Bienvenido de nuevo!</h1>
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label className="block text-black uppercase font-bold">Correo electrónico</label>
+            <label className="block text-white uppercase font-bold">Correo electrónico</label>
             <input
               type="email"
               name="correo_electronico"
@@ -54,7 +55,7 @@ function Login() {
           </div>
 
           <div className="form-group">
-            <label className="block text-black uppercase font-bold">Contraseña</label>
+            <label className="block text-white uppercase font-bold">Contraseña</label>
             <input
               type="password"
               name="contrasena"

@@ -50,35 +50,34 @@ function Home() {
                     </div>
 
                 </div>
-
-                <div className=" container mx-auto grid md:grid-cols-3">
-
-                    <div className="py-5 col-span-1 rounded-lg mr-4 mb-6  hover:scale-110 bg-white" >
-                        {/* premio1 */}
-                        <h1 className="text-center text-lg mb-2 "><b>Premio 1</b></h1>
-                        <img className=" h-2/3 mx-auto rounded-xl" src="premio1.png" />
-                        <h1 className="text-center"><b>Puntos:</b></h1>
-                        <h1 className="text-center">1000</h1>
-
-                    </div>
-                    {/* premio2 */}
-                    <div className=" py-5 col-span-1 rounded-lg  mr-4 mb-6 hover:scale-110  bg-white" >
-                        <h1 className="text-center text-lg mb-2 " ><b>Premio 2</b></h1>
-                        <img className=" h-2/3 mx-auto rounded-xl" src="premio2.jpg" />
-                        <h1 className="text-center"><b>Puntos:</b></h1>
-                        <h1 className="text-center">2000</h1>
-                    </div>
-                    {/* Premio3 */}
-                    <div className="py-5 col-span-1 rounded-md hover:scale-110    mr-4 mb-6 bg-white" >
-
-                        <h1 className="text-center text-lg mb-2 "><b>Premio 3</b></h1>
-                        <img className=" h-2/3 mx-auto rounded-xl" src="premio3.jpg" />
-                        <h1 className="text-center"><b>Puntos:</b></h1>
-                        <h1 className="text-center">3000</h1>
-                    </div>
-                </div >
                 {/* <a href='Premios' className='text-black uppercase text-left mx-auto hover:text-blue-600 lg:mr-7 mb-8 lg:mb-0'>Ver Mas</a> */}
             </div>
+            <div className=" container mx-auto grid md:grid-cols-3">
+
+                <div className="py-5 col-span-1 rounded-lg mr-4 mb-6  hover:scale-110 bg-green-500" >
+                    {/* premio1 */}
+                    <h1 className="text-center text-lg mb-2 "><b>Premio 1</b></h1>
+                    <img className=" h-2/3 mx-auto rounded-xl" src="premio1.png" />
+                    <h1 className="text-center"><b>Puntos:</b></h1>
+                    <h1 className="text-center">1000</h1>
+
+                </div>
+                {/* premio2 */}
+                <div className=" py-5 col-span-1 rounded-lg  mr-4 mb-6 hover:scale-110  bg-green-500" >
+                    <h1 className="text-center text-lg mb-2 " ><b>Premio 2</b></h1>
+                    <img className=" h-2/3 mx-auto rounded-xl" src="premio2.jpg" />
+                    <h1 className="text-center"><b>Puntos:</b></h1>
+                    <h1 className="text-center">2000</h1>
+                </div>
+                {/* Premio3 */}
+                <div className="py-5 col-span-1 rounded-md hover:scale-110    mr-4 mb-6 bg-green-500" >
+
+                    <h1 className="text-center text-lg mb-2 "><b>Premio 3</b></h1>
+                    <img className=" h-2/3 mx-auto rounded-xl" src="premio3.jpg" />
+                    <h1 className="text-center"><b>Puntos:</b></h1>
+                    <h1 className="text-center">3000</h1>
+                </div>
+            </div >
             <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" ></div>
             <h1 className="text-center mt-25 items-center text-7xl py-5 font-mono ">Sabias que?</h1>
 
@@ -114,36 +113,36 @@ function Home() {
             <footer className="  bg-green-500">
                 <div className="  grid md:grid-cols-3  ">
                     <div className=" col-span-1 text-xl mb-8  lg:mr-7 text-center items-center "  >
-                        <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold">Sobre Nosotros</h1>
+                        <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white">Sobre Nosotros</h1>
                         <ul className="">
                             <li>
-                                <a href='#' className=' text-center col-span-1 text-xl mb-8  lg:mr-7 hover:text-white text-center'>Quienes Somos</a>
+                                <a href='#' className=' text-center col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-center text-white'>Quienes Somos</a>
                             </li>
                         </ul>
                         <ul className="">
                             <li>
-                                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-white text-center'>Blog</a>
+                                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-center text-white'>Blog</a>
                             </li>
                         </ul>
                     </div>
                     <div className=" col-span-1 text-xl mb-8 lg:mr-7 text-center items-center "  >
-                        <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold" >GreenTech</h1>
+                        <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white" >GreenTech</h1>
                         <ul className=" ">
                             <li>
-                                <a href='#' className=' col-span-1 text-xl mb-8 lg:mr-7 hover:text-white'>Productos</a>
+                                <a href='#' className=' col-span-1 text-xl mb-8 lg:mr-7 hover:text-black text-white'>Productos</a>
                             </li>
                         </ul>
                     </div>
                     <div className=" col-span-1 text-xl mb-8 lg:mr-7 text-center items-center "  >
-                        <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold"  >Ayuda y soporte</h1>
+                        <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white"  >Ayuda y soporte</h1>
                         <ul className="">
                             <li>
-                                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-white'>Contacto</a>
+                                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-white'>Contacto</a>
                             </li>
                         </ul>
                         <ul className="">
                             <li>
-                                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-white'>Inicio</a>
+                                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-white'>Inicio</a>
                             </li>
                         </ul>
                     </div>

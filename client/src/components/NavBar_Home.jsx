@@ -26,11 +26,11 @@ function NavBar_Home() {
                 <div className='container mx-auto flex px-8 lg:px-0 '>
 
                     <div className='flex flex-grow items-center'>
-                        <img id='EcoPointsLogo' className='hover:scale-110' src='EcoPointsLogo.png' />
+                        <img id='EcoPointsLogo' className='hover:scale-110 h-40' src='EcoPointsLogo.png' />
                     </div>
 
                     <div className='flex lg:hidden'>
-                        <img className='h-10' src='menu.png' onClick={openMenu} />
+                        <img id='menu-burguer' className='h-10' src='menu.png' onClick={openMenu} />
                     </div>
 
 
@@ -40,10 +40,10 @@ function NavBar_Home() {
                     <div id='menu' className=' lg:flex hidden flex-grow justify-between absolute lg:relative lg:top-0 top-20 left-0 bg-green-500
         w-full lg:w-auto items-center py-14 lg:py-0 px-8 sm:px-24 lg:px-0 font-bold'>
                         <div className='flex flex-col lg:flex-row mb-8 lg:mb-0'>
-                            <a href='Premios' className='text-black  hover:text-white lg:mr-7 mb-8 lg:mb-0 uppercase'>Premios</a>
-                            <a href='#' className='text-black  hover:text-white lg:mr-7 mb-8 lg:mb-0 uppercase'>Mapa</a>
-                            <a href='Foro' className='text-black  hover:text-white lg:mr-7 mb-8 lg:mb-0 uppercase'>Foro</a>
-                            <a href='#' className='text-black   hover:text-white '>ChatBot</a>
+                            <a href='Premios' className='text-white  hover:text-black lg:mr-7 mb-8 lg:mb-0 uppercase'>Premios</a>
+                            <a href='#' className='text-white  hover:text-black lg:mr-7 mb-8 lg:mb-0 uppercase'>Mapa</a>
+                            <a href='Foro' className='text-white  hover:text-black lg:mr-7 mb-8 lg:mb-0 uppercase'>Foro</a>
+                            <a href='#' className='text-white   hover:text-black '>ChatBot</a>
 
                         </div>
 

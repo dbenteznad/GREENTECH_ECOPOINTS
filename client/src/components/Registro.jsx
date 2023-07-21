@@ -3,6 +3,8 @@ import Navbar from "./Navbar_WelcomePage";
 import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
 function Registro() {
 
@@ -30,11 +32,17 @@ function Registro() {
     axios(configuration)
       .then((result) => {
         setRegister(true);
-        // Redirige al usuario a la página principal del usuario
-        window.location.href = "/registro-formulario";
+        // Obtener el token de la respuesta
+        const token = result.data.token;
+
+        // Almacenar el token en una cookie con una duración de 1 hora
+        Cookies.set("userToken", token, { expires: 1 / 24 });
+
+        // Redirigir al usuario a la página de registro de formularios
+        history.push("/registro-formulario");
       })
       .catch((error) => {
-        error = new Error();
+        // Manejo del error
       });
   }
 
@@ -47,7 +55,7 @@ function Registro() {
         <h1 className="text-center text-5xl mb-10 font-bold">¡Regístrate y únete al nuevo reciclaje!</h1>
 
         <div id="Registro" className="">
-          <label className="block text-black uppercase font-bold">
+          <label className="block text-white uppercase font-bold">
             Correo Electronico
           </label>
           <input
@@ -62,7 +70,7 @@ function Registro() {
         </div>
 
         <div className="">
-          <label className="block text-black uppercase font-bold">Contraseña</label>
+          <label className="block text-white uppercase font-bold">Contraseña</label>
           <input
             id="Password"
             type="password"

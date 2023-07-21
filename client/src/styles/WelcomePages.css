@@ -31,6 +31,8 @@ body {
     /* max-width: 600px; */
     text-align: left;
     margin-bottom: 32px;
+    color: white;
+    font-style: italic;
 }
 
 #formulario-registro {

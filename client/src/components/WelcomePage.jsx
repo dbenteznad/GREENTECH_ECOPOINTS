@@ -46,8 +46,8 @@ function WelcomePage() {
       <div id="hero" className=" mx-auto grid md:grid-cols-2 items-center bg-green-500 pt-1000">
 
         <div id="hero-eslogan" className="ml-0 col-span-1">
-          <h1 id="hero-h1" className=" text-center font-bold text-5xl text-black mt-6" >¡Recicla, gana premios y salva el planeta con nuestra app!</h1>
-          <h2 id="hero-h2" className=" text-center font-bold text-2xl text-black mt-6">Únete a la revolución verde, hazte eco-héroe ya y construye un futuro mejor.</h2>
+          <h1 id="hero-h1" className=" text-center font-bold text-5xl text-white mt-6" >¡Recicla, gana premios y salva el planeta con nuestra app!</h1>
+          <h2 id="hero-h2" className=" text-center font-bold text-2xl mt-6">Únete a la revolución verde, ¡hazte eco-héroe!<br />Construye un futuro mejor.</h2>
           <img className="w-2/3 md:h-1/3 py-5 hover:scale-105 ease-in duration-300 " src="bolsa_basura.png" />
 
         </div>
@@ -198,36 +198,36 @@ function WelcomePage() {
       <footer className="  bg-green-500">
         <div className="  grid md:grid-cols-3  ">
           <div className=" col-span-1 text-xl mb-8  lg:mr-7 text-center items-center "  >
-            <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold">Sobre Nosotros</h1>
+            <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white">Sobre Nosotros</h1>
             <ul className="">
               <li>
-                <a href='#' className=' text-center col-span-1 text-xl mb-8  lg:mr-7 hover:text-white text-center'>Quienes Somos</a>
+                <a href='#' className=' text-center col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-center text-white'>Quienes Somos</a>
               </li>
             </ul>
             <ul className="">
               <li>
-                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-white text-center'>Blog</a>
+                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-center text-white'>Blog</a>
               </li>
             </ul>
           </div>
           <div className=" col-span-1 text-xl mb-8 lg:mr-7 text-center items-center "  >
-            <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold" >GreenTech</h1>
+            <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white" >GreenTech</h1>
             <ul className=" ">
               <li>
-                <a href='#' className=' col-span-1 text-xl mb-8 lg:mr-7 hover:text-white'>Productos</a>
+                <a href='#' className=' col-span-1 text-xl mb-8 lg:mr-7 hover:text-black text-white'>Productos</a>
               </li>
             </ul>
           </div>
           <div className=" col-span-1 text-xl mb-8 lg:mr-7 text-center items-center "  >
-            <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold"  >Ayuda y soporte</h1>
+            <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white"  >Ayuda y soporte</h1>
             <ul className="">
               <li>
-                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-white'>Contacto</a>
+                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-white'>Contacto</a>
               </li>
             </ul>
             <ul className="">
               <li>
-                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-white'>Inicio</a>
+                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-white'>Inicio</a>
               </li>
             </ul>
           </div>
