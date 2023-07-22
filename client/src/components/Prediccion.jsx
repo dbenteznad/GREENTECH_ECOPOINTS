@@ -13,6 +13,9 @@ function Prediccion() {
     kg_organico: "",
   });
 
+  const [showMessage, setShowMessage] = useState(false); // Nuevo estado para controlar la visibilidad del mensaje adicional
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -42,6 +45,14 @@ function Prediccion() {
       })
       .then((data) => {
         setResults(data);
+        setShowMessage(true);
+        setTimeout(() => {
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth",
+          });
+        }, 100);
+
       })
       .catch((error) => console.error("Error al procesar la predicción:", error));
 
@@ -50,30 +61,34 @@ function Prediccion() {
   };
 
   return (
-    <div className="contain">
-      <h1>
-        <u>Predicción de Reciclaje Residuos</u> ♻️
-      </h1>
-      <p>
-        La siguiente predicción muestra la cantidad de material reciclado y su peso estimado de manera ANUAL según el
-        perfil de la persona.
-      </p>
-      <p>
-        <u>Cómo funciona la predicción:</u> Debes poner el número correspondiente de la palabra, en las celdas blancas.
-      </p>
+    <div className="bloque">
+      <div className="titulo">
+        <h1 ><span className="titulo_color">Predicción de Reciclaje Residuos</span> ♻️</h1>
+      </div>
+      <div className="explicacion">
+        <p>La siguiente predicción muestra la cantidad de material reciclado y su peso estimado de manera ANUAL según el perfil de la persona. </p>
+        <p className="pred" > Cómo funciona la predicción? </p>
+        <p className="pred_2"> Debes poner el número correspondiente de la palabra, en las celdas blancas.</p>
+      </div>
       <form onSubmit={handleSubmit}>
         <table className="variable-table">
           <tbody>
-            <tr>
+            <tr className="valores">
+              <th>Tipo Variable</th>
+              <th colSpan="4">Caractéristicas de la variable</th>
+              <th>Valor a predecir</th>
+            </tr>
+            <tr className="linia">
               <th>Edad:</th>
-              <td>entre 12 y 100</td>
-              <td><input type="number" id="edad" min="12" max="100" required /></td>
+              <td colSpan="4">entre 12 y 100</td>
+              <td><input type="text" id="edad" pattern="[0-9]{2,3}" inputMode="numeric" required /></td>
             </tr>
             <tr className="linia">
               <th>Género:</th>
-              <td>masculino: 0</td>
-              <td>Femenino: 1</td>
-              <td><input type="number" id="genero" min="0" max="1" required /></td>
+              <td colSpan="2">masculino: 0</td>
+              <td colSpan="2">Femenino: 1</td>
+              <td><input type="text" id="genero" pattern="[0-1]" inputMode="numeric" required /></td>
+
             </tr>
             <tr className="linia">
               <th>Estado Civil:</th>
@@ -81,12 +96,12 @@ function Prediccion() {
               <td>separado/separada: 1</td>
               <td>casado/casada: 2</td>
               <td>viudo/viuda: 3</td>
-              <td><input type="number" id="estado_civil" min="0" max="3" required /></td>
+              <td><input type="text" id="estado_civil" pattern="[0-3]" inputMode="numeric" required /></td>
             </tr>
             <tr className="linia">
               <th>Número de hijos:</th>
-              <td>entre 0 y 4.</td>
-              <td><input type="number" id="num_hijos" min="0" max="4" required /></td>
+              <td colSpan="4">entre 0 y 4</td>
+              <td><input type="text" id="num_hijos" pattern="[0-4]" inputMode="numeric" required /></td>
             </tr>
             <tr className="linia">
               <th>Tipo de vivienda:</th>
@@ -94,7 +109,7 @@ function Prediccion() {
               <td>apartamento: 1</td>
               <td>chalet: 2</td>
               <td>loft: 3</td>
-              <td><input type="number" id="tipo_vivienda" min="0" max="3" required /></td>
+              <td><input type="text" id="tipo_vivienda" pattern="[0-3]" inputMode="numeric" required /></td>
             </tr>
             <tr className="linia">
               <th rowSpan="2">Nivel de estudios:</th>
@@ -102,7 +117,7 @@ function Prediccion() {
               <td>educación primaria: 1</td>
               <td>educación secundaria: 2</td>
               <td>bachillerato: 3</td>
-              <td rowSpan="2"><input type="number" id="nivel_estudios" min="0" max="7" required /></td>
+              <td rowSpan="2"><input type="text" id="nivel_estudios" pattern="[0-7]" inputMode="numeric" required /></td>
             </tr>
             <tr>
               <td>técnico o formación profesional: 4</td>
@@ -116,7 +131,7 @@ function Prediccion() {
               <td>arquitecto/a: 1</td>
               <td>asistente administrativo/a: 2</td>
               <td>contador/a: 3</td>
-              <td rowSpan="7"><input type="number" id="profesion" min="0" max="23" required /></td>
+              <td rowSpan="7"><input type="text" id="profesion" pattern="[0-23]" inputMode="numeric" required /></td>
             </tr>
             <tr>
               <td>diseñador/a: 4</td>
@@ -152,37 +167,47 @@ function Prediccion() {
         </table>
         <button className="button" type="submit">Obtener predicción</button>
       </form>
-      <h2>Resultados de la predicción:</h2>
-      <div className="results">
-        <p>
-          Cantidad de aluminio: <span>{results.cant_aluminio} unidades.</span>
-        </p>
-        <p>
-          Cantidad de plástico: <span>{results.cant_plastico} unidades.</span>
-        </p>
-        <p>
-          Cantidad de cristal: <span>{results.cant_cristal} unidades.</span>
-        </p>
-        <p>
-          Kg de papel: <span>{results.kg_papel} kg.</span>
-        </p>
-        <p>
-          Kg de orgánico: <span>{results.kg_organico} kg.</span>
-        </p>
+      <div className="contenedor-principal" >
+        <div className="resultados-container">
+          <div className="titulo_resultados"><h2>Resultados de la predicción:</h2></div>
+
+          <div className="resultados">
+            <ul>
+              <li><p>
+                Cantidad de aluminio: <span className="color_resultados">{results.cant_aluminio} unidades.</span>
+              </p></li>
+              <li><p>
+                Cantidad de plástico: <span className="color_resultados">{results.cant_plastico} unidades.</span>
+              </p></li>
+              <li><p>
+                Cantidad de cristal: <span className="color_resultados">{results.cant_cristal} unidades.</span>
+              </p></li>
+              <li> <p>
+                Kg de papel: <span className="color_resultados">{results.kg_papel} kg.</span>
+              </p></li>
+              <li><p>
+                Kg de orgánico: <span className="color_resultados">{results.kg_organico} kg.</span>
+              </p></li>
+            </ul>
+          </div>
+        </div>
+        {/* Mostrar mensaje adicional solo si es relevante y showMessage es true */}
+        {showMessage && (
+          <div className="mensaje-adicional">
+            <p>
+              ¡Ah, las predicciones, qué locura! Aquí va la información más jugosa
+              del día: nuestras predicciones tienen una fiabilidad del 0,002%, sí,
+              ni siquiera el 1% lo pillamos. Pero espera, ¡no te desesperes! Con
+              toda la certeza del mundo, estas predicciones no van a pasar en el
+              99,998% de los casos. ¡Casi nada, eh!
+            </p>
+            <p>Seamos sinceros, nuestro dataset es más falso que un billete de 3 dólares. ¡Todo inventado, nada real!</p>
+            <p>¡Es como tener una moneda de dos caras en la mano! Por un lado, nuestras predicciones son más certeras que acertar a ciegas en una diana, pero por el otro, son más imprecisas que un reloj de arena sin arena. Un verdadero show de equilibrio.</p>
+          </div>
+        )}
       </div>
-      {/* Mostrar mensaje adicional solo si es relevante */}
-      {results.mensaje_adicional && (
-        <>
-          <p>¡Ah, las predicciones, qué locura! Aquí va la información más jugosa del día: nuestras predicciones tienen una fiabilidad del 0,002%, sí, ni siquiera el 1% lo pillamos. Pero espera, ¡no te desesperes! Con toda la certeza del mundo, estas predicciones no van a pasar en el 99,998% de los casos. ¡Casi nada, eh!palabra </p>
-          <p>Seamos sinceros, nuestro dataset es más falso que un billete de 3 dólares. ¡Todo inventado, nada real!</p>
-          <p>¡Es como tener una moneda de dos caras en la mano! Por un lado, nuestras predicciones son más certeras que acertar a ciegas en una diana, pero por el otro, son más imprecisas que un reloj de arena sin arena. Un verdadero show de equilibrio.</p>
-        </>
-      )}
     </div>
   );
 }
 
 export default Prediccion;
-
-
-
