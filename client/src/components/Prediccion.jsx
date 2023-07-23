@@ -1,10 +1,117 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+
 import '../styles/Prediccion.css';
 
+const getEstadoCivil = (value) => {
+  switch (value) {
+    case 0:
+      return 'Soltero/Soltera';
+    case 1:
+      return 'Separado/Separada';
+    case 2:
+      return 'Casado/Casada';
+    case 3:
+      return 'Viudo/Viuda';
+    default:
+      return '';
+  }
+};
+
+const getTipoVivienda = (value) => {
+  switch (value) {
+    case 0:
+      return 'Piso';
+    case 1:
+      return 'Apartamento';
+    case 2:
+      return 'Chalet';
+    case 3:
+      return 'Loft';
+    default:
+      return '';
+  }
+};
+
+const getNivelEstudios = (value) => {
+  switch (value) {
+    case 0:
+      return 'Sin estudios';
+    case 1:
+      return 'Educación primaria';
+    case 2:
+      return 'Educación secundaria';
+    case 3:
+      return 'Bachillerato';
+    case 4:
+      return 'Técnico o formación profesional';
+    case 5:
+      return 'Universidad (licenciatura/grado)';
+    case 6:
+      return 'Posgrado (maestría/máster)';
+    case 7:
+      return 'Doctorado';
+    default:
+      return '';
+  }
+};
+
+const getProfesion = (value) => {
+  switch (value) {
+    case 0:
+      return 'Administrativo/a';
+    case 1:
+      return 'Arquitecto/a';
+    case 2:
+      return 'Asistente administrativo/a';
+    case 3:
+      return 'Contador/a';
+    case 4:
+      return 'Diseñador/a';
+    case 5:
+      return 'Ingeniero/a';
+    case 6:
+      return 'Médico/a';
+    case 7:
+      return 'Profesor/a';
+    case 8:
+      return 'Programador/a';
+    case 9:
+      return 'Estudiante';
+    case 10:
+      return 'Trabajador/a social';
+    case 11:
+      return 'Empresario/a';
+    case 12:
+      return 'Abogado/a';
+    case 13:
+      return 'Comerciante';
+    case 14:
+      return 'Periodista';
+    case 15:
+      return 'Investigador/a';
+    case 16:
+      return 'Artista';
+    case 17:
+      return 'Obrero/a';
+    case 18:
+      return 'Agricultor/a';
+    case 19:
+      return 'Fontanero/a';
+    case 20:
+      return 'Jardinero/a';
+    case 21:
+      return 'Repartidor/a';
+    case 22:
+      return 'Electricista';
+    case 23:
+      return 'Otro';
+    default:
+      return '';
+  }
+};
 
 function Prediccion() {
-
-
+  const [userInputs, setUserInputs] = useState({});
   const [results, setResults] = useState({
     cant_aluminio: "",
     cant_plastico: "",
@@ -13,8 +120,9 @@ function Prediccion() {
     kg_organico: "",
   });
 
-  const [showMessage, setShowMessage] = useState(false); // Nuevo estado para controlar la visibilidad del mensaje adicional
-
+  const [showMessage, setShowMessage] = useState(false);
+  const [resultsReady, setResultsReady] = useState(false);
+  const [showResults, setShowResults] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,6 +137,7 @@ function Prediccion() {
       nivel_estudios: parseInt(form.nivel_estudios.value),
       profesion: parseInt(form.profesion.value),
     };
+    setUserInputs(input_data);
 
     fetch("http://localhost:5000/", {
       method: "POST",
@@ -45,20 +154,21 @@ function Prediccion() {
       })
       .then((data) => {
         setResults(data);
-        setShowMessage(true);
-        setTimeout(() => {
-          window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: "smooth",
-          });
-        }, 100);
-
+        setResultsReady(true);
       })
       .catch((error) => console.error("Error al procesar la predicción:", error));
-
-
-
   };
+
+  useEffect(() => {
+    if (resultsReady && Object.keys(userInputs).length > 0) {
+      setShowResults(true);
+      setShowMessage(true); // Set showMessage to true when showResults is true
+      // Scroll hacia el final de la página después de 100ms
+      setTimeout(() => {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      }, 100);
+    }
+  }, [resultsReady, userInputs, showResults]);
 
   return (
     <div className="bloque">
@@ -80,88 +190,88 @@ function Prediccion() {
             </tr>
             <tr className="linia">
               <th>Edad:</th>
-              <td colSpan="4">entre 12 y 100</td>
+              <td colSpan="4">Entre 12 y 100</td>
               <td><input type="text" id="edad" pattern="[0-9]{2,3}" inputMode="numeric" required /></td>
             </tr>
             <tr className="linia">
               <th>Género:</th>
-              <td colSpan="2">masculino: 0</td>
+              <td colSpan="2">Masculino: 0</td>
               <td colSpan="2">Femenino: 1</td>
               <td><input type="text" id="genero" pattern="[0-1]" inputMode="numeric" required /></td>
 
             </tr>
             <tr className="linia">
               <th>Estado Civil:</th>
-              <td>soltero/soltera: 0</td>
-              <td>separado/separada: 1</td>
-              <td>casado/casada: 2</td>
-              <td>viudo/viuda: 3</td>
+              <td>Soltero/a: 0</td>
+              <td>Separado/a: 1</td>
+              <td>Casado/a: 2</td>
+              <td>Viudo/a: 3</td>
               <td><input type="text" id="estado_civil" pattern="[0-3]" inputMode="numeric" required /></td>
             </tr>
             <tr className="linia">
               <th>Número de hijos:</th>
-              <td colSpan="4">entre 0 y 4</td>
+              <td colSpan="4">Entre 0 y 4</td>
               <td><input type="text" id="num_hijos" pattern="[0-4]" inputMode="numeric" required /></td>
             </tr>
             <tr className="linia">
               <th>Tipo de vivienda:</th>
-              <td>piso: 0</td>
-              <td>apartamento: 1</td>
-              <td>chalet: 2</td>
-              <td>loft: 3</td>
+              <td>Piso: 0</td>
+              <td>Apartamento: 1</td>
+              <td>Chalet: 2</td>
+              <td>Loft: 3</td>
               <td><input type="text" id="tipo_vivienda" pattern="[0-3]" inputMode="numeric" required /></td>
             </tr>
             <tr className="linia">
               <th rowSpan="2">Nivel de estudios:</th>
-              <td>sin estudios: 0</td>
-              <td>educación primaria: 1</td>
-              <td>educación secundaria: 2</td>
-              <td>bachillerato: 3</td>
+              <td>Sin estudios: 0</td>
+              <td>Educación primaria: 1</td>
+              <td>Educación secundaria: 2</td>
+              <td>Bachillerato: 3</td>
               <td rowSpan="2"><input type="text" id="nivel_estudios" pattern="[0-7]" inputMode="numeric" required /></td>
             </tr>
             <tr>
-              <td>técnico o formación profesional: 4</td>
-              <td>universidad (licenciatura/grado): 5</td>
-              <td>posgrado (maestría/máster): 6</td>
-              <td>doctorado: 7</td>
+              <td>Técnico o formación profesional: 4</td>
+              <td>Universidad (licenciatura/grado): 5</td>
+              <td>Posgrado (maestría/máster): 6</td>
+              <td>Doctorado: 7</td>
             </tr>
             <tr className="linia">
               <th rowSpan="7">Profesión:</th>
-              <td>administrativo/a: 0</td>
-              <td>arquitecto/a: 1</td>
-              <td>asistente administrativo/a: 2</td>
-              <td>contador/a: 3</td>
+              <td>Administrativo/a: 0</td>
+              <td>Arquitecto/a: 1</td>
+              <td>Asistente administrativo/a: 2</td>
+              <td>Contador/a: 3</td>
               <td rowSpan="7"><input type="text" id="profesion" pattern="[0-23]" inputMode="numeric" required /></td>
             </tr>
             <tr>
-              <td>diseñador/a: 4</td>
-              <td>ingeniero/a: 5</td>
-              <td>médico/a: 6</td>
-              <td>profesor/a: 7</td>
+              <td>Diseñador/a: 4</td>
+              <td>Ingeniero/a: 5</td>
+              <td>Médico/a: 6</td>
+              <td>Profesor/a: 7</td>
             </tr>
             <tr>
-              <td>programador/a: 8</td>
-              <td>estudiante: 9</td>
-              <td>trabajador/a social: 10</td>
-              <td>empresario/a: 11</td>
+              <td>Programador/a: 8</td>
+              <td>Estudiante: 9</td>
+              <td>Trabajador/a social: 10</td>
+              <td>Empresario/a: 11</td>
             </tr>
             <tr>
-              <td>abogado/a: 12</td>
-              <td>comerciante: 13</td>
-              <td>periodista: 14</td>
-              <td>investigador/a: 15</td>
+              <td>Abogado/a: 12</td>
+              <td>Comerciante: 13</td>
+              <td>Periodista: 14</td>
+              <td>Investigador/a: 15</td>
             </tr>
             <tr>
-              <td>artista: 16</td>
-              <td>obrero/a: 17</td>
-              <td>agricultor/a: 18</td>
-              <td>fontanero/a: 19</td>
+              <td>Artista: 16</td>
+              <td>Obrero/a: 17</td>
+              <td>Agricultor/a: 18</td>
+              <td>Fontanero/a: 19</td>
             </tr>
             <tr>
-              <td>jardinero/a: 20</td>
-              <td>repartidor/a: 21</td>
-              <td>electricista: 22</td>
-              <td>otro: 23</td>
+              <td>Jardinero/a: 20</td>
+              <td>Repartidor/a: 21</td>
+              <td>Electricista: 22</td>
+              <td>Otro: 23</td>
             </tr>
           </tbody>
         </table>
@@ -170,6 +280,11 @@ function Prediccion() {
       <div className="contenedor-principal" >
         <div className="resultados-container">
           <div className="titulo_resultados"><h2>Resultados de la predicción:</h2></div>
+          {showResults && (
+            <div className="elecciones">
+              <p>Para una persona de <span>{userInputs.edad}</span> años, de género <span>{userInputs.genero === 0 ? 'Masculino' : 'Femenino'}</span>, <span>{getEstadoCivil(userInputs.estado_civil)}</span>, que vive en un <span>span{getTipoVivienda(userInputs.tipo_vivienda)}</span>, con <span>{userInputs.num_hijos}</span> hijo/a/s, con un nivel de estudios de <span>{getNivelEstudios(userInputs.nivel_estudios)}</span> y de profesión <span>{getProfesion(userInputs.profesion)}</span> <u><b>generará al año de media...</b></u>  </p>
+            </div>
+          )}
 
           <div className="resultados">
             <ul>
@@ -192,7 +307,7 @@ function Prediccion() {
           </div>
         </div>
         {/* Mostrar mensaje adicional solo si es relevante y showMessage es true */}
-        {showMessage && (
+        {showResults && showMessage && (
           <div className="mensaje-adicional">
             <p>
               ¡Ah, las predicciones, qué locura! Aquí va la información más jugosa

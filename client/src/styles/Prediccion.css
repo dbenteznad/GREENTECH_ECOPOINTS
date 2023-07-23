@@ -99,6 +99,7 @@
 }
 
 
+
 .titulo_resultados {
     color: #054375;
     margin-top: 10px;
@@ -106,6 +107,14 @@
     font-weight: bold;
     text-decoration: underline;
     font-size: 18px;
+}
+
+.elecciones{
+    text-align: justify;
+}
+.elecciones span{
+    font-weight: bold;
+    color:#054375;
 }
 
 .resultados {
@@ -133,7 +142,7 @@
 
 .titulo_resultados {
     color: #054375;
-    margin-top: 10px;
+    margin-top: 20px;
     text-align: justify;
     font-weight: bold;
     text-decoration: underline;
@@ -142,7 +151,6 @@
 
 .resultados {
     text-align: justify;
-    margin-top: 5px;
     font-weight: bold;
     color: black;
     line-height: 2;
@@ -206,6 +214,7 @@
     border: 2px dashed red;
     font-style: italic;
     color: #6b0f12;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .mensaje-adicional p {
