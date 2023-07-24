@@ -5,7 +5,10 @@ import '../styles/WelcomePages.css';
 import GraficaEsp from "./graficas_esp"
 import GraficaCat from "./GraficaCat"
 import GraficaComp from "./graficas_comp"
-// import Chatbot from "./chat";
+import Chat from "./chat";
+
+
+
 
 
 
@@ -194,7 +197,7 @@ function WelcomePage() {
 
       </div>
 
-{/* <Chatbot/> */}
+      <Chat/>
 
       {/* Footer */}
       <footer className="  bg-green-500">

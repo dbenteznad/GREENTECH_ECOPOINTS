@@ -11,22 +11,24 @@ import Prediccion from "./components/Prediccion";
 
 import ProtectedRoutes from "./components/ProtectedRoutes";
 
-function App() { 
+function App() {
   return (
     <>
-        <Switch>
-          <Route exact path="/" component={WelcomePage} />
-          <Route exact path="/registro" component={Registro} />
-          <Route exact path="/registro-formulario" component={Formulario}/>  
-          <Route exact path="/login"  component={Login}/>
-          {/* <ProtectedRoutes path="/home" component={Home} />
-           */}
-           <Route exact path="/home" component={Home}/>
-       <Route exact path="/Prediccion" component={Prediccion}/>
-          <Route exact path="/premios" component={Premios}/>
-        </Switch>
+      <Switch>
+        <Route exact path="/" component={WelcomePage} />
+        <Route exact path="/registro" component={Registro} />
+        <Route exact path="/registro-formulario" component={Formulario} />
+        <Route exact path="/login" component={Login} />
+        {/* <ProtectedRoutes path="/home" component={Home} />
+         */}
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/Prediccion" component={Prediccion} />
+        <Route exact path="/premios" component={Premios} />
+        <Route exact path="/" component={WelcomePage} />
+
+      </Switch>
     </>
   );
-};
+}
 
 export default App;
