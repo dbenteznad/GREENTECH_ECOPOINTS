@@ -13,11 +13,14 @@
     "axios": "^1.4.0",
     "chart.js": "^4.3.0",
     "chartjs-plugin-datalabels": "^2.2.0",
+    "plotly.js-dist": "^2.24.3",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-icons": "^4.10.1",
     "react-router-dom": "^5.2.0",
+    "rivescript": "^2.2.1",
     "universal-cookie": "^4.0.4"
   },
   "devDependencies": {

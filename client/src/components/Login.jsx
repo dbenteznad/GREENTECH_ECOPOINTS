@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
+import Navbar from "./Navbar_WelcomePage";
 import axios from "axios";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
@@ -21,24 +21,25 @@ function Login() {
       },
     };
     
-    // axios(configuration)
-    //   .then((result) => {
-    //     // Envia la cookie
-    //     cookies.set("TOKEN", result.data.token, {
-    //       path: "/",
-    //     });
-    //     // Redirige al usuario a la página principal del usuario
-    //     window.location.href = "/Sesion";
-    //   })
-    //   .catch((error) => {
-    //     error = new Error();
-    //   });
+    axios(configuration)
+      .then((result) => {
+        setLogin(true);
+        // Envia la cookie
+        cookies.set("TOKEN", result.data.token, {
+          path: "/",
+        });
+        // Redirige al usuario a la página principal del usuario
+        window.location.href = "/home";
+      })
+      .catch((error) => {
+        error = new Error();
+      });
   }
 
   return (
     <div>
       <div className="py-10 px-5 mb-10 w-1/2 items-center mt-10  mx-auto rounded-lg bg-green-500 ">
-        <h1 className="text-center text-5xl mb-10 font-mono">Bienvenido de Nuevo</h1>
+        <h1 className="text-center text-5xl mb-10 font-bold text-black">¡Bienvenido de nuevo!</h1>
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -69,7 +70,7 @@ function Login() {
             variant="primary"
             type="submit"
             onClick={handleSubmit}
-            className="py-2 px-2 bg-green-700 w-full p-3 text-white uppercase font-bold rounded-md hover:scale-105 cursor-pointer"
+            className="py-2 px-2 bg-emerald-800 w-full p-3 text-white uppercase font-bold rounded-md hover:scale-105 cursor-pointer"
           >
             Iniciar sesión
           </button>

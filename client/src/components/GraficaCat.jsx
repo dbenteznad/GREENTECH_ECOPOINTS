@@ -198,10 +198,12 @@ const chartRef = useRef(null);
 
   return (
     <div className='grid md:grid-cols-2'>
-     <div className='span-col-1 '>   <canvas className='w-1/2  span-col-1 ' ref={chartRef} />   </div>
+
+       <h1 className='span-col-1 items-center text-center mx-auto'>hola mundo</h1>
+     <div className='span-col-1 '>  <canvas className='w-1/2 ' ref={chartRef} />   </div>
      
 
-      <h1 className='span-col-1 items-center text-center mx-auto'>hola mundo</h1>
+     
     </div>
   );
 };

@@ -1,0 +1,85 @@
+body {
+    background-color: #F5F6F6;
+}
+
+#hero {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-image: url("../../public/Fondo_Hero.png");
+}
+
+@media screen and (max-width: 720px) {
+    #hero {
+        background-image: none;
+    }
+}
+
+
+#hero-h1 {
+    font-size: 48px;
+    padding-left: 2%;
+    /* max-width: 600px; */
+    line-height: 56px;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+#hero-h2 {
+    font-size: 20px;
+    padding-left: 2%;
+    line-height: 30px;
+    /* max-width: 600px; */
+    text-align: left;
+    margin-bottom: 32px;
+    color: white;
+    font-style: italic;
+}
+
+#formulario-registro {
+    margin-bottom: 350px;
+}
+
+@media screen and (max-width: 720px) {
+    #hero-h1 {
+        font-size: 32px; /* Reducir el tamaño de la fuente */
+        line-height: 40px; /* Ajustar el interlineado */
+        margin-bottom: 16px; /* Ajustar el margen inferior */
+    }
+    
+    #hero-h2 {
+        font-size: 16px; /* Reducir el tamaño de la fuente */
+        line-height: 24px; /* Ajustar el interlineado */
+        margin-bottom: 16px; /* Ajustar el margen inferior */
+    }
+    
+    #formulario-registro {
+        margin-bottom: 0px; /* Ajustar el margen inferior */
+    }
+}
+
+
+#Por_que_proyecto {
+    background-color: #F5F6F6;
+    margin-top: 50px;
+}
+
+#about-project {
+    padding-bottom: 50px;
+}
+
+#img-empresa {
+   border-radius: 2%;
+   padding-right: 20%;
+}
+
+@media screen and (max-width: 720px) {
+    #img-empresa {
+        border-radius: 2%;
+        padding-right: 0;
+        padding-bottom: 5%;
+     }
+
+     #frase-greentech{
+        text-align: center;
+     }
+}
