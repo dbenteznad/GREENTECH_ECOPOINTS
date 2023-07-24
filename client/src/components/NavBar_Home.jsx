@@ -21,7 +21,7 @@ function NavBar_Home() {
 
     return (
         <>
-            <nav className=' py-4 bg-green-500 sticky top-0 pt-3 shadow-md  '>
+            <nav className=' py-4 bg-green-500 static top-0 pt-3 shadow-md  '>
 
                 <div className='container mx-auto flex px-8 lg:px-0 '>
 
@@ -38,7 +38,7 @@ function NavBar_Home() {
 
 
                     <div id='menu' className=' lg:flex hidden flex-grow justify-between absolute lg:relative lg:top-0 top-20 left-0 bg-green-500
-        w-full lg:w-auto items-center py-14 lg:py-0 px-8 sm:px-24 lg:px-0 font-bold'>
+                         w-full lg:w-auto items-center py-14 lg:py-0 px-8 sm:px-24 lg:px-0 font-bold'>
                         <div className='flex flex-col lg:flex-row mb-8 lg:mb-0'>
                             <a href='Premios' className='text-white  hover:text-black lg:mr-7 mb-8 lg:mb-0 uppercase'>Premios</a>
                             <a href='#' className='text-white  hover:text-black lg:mr-7 mb-8 lg:mb-0 uppercase'>Mapa</a>
@@ -56,10 +56,10 @@ function NavBar_Home() {
                             <div id="dropdownOffset" className="z-10 rounded-xl hidden bg-white divide-y divide-gray-100  w-35 ">
                                 <ul class="py-2 text-sm " aria-labelledby="dropdownDefault">
                                     <li>
-                                        <a href="Home" class="block px-4 py-2 hover:bg-green-400  ">Inicio</a>
+                                        <a href="home" class="block px-4 py-2 hover:bg-green-400  ">Inicio</a>
                                     </li>
                                     <li>
-                                        <a href="Perfil" class="block px-4 py-2 hover:bg-green-400  " >Ajustes</a>
+                                        <a href="#" class="block px-4 py-2 hover:bg-green-400  " >Ajustes</a>
                                     </li>
                                     {/* logout */}
                                     <button type="submit" variant="danger" class="block px-4 py-2 hover:bg-green-400" onClick={() => logout()}>

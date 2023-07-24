@@ -5,7 +5,7 @@ import '../styles/WelcomePages.css';
 import GraficaEsp from "./graficas_esp"
 import GraficaCat from "./GraficaCat"
 import GraficaComp from "./graficas_comp"
-// import Chatbot from "./chat";
+import Chatbot from "./chat";
 
 
 
@@ -41,7 +41,7 @@ function WelcomePage() {
   }
 
   return (
-    <div className="  h-full bg-public scroll-auto" >
+    <div className="  h-full bg-public scroll-auto  bg-white " >
       <Navbar_WelcomePage />
 
 
@@ -115,7 +115,7 @@ function WelcomePage() {
       <div className="container mx-auto items-center  rounded-md " >
         <h2 className=" text-center items-center mx-auto text-5xl py-5  mb-10 mt-10 ">Evolución Reciclaje España</h2>
         <div >
-          <GraficaEsp/>
+          <GraficaEsp />
 
         </div  >
       </div>
@@ -136,10 +136,10 @@ function WelcomePage() {
       </div>
 
       <div className="container mx-auto items-center  rounded-md " >
-      <h2 className=" text-center items-center text-5xl py-5 mb-10 mt-10 ">Predicción % Residuos Selectivos</h2>
-        <div >
-<GraficaComp/>
-       
+        <h2 className=" text-center items-center text-5xl py-5 mb-10 mt-10 ">Predicción % Residuos Selectivos</h2>
+        <div className=" static">
+          <GraficaComp />
+
         </div>
       </div>
       <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" id="Como_funciona" ></div>
@@ -194,7 +194,7 @@ function WelcomePage() {
 
       </div>
 
-{/* <Chatbot/> */}
+      <Chatbot />
 
       {/* Footer */}
       <footer className="  bg-green-500">
@@ -230,7 +230,7 @@ function WelcomePage() {
             <ul className="">
               <li>
                 <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-white'>Inicio</a>
-                
+
 
               </li>
             </ul>
