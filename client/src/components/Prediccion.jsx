@@ -5,13 +5,13 @@ import '../styles/Prediccion.css';
 const getEstadoCivil = (value) => {
   switch (value) {
     case 0:
-      return 'Soltero/Soltera';
+      return 'Soltero/a';
     case 1:
-      return 'Separado/Separada';
+      return 'Separado/a';
     case 2:
-      return 'Casado/Casada';
+      return 'Casado/a';
     case 3:
-      return 'Viudo/Viuda';
+      return 'Viudo/a';
     default:
       return '';
   }
@@ -241,7 +241,7 @@ function Prediccion() {
               <td>Arquitecto/a: 1</td>
               <td>Asistente administrativo/a: 2</td>
               <td>Contador/a: 3</td>
-              <td rowSpan="7"><input type="text" id="profesion" pattern="[0-23]" inputMode="numeric" required /></td>
+              <td rowSpan="7"><input type="text" id="profesion" pattern="[0-9]{1,2}|1[0-9]|2[0-3]" inputMode="numeric" required /></td>
             </tr>
             <tr>
               <td>Diseñador/a: 4</td>
@@ -282,7 +282,7 @@ function Prediccion() {
           <div className="titulo_resultados"><h2>Resultados de la predicción:</h2></div>
           {showResults && (
             <div className="elecciones">
-              <p>Para una persona de <span>{userInputs.edad}</span> años, de género <span>{userInputs.genero === 0 ? 'Masculino' : 'Femenino'}</span>, <span>{getEstadoCivil(userInputs.estado_civil)}</span>, que vive en un <span>span{getTipoVivienda(userInputs.tipo_vivienda)}</span>, con <span>{userInputs.num_hijos}</span> hijo/a/s, con un nivel de estudios de <span>{getNivelEstudios(userInputs.nivel_estudios)}</span> y de profesión <span>{getProfesion(userInputs.profesion)}</span> <u><b>generará al año de media...</b></u>  </p>
+              <p>Para una persona de <span>{userInputs.edad}</span> años, de género <span>{userInputs.genero === 0 ? 'Masculino' : 'Femenino'}</span>, <span>{getEstadoCivil(userInputs.estado_civil)}</span>, que vive en un <span>{getTipoVivienda(userInputs.tipo_vivienda)}</span>, con <span>{userInputs.num_hijos}</span> hijo/a/s, con un nivel de estudios de <span>{getNivelEstudios(userInputs.nivel_estudios)}</span> y de profesión <span>{getProfesion(userInputs.profesion)}</span> <u><b>generará al año de media...</b></u>  </p>
             </div>
           )}
 
@@ -311,10 +311,10 @@ function Prediccion() {
           <div className="mensaje-adicional">
             <p>
               ¡Ah, las predicciones, qué locura! Aquí va la información más jugosa
-              del día: nuestras predicciones tienen una fiabilidad del 0,002%, sí,
+              del día: nuestras predicciones tienen una fiabilidad del 0,068%, sí,
               ni siquiera el 1% lo pillamos. Pero espera, ¡no te desesperes! Con
               toda la certeza del mundo, estas predicciones no van a pasar en el
-              99,998% de los casos. ¡Casi nada, eh!
+              99,932% de los casos. ¡Casi nada, eh!
             </p>
             <p>Seamos sinceros, nuestro dataset es más falso que un billete de 3 dólares. ¡Todo inventado, nada real!</p>
             <p>¡Es como tener una moneda de dos caras en la mano! Por un lado, nuestras predicciones son más certeras que acertar a ciegas en una diana, pero por el otro, son más imprecisas que un reloj de arena sin arena. Un verdadero show de equilibrio.</p>
