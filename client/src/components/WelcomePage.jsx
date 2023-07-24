@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar_WelcomePage from "./Navbar_WelcomePage";
 import axios from "axios";
 import '../styles/WelcomePages.css'
+import videoBG from '../assets/chica_reciclando.mp4'
 
 
 
@@ -32,6 +33,8 @@ function WelcomePage() {
     axios(configuration)
       .then((result) => {
         setRegister(true);
+        // Redirige al usuario a la página principal del usuario
+        window.location.href = "/registro-formulario";
       })
       .catch((error) => {
         error = new Error();
@@ -43,13 +46,14 @@ function WelcomePage() {
       <Navbar_WelcomePage />
 
 
-      <div id="hero" className=" mx-auto grid md:grid-cols-2 items-center bg-green-500 pt-1000">
+      <div id="hero" className=" mx-auto grid md:grid-cols-2 items-center  pt-1000">
+      <video id="video-hero" src={videoBG} autoPlay loop  muted></video>
+      
 
         <div id="hero-eslogan" className="ml-0 col-span-1">
           <h1 id="hero-h1" className=" text-center font-bold text-5xl text-white mt-6" >¡Recicla, gana premios y salva el planeta con nuestra app!</h1>
-          <h2 id="hero-h2" className=" text-center font-bold text-2xl mt-6">Únete a la revolución verde, ¡hazte eco-héroe!<br />Construye un futuro mejor.</h2>
-          <img className="w-2/3 md:h-1/3 py-5 hover:scale-105 ease-in duration-300 " src="bolsa_basura.png" />
-
+          <h2 id="hero-h2" className=" text-center font-bold text-2xl mt-6 text-white">Únete a la revolución verde, ¡hazte eco-héroe!<br />Construye un futuro mejor.</h2>
+          {/* <img className="w-2/3 md:h-1/3 py-5 hover:scale-105 ease-in duration-300 " src="bolsa_basura.png" /> */}
         </div>
 
         {/* Formulario */}
@@ -177,14 +181,14 @@ function WelcomePage() {
 
       <div className="container mx-auto grid md:grid-cols-2 items-center  mb-40  rounded-md" >
         <div >
-          <img id="img-empresa"  src="Empresa.png" />
+          <img id="img-empresa" src="gg.png" />
         </div>
-        <p id="frase-greentech" className="col-span-1  text-right items-center"><b>EcoPoints</b> es una iniciativa de <b>GreenTech</b>, una empresa IoT dedicada a la sostenibilidad, que premia 
-        tu responsabilidad medioambiental a través de un Sistema de Devolución y Recompensa. Cada vez que reciclas en nuestros contenedores de tu ciudad, recibes <b>EcoPoints</b>, que puedes canjear por premios. 
-        <br/> <br/> Nuestro enfoque combina la tecnología con el compromiso de construir un mundo más sostenible a través del reciclaje inteligente y accesible para todos. 
-        Con <b>EcoPoints</b> ganas tú y gana el medio ambiente, porque cada pequeña acción cuenta en la construcción de un mundo más verde y sostenible. Únete a la comunidad <b>EcoPoints</b> y sé parte 
-        del cambio hacia un futuro mejor.</p>
- 
+        <p id="frase-greentech" className="col-span-1  text-center items-center"><b>EcoPoints</b> es una iniciativa de <b>GreenTech</b>, una empresa IoT dedicada a la sostenibilidad, que premia
+          tu responsabilidad medioambiental a través de un Sistema de Devolución y Recompensa. Cada vez que reciclas en nuestros contenedores de tu ciudad, recibes <b>EcoPoints</b>, que puedes canjear por premios.
+          <br /> <br /> Nuestro enfoque combina la tecnología con el compromiso de construir un mundo más sostenible a través del reciclaje inteligente y accesible para todos.
+          Con <b>EcoPoints</b> ganas tú y gana el medio ambiente, porque cada pequeña acción cuenta en la construcción de un mundo más verde y sostenible. Únete a la comunidad <b>EcoPoints</b> y sé parte
+          del cambio hacia un futuro mejor.</p>
+
       </div>
 
 

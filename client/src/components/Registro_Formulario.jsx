@@ -1,67 +1,94 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Registro from './Registro';
 import axios from "axios";
+import queryString from 'query-string';
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
 
 
+function Formulario(props) {
 
-
-function Formulario() {
-
+    const [correo_electronico, setEmail] = useState("");
     const [nombre, setNombre] = useState("");
     const [numero_movil, setMovil] = useState("");
     const [ubicacion, setUbicacion] = useState("");
-    const [basura_papel, setBasuraPapel] = useState("")
-    const [basura_plastico, setBasuraPlastico] = useState("")
-    const [basura_resto, setBasuraResto] = useState("")
-    const [basura_organico, setBasuraOrganico] = useState("")
-    const [basura_cristal, setBasuraCristal] = useState("")
-    const [no_recicla, setNoRecicla] = useState("")
-    // Resto de los estados para el formulario...
-  
+    const [basura_papel, setBasuraPapel] = useState("");
+    const [basura_plastico, setBasuraPlastico] = useState("");
+    const [basura_resto, setBasuraResto] = useState("");
+    const [basura_organico, setBasuraOrganico] = useState("");
+    const [basura_cristal, setBasuraCristal] = useState("");
+    const [no_recicla, setNoRecicla] = useState("");
+    const [login, setLogin] = useState(false);
+
+    // Obtener el valor de correo_electronico desde los parámetros de la URL usando useEffect
+    useEffect(() => {
+        const values = queryString.parse(props.location.search);
+        const correo_electronico = values.correo_electronico || '';
+        // Realiza cualquier otra acción con el correo_electronico si es necesario
+    }, [props.location.search]);
+
     const handleSubmit = (e) => {
-      e.preventDefault();
-  
-      // Establecer la configuración de la solicitud al backend
-      const configuration = {
-        method: "put",
-        url: "http://localhost:5000/api/v1/usuarios/register",
-        data: {
-          nombre,
-          ubicacion,
-          correo_electronico: email, // Asegúrate de que el nombre del campo sea "correo_electronico" en el servidor
-          movil,
-          // Resto de los campos que necesitas enviar al servidor...
-        },
-      };
-  
-      // Realizar la llamada a la API usando axios
-      axios(configuration)
+        e.preventDefault();
+
+        // Establecer la configuración de la solicitud al backend
+        const configuration = {
+            method: "put",
+            url: `http://localhost:5000/api/v1/usuarios/${correo_electronico}`,
+            data: {
+                correo_electronico,
+                nombre,
+                numero_movil,
+                ubicacion,
+                basura_papel: basura_papel === "si",
+                basura_plastico: basura_plastico === "si",
+                basura_resto: basura_resto === "si",
+                basura_organico: basura_organico === "si",
+                basura_cristal: basura_cristal === "si",
+                no_recicla: no_recicla === "si",
+            },
+        };
+
+        // Realizar la llamada a la API usando axios
+        axios(configuration)
         .then((result) => {
-          // Obtener el token de la respuesta
-          const token = result.data.token;
-  
-          // Almacenar el token en una cookie con una duración de 1 hora
-          document.cookie = `userToken=${token}; path=/`;
-  
-          // Redirigir al usuario a la página de inicio (u otra página de tu elección)
-          window.location.href = "/home"; // Cambia "/home" por la ruta que desees redirigir al usuario
+          setLogin(true);
+          // Envia la cookie
+          cookies.set("TOKEN", result.data.token, {
+            path: "/",
+          });
+          // Redirige al usuario a la página principal del usuario
+          window.location.href = "/home";
         })
         .catch((error) => {
-          // Manejo del error
+          error = new Error();
         });
     }
-  
+
 
 
     return (
         <>
-            <h1 className="mt-5 text-center text-5xl mb-10" >Rellene los siguientes campos:</h1>
+            <h1 className="mt-5 text-center text-5xl mb-10" >¡Rellene los siguientes campos!</h1>
             <form
-                onChange={Registro}
+                onSubmit={handleSubmit}
 
                 className="  py-10 px-5 mb-10 w-1/2 items-center mx-auto rounded-lg bg-green-500  ">
-
+                <div className="mb-5">
+                    <label className="block text-black uppercase font-bold"
+                        defaultChecked>
+                        Por favor, verifique su correo electrónico:
+                    </label> {""}
+                    <input
+                        id="Nombre"
+                        type="text"
+                        name="correo_electronico"
+                        value={correo_electronico}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className=" border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                        placeholder="Correo electrónico "
+                    ></input>
+                </div>
 
 
                 <div className="mb-5">
@@ -72,15 +99,17 @@ function Formulario() {
                     <input
                         id="Nombre"
                         type="text"
-                        // value={nombre}
+                        name="nombre"
+                        value={nombre}
+                        onChange={(e) => setNombre(e.target.value)}
                         className=" border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                         placeholder="Nombre "
 
 
                     ></input>
                 </div>
-                
-                 <div className="mb-5">
+
+                <div className="mb-5">
                     <label className="block text-black uppercase font-bold">
                         Número de móvil:
                     </label> {""}
@@ -88,6 +117,9 @@ function Formulario() {
                         // value={movil}
                         id="Movil"
                         type="text"
+                        name="numero_movil"
+                        value={numero_movil}
+                        onChange={(e) => setMovil(e.target.value)}
                         className=" border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                         placeholder="Movil"
 
@@ -103,28 +135,34 @@ function Formulario() {
                         // value={ubicacion}
                         id="Ubicacion"
                         type="text"
+                        name="ubicacion"
+                        value={ubicacion}
+                        onChange={(e) => setUbicacion(e.target.value)}
                         className=" border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                         placeholder="ubicacion"
 
 
                     ></input>
                 </div>
-               
-               
+
+
                 <div className="text-sm mb-2">
                     <p className="mt-2 block text-black uppercase font-bold">
                         Basura Papel: </p>
                     <input
                         type="radio"
                         value={"si"}
-                        name="Basura_Papel"
-                        checked
+                        name="basura_papel"
+                        checked={basura_papel === "si"}
+                        onChange={(e) => setBasuraPapel(e.target.value)}
                         className="text-sm mx-1 cursor-pointer" />
                     <label>Sí</label>
                     <input
                         type="radio"
                         value={"no"}
-                        name="Basura_Papel"
+                        name="basura_papel"
+                        checked={basura_papel === "no"}
+                        onChange={(e) => setBasuraPapel(e.target.value)}
                         className="text-sm mx-1 cursor-pointer" />
                     <label>No</label>
                 </div>
@@ -135,14 +173,17 @@ function Formulario() {
                     <input
                         type="radio"
                         value={"si"}
-                        name="Basura_Plastico"
-                        checked
+                        name="basura_plastico"
+                        checked={basura_plastico === "si"}
+                        onChange={(e) => setBasuraPlastico(e.target.value)}
                         className="text-sm mx-1 cursor-pointer" />
                     <label>Sí</label>
                     <input
                         type="radio"
                         value={"no"}
-                        name="Basura_Plastico"
+                        name="basura_plastico"
+                        checked={basura_plastico === "no"}
+                        onChange={(e) => setBasuraPlastico(e.target.value)}
                         className="text-sm mx-1 cursor-pointer" />
                     <label>No</label>
                 </div>
@@ -153,14 +194,17 @@ function Formulario() {
                     <input
                         type="radio"
                         value={"si"}
-                        name="Basura_Resto"
-                        checked
+                        name="basura_resto"
+                        checked={basura_resto === "si"}
+                        onChange={(e) => setBasuraResto(e.target.value)}
                         className="text-sm mx-1 cursor-pointer" />
                     <label>Sí</label>
                     <input
                         type="radio"
                         value={"no"}
-                        name="Basura_Resto"
+                        name="basura_resto"
+                        checked={basura_resto === "no"}
+                        onChange={(e) => setBasuraResto(e.target.value)}
                         className="text-sm mx-1 cursor-pointer" />
                     <label>No</label>
                 </div>
@@ -171,14 +215,17 @@ function Formulario() {
                     <input
                         type="radio"
                         value={"si"}
-                        name="Basura_Organico"
-                        checked
+                        name="basura_organico"
+                        checked={basura_organico === "si"}
+                        onChange={(e) => setBasuraOrganico(e.target.value)}
                         className="text-sm mx-1 cursor-pointer" />
                     <label>Sí</label>
                     <input
                         type="radio"
                         value={"no"}
-                        name="Basura_Organico"
+                        name="basura_organico"
+                        checked={basura_organico === "no"}
+                        onChange={(e) => setBasuraOrganico(e.target.value)}
                         className="text-sm mx-1 cursor-pointer" />
                     <label>No</label>
                 </div>
@@ -188,15 +235,18 @@ function Formulario() {
                         Basura Vidrio: </p>
                     <input
                         type="radio"
-                        checked
                         value={"si"}
-                        name="Basura_Vidrio"
+                        name="basura_cristal"
+                        checked={basura_cristal === "si"}
+                        onChange={(e) => setBasuraCristal(e.target.value)}
                         className="text-sm mx-1 cursor-pointer" />
                     <label>Sí</label>
                     <input
                         type="radio"
                         value={"no"}
-                        name="Basura_Vidrio"
+                        name="basura_cristal"
+                        checked={basura_cristal === "no"}
+                        onChange={(e) => setBasuraCristal(e.target.value)}
                         className="text-sm mx-1 cursor-pointer" />
                     <label>No</label>
                 </div>
@@ -207,14 +257,17 @@ function Formulario() {
                     <input
                         type="radio"
                         value={"si"}
-                        name="No_recicla"
-                        checked
+                        name="no_recicla"
+                        checked={no_recicla === "si"}
+                        onChange={(e) => setNoRecicla(e.target.value)}
                         className="text-sm mx-1 cursor-pointer" />
                     <label>Sí</label>
                     <input
                         type="radio"
                         value={"no"}
-                        name="No_recicla"
+                        name="no_recicla"
+                        checked={no_recicla === "no"}
+                        onChange={(e) => setNoRecicla(e.target.value)}
                         className="mb-5 text-sm mx-1 cursor-pointer" />
                     <label>No</label>
                 </div>
@@ -223,9 +276,14 @@ function Formulario() {
 
 
 
-                <input type="submit"
-                    className=" py-2 px-2 bg-green-700 w-full p-3 text-white uppercase font-bold rounded-md hover:scale-105 cursor-pointer"
-                />
+                <button
+            variant="primary"
+            type="submit"
+            onClick={handleSubmit}
+            className="py-2 px-2 bg-emerald-800 w-full p-3 text-white uppercase font-bold rounded-md hover:scale-105 cursor-pointer"
+          >
+            ENVIAR
+          </button>
 
 
             </form>

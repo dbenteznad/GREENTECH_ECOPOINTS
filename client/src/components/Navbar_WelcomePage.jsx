@@ -7,11 +7,11 @@ import '../styles/Navbar_WelcomePage.css'
 function Navbar_WelcomePage() {
   return (
     <>
-      <nav className='  py-4 bg-green-500 sticky top-0 pt-3 shadow-md  '>
+      <nav className='  py-5 bg-green-500 sticky top-0 shadow-md'>
         <div className='container mx-auto flex px-8 lg:px-0 ' >
           <button
            className='flex flex-grow items-center'>
-           <Link to="/" rel="stylesheet" href='Home' > <img className='hover:scale-110 h-40' src='EcoPointsLogo.png' /> </Link>
+           <Link to="/" rel="stylesheet" href='Home' > <img id='EcopointsLogo' className='hover:scale-110' src='EcoPointsLogo2.png' /> </Link>
           </button>
           <div className='flex lg:hidden'>
             <img id='menu-burguer' className='h-10 hover:scale-110' src='menu.png' onClick={openMenu} />

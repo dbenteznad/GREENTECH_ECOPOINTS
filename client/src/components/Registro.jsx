@@ -12,7 +12,6 @@ function Registro() {
   const [contrasena, setPassWord] = useState("");
   const [login, setLogin] = useState(false);
   const [register, setRegister] = useState(false);
-  const history = useHistory();
 
   const handleSubmit = (e) => {
     // Evitar que el formulario actualice toda la página
@@ -32,17 +31,11 @@ function Registro() {
     axios(configuration)
       .then((result) => {
         setRegister(true);
-        // Obtener el token de la respuesta
-        const token = result.data.token;
-
-        // Almacenar el token en una cookie con una duración de 1 hora
-        Cookies.set("userToken", token, { expires: 1 / 24 });
-
-        // Redirigir al usuario a la página de registro de formularios
-        history.push("/registro-formulario");
+        // Redirige al usuario a la página principal del usuario
+        window.location.href = "/registro-formulario";
       })
       .catch((error) => {
-        // Manejo del error
+        error = new Error();
       });
   }
 
@@ -62,8 +55,8 @@ function Registro() {
             id="Correo_electonico"
             type="email"
             name="correo_electronico"
-              value={correo_electronico}
-              onChange={e => setEmail(e.target.value)}
+            value={correo_electronico}
+            onChange={e => setEmail(e.target.value)}
             className="mb-5 border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
             placeholder="Correo Electronico"
           />
@@ -75,21 +68,21 @@ function Registro() {
             id="Password"
             type="password"
             name="contrasena"
-              value={contrasena}
-              onChange={e => setPassWord(e.target.value)}
+            value={contrasena}
+            onChange={e => setPassWord(e.target.value)}
             className="mb-5 border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
             placeholder="Contraseña"
           />
         </div>
 
         <button
-            variant="primay"
-            type="submit"
-            className="py-2 px-2 bg-emerald-800 w-full p-3 text-white uppercase font-bold rounded-md hover:scale-105 cursor-pointer"
-            onClick={(e) => handleSubmit(e)}
-          >
-            ¡Regístrate!
-          </button>
+          variant="primay"
+          type="submit"
+          className="py-2 px-2 bg-emerald-800 w-full p-3 text-white uppercase font-bold rounded-md hover:scale-105 cursor-pointer"
+          onClick={(e) => handleSubmit(e)}
+        >
+          ¡Regístrate!
+        </button>
 
       </form>
     </div>

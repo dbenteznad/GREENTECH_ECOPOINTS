@@ -9,6 +9,7 @@ import Registro from "./components/Registro";
 import Prueba from "./components/Prueba";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 
+
 function App() { 
   return (
     <>

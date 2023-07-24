@@ -3,6 +3,7 @@ import '../styles/Home.css'
 import axios from "axios";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
+import videoBG from '../assets/video_home1.mp4'
 
 
 function Home() {
@@ -48,13 +49,13 @@ function Home() {
                             <img class="x" src=".../../public/x.png" alt="" />
                         </button>
                     </div>
-
+                    <video id="video-hero" src={videoBG} autoPlay loop muted></video>
                 </div>
                 {/* <a href='Premios' className='text-black uppercase text-left mx-auto hover:text-blue-600 lg:mr-7 mb-8 lg:mb-0'>Ver Mas</a> */}
             </div>
-            <div className=" container mx-auto grid md:grid-cols-3">
+            <div id="premios" className="container mx-auto grid md:grid-cols-3">
 
-                <div className="py-5 col-span-1 rounded-lg mr-4 mb-6  hover:scale-110 bg-green-500" >
+                <div className="py-5 col-span-1 rounded-lg mr-4 mb-6  hover:scale-110 bg-emerald-500" >
                     {/* premio1 */}
                     <h1 className="text-center text-lg mb-2 "><b>Premio 1</b></h1>
                     <img className=" h-2/3 mx-auto rounded-xl" src="premio1.png" />
@@ -63,16 +64,16 @@ function Home() {
 
                 </div>
                 {/* premio2 */}
-                <div className=" py-5 col-span-1 rounded-lg  mr-4 mb-6 hover:scale-110  bg-green-500" >
+                <div className=" py-5 col-span-1 rounded-lg  mr-4 mb-6 hover:scale-110  bg-emerald-500" >
                     <h1 className="text-center text-lg mb-2 " ><b>Premio 2</b></h1>
                     <img className=" h-2/3 mx-auto rounded-xl" src="premio2.jpg" />
                     <h1 className="text-center"><b>Puntos:</b></h1>
                     <h1 className="text-center">2000</h1>
                 </div>
                 {/* Premio3 */}
-                <div className="py-5 col-span-1 rounded-md hover:scale-110    mr-4 mb-6 bg-green-500" >
+                <div className="py-5 col-span-1 rounded-md hover:scale-110    mr-4 mb-6 bg-emerald-500" >
 
-                    <h1 className="text-center text-lg mb-2 "><b>Premio 3</b></h1>
+                    <h1 className="text-center text-lg mb-2 text"><b>Premio 3</b></h1>
                     <img className=" h-2/3 mx-auto rounded-xl" src="premio3.jpg" />
                     <h1 className="text-center"><b>Puntos:</b></h1>
                     <h1 className="text-center">3000</h1>

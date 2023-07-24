@@ -26,7 +26,7 @@ function NavBar_Home() {
                 <div className='container mx-auto flex px-8 lg:px-0 '>
 
                     <div className='flex flex-grow items-center'>
-                        <img id='EcoPointsLogo' className='hover:scale-110 h-40' src='EcoPointsLogo.png' />
+                        <img id='EcoPointsLogo' className='hover:scale-110' src='EcoPointsLogo2.png' />
                     </div>
 
                     <div className='flex lg:hidden'>
