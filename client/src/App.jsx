@@ -6,7 +6,8 @@ import Premios from "./components/Premios";
 import Formulario from "./components/Registro_Formulario";
 import Login from "./components/Login";
 import Registro from "./components/Registro";
-import Prediccion from "./components/Prediccion";
+import Prediccion_Home from "./components/Prediccion_Home";
+import Prediccion_WelcomePage from "./components/Prediccion_WelcomePage"
 
 
 import ProtectedRoutes from "./components/ProtectedRoutes";
@@ -22,7 +23,9 @@ function App() {
           {/* <ProtectedRoutes path="/home" component={Home} />
            */}
            <Route exact path="/home" component={Home}/>
-       <Route exact path="/Prediccion" component={Prediccion}/>
+       <Route exact path="/Prediccion_Home" component={Prediccion_Home}/>
+       <Route exact path="/Prediccion_WelcomePage" component={Prediccion_WelcomePage}/>
+
           <Route exact path="/premios" component={Premios}/>
         </Switch>
     </>

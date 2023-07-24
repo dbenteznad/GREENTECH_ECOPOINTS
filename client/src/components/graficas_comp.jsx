@@ -145,19 +145,12 @@ function GraficaComp() {
 
     return (
 
-        <div className='grid md:grid-cols-2 '>
-
-
-            <div className='span-col-1 static'>
-
-                <div className='w-1/3' id="comparativa" ></div>
-
-            </div>
-            <h1 className=' span-col-1  items-center text-center mx-auto '>hola mundo</h1>
-
-
-
+        <div className='grid md:grid-cols-2'>
+        <div className='span-col-1 relative z-0'>
+            <div className='w-1/2 relative' id="comparativa"></div>
         </div>
+        <h1 className='span-col-1 items-center text-center mx-auto'>hola mundo</h1>
+    </div>
 
 
 

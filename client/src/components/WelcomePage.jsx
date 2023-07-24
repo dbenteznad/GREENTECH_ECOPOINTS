@@ -5,7 +5,7 @@ import '../styles/WelcomePages.css';
 import GraficaEsp from "./graficas_esp"
 import GraficaCat from "./GraficaCat"
 import GraficaComp from "./graficas_comp"
-import Chatbot from "./chat";
+// import Chatbot from "./chat";
 
 
 
@@ -126,22 +126,19 @@ function WelcomePage() {
           <h2 className=" text-center w-1/2 items-center text-5xl  mx-auto py-5 mb-10 mt-10 ">Evolución Reciclaje Cataluña</h2>
         </div>
         <div>
-
           <GraficaCat />
-
-
-        </div>
-
-
-      </div>
-
-      <div className="container mx-auto items-center  rounded-md " >
-        <h2 className=" text-center items-center text-5xl py-5 mb-10 mt-10 ">Predicción % Residuos Selectivos</h2>
-        <div className=" static">
-          <GraficaComp />
-
         </div>
       </div>
+
+      
+
+        <div>
+          <h2 className=" text-center items-center text-5xl py-5 mb-10 mt-10 ">Predicción % Residuos Selectivos</h2>
+        </div>
+
+        <div> <GraficaComp /></div>
+         
+     
       <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" id="Como_funciona" ></div>
       {/* Como Funciona */}
       <div>
@@ -194,7 +191,7 @@ function WelcomePage() {
 
       </div>
 
-      <Chatbot />
+      {/* <Chatbot /> */}
 
       {/* Footer */}
       <footer className="  bg-green-500">

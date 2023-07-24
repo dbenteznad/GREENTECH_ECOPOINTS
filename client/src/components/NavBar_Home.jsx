@@ -4,6 +4,7 @@ import openPerfil from './Menu_Burguer_Perfil';
 import '../styles/Navbar_Home.css'
 import axios from "axios";
 import Cookies from "universal-cookie";
+
 const cookies = new Cookies();
 
 // Obtener el token generado en el login
@@ -43,7 +44,7 @@ function NavBar_Home() {
                             <a href='Premios' className='text-white  hover:text-black lg:mr-7 mb-8 lg:mb-0 uppercase'>Premios</a>
                             <a href='#' className='text-white  hover:text-black lg:mr-7 mb-8 lg:mb-0 uppercase'>Mapa</a>
                             <a href='Foro' className='text-white  hover:text-black lg:mr-7 mb-8 lg:mb-0 uppercase'>Foro</a>
-                            <a href='#' className='text-white   hover:text-black '>ChatBot</a>
+                            <a href='Prediccion_Home' className='text-white   hover:text-black '>Estadistica</a>
 
                         </div>
 

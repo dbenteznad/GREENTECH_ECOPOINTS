@@ -77,7 +77,9 @@ function Home() {
                     <h1 className="text-center"><b>Puntos:</b></h1>
                     <h1 className="text-center">3000</h1>
                 </div>
+
             </div >
+            <a href="Premios" className="hover:text-blue-600 text-lg flex flex-row-reverse mr-12 ">Ver Mas</a>   
             <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" ></div>
             <h1 className="text-center mt-25 items-center text-7xl py-5 font-mono ">Sabias que?</h1>
 
@@ -109,49 +111,51 @@ function Home() {
             </div>
 
 
-            {/* Footer */}
-            <footer className="  bg-green-500">
-                <div className="  grid md:grid-cols-3  ">
-                    <div className=" col-span-1 text-xl mb-8  lg:mr-7 text-center items-center "  >
-                        <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white">Sobre Nosotros</h1>
-                        <ul className="">
-                            <li>
-                                <a href='#' className='  col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-center text-white'>Quienes Somos</a>
-                            </li>
-                        </ul>
-                        <ul className="">
-                            <li>
-                                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-center text-white'>Blog</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className=" col-span-1 text-xl mb-8 lg:mr-7 text-center items-center "  >
-                        <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white" >GreenTech</h1>
-                        <ul className=" ">
-                            <li>
-                                <a href='#' className=' col-span-1 text-xl mb-8 lg:mr-7 hover:text-black text-white'>Productos</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className=" col-span-1 text-xl mb-8 lg:mr-7 text-center items-center "  >
-                        <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white"  >Ayuda y soporte</h1>
-                        <ul className="">
-                            <li>
-                                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-white'>Contacto</a>
-                            </li>
-                        </ul>
-                        <ul className="">
-                            <li>
-                                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-white'>Inicio</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
+             {/* Footer */}
+      <footer className="  bg-green-500">
+        <div className="  grid md:grid-cols-3  ">
+          <div className=" col-span-1 text-xl mb-8  lg:mr-7 text-center items-center "  >
+            <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white">Sobre Nosotros</h1>
+            <ul className="">
+              <li>
+                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-center text-white'>Quienes Somos</a>
+              </li>
+            </ul>
+            <ul className="">
+              <li>
+                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-center text-white'>Blog</a>
+              </li>
+            </ul>
+          </div>
+          <div className=" col-span-1 text-xl mb-8 lg:mr-7 text-center items-center "  >
+            <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white" >GreenTech</h1>
+            <ul className=" ">
+              <li>
+                <a href='#' className=' col-span-1 text-xl mb-8 lg:mr-7 hover:text-black text-white'>Productos</a>
+              </li>
+            </ul>
+          </div>
+          <div className=" col-span-1 text-xl mb-8 lg:mr-7 text-center items-center "  >
+            <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white"  >Ayuda y soporte</h1>
+            <ul className="">
+              <li>
+                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-white'>Contacto</a>
+              </li>
+            </ul>
+            <ul className="">
+              <li>
+                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-white'>Inicio</a>
 
-                </div>
 
-            </footer >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+
+        </div>
+
+      </footer >
 
 
 
