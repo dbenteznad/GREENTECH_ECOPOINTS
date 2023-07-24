@@ -116,7 +116,7 @@ function Home() {
                         <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white">Sobre Nosotros</h1>
                         <ul className="">
                             <li>
-                                <a href='#' className=' text-center col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-center text-white'>Quienes Somos</a>
+                                <a href='#' className='  col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-center text-white'>Quienes Somos</a>
                             </li>
                         </ul>
                         <ul className="">

@@ -22,7 +22,7 @@ function Navbar_WelcomePage() {
               <a href='#Por_que_proyecto'  className='  hover:text-black lg:mr-7 mb-8 lg:mb-0 text-white  '>Por qué el proyecto</a>
               <a href='#Como_funciona' className=' hover:text-black lg:mr-7 mb-8 lg:mb-0 text-white'>Cómo funciona</a>
               <a href='#sobre_nosotros' className=' hover:text-black lg:mr-7 mb-8 lg:mb-0 text-white'>Sobre nosotros </a>
-              <a href='Blog' className='  hover:text-black text-white '>Blog</a>
+              <a href='Prediccion' className='  hover:text-black text-white '>Estadisticas</a>
             </div>
             <div className='flex flex-col lg:flex-row text-center font-bold'>
               <a className='  text-white   py-2.5 px-4 rounded-md bg-emerald-800  hover:scale-110 lg:mr-4 mb-8 lg:mb-0' href='Login'>Iniciar sesión</a>

@@ -1,9 +1,11 @@
 import { useState } from "react";
 import Navbar_WelcomePage from "./Navbar_WelcomePage";
 import axios from "axios";
-import '../styles/WelcomePages.css'
-
-
+import '../styles/WelcomePages.css';
+import GraficaEsp from "./graficas_esp"
+import GraficaCat from "./GraficaCat"
+import GraficaComp from "./graficas_comp"
+// import Chatbot from "./chat";
 
 
 
@@ -108,9 +110,13 @@ function WelcomePage() {
           Al utilizar una app de gestión de residuos, contribuimos activamente a cuidar el medio ambiente y promover prácticas sostenibles en nuestra comunidad.</p>
       </div>
       {/* Graficos  */}
+
+
       <div className="container mx-auto items-center  rounded-md " >
+        <h2 className=" text-center items-center mx-auto text-5xl py-5  mb-10 mt-10 ">Evolución Reciclaje España</h2>
         <div >
-          <h2 className=" text-center items-center mx-auto text-5xl py-5  mb-10 mt-10 ">Evolución Reciclaje España</h2>
+          <GraficaEsp/>
+
         </div  >
       </div>
 
@@ -121,7 +127,7 @@ function WelcomePage() {
         </div>
         <div>
 
-          {/* <Prueba /> */}
+          <GraficaCat />
 
 
         </div>
@@ -130,9 +136,10 @@ function WelcomePage() {
       </div>
 
       <div className="container mx-auto items-center  rounded-md " >
+      <h2 className=" text-center items-center text-5xl py-5 mb-10 mt-10 ">Predicción % Residuos Selectivos</h2>
         <div >
-
-          <h2 className=" text-center items-center text-5xl py-5 mb-10 mt-10 ">Predicción % Residuos Selectivos</h2>
+<GraficaComp/>
+       
         </div>
       </div>
       <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" id="Como_funciona" ></div>
@@ -177,22 +184,17 @@ function WelcomePage() {
 
       <div className="container mx-auto grid md:grid-cols-2 items-center  mb-40  rounded-md" >
         <div >
-          <img id="img-empresa"  src="Empresa.png" />
+          <img id="img-empresa" src="Empresa.png" />
         </div>
-        <p id="frase-greentech" className="col-span-1  text-right items-center"><b>EcoPoints</b> es una iniciativa de <b>GreenTech</b>, una empresa IoT dedicada a la sostenibilidad, que premia 
-        tu responsabilidad medioambiental a través de un Sistema de Devolución y Recompensa. Cada vez que reciclas en nuestros contenedores de tu ciudad, recibes <b>EcoPoints</b>, que puedes canjear por premios. 
-        <br/> <br/> Nuestro enfoque combina la tecnología con el compromiso de construir un mundo más sostenible a través del reciclaje inteligente y accesible para todos. 
-        Con <b>EcoPoints</b> ganas tú y gana el medio ambiente, porque cada pequeña acción cuenta en la construcción de un mundo más verde y sostenible. Únete a la comunidad <b>EcoPoints</b> y sé parte 
-        del cambio hacia un futuro mejor.</p>
- 
+        <p id="frase-greentech" className="col-span-1  text-right items-center"><b>EcoPoints</b> es una iniciativa de <b>GreenTech</b>, una empresa IoT dedicada a la sostenibilidad, que premia
+          tu responsabilidad medioambiental a través de un Sistema de Devolución y Recompensa. Cada vez que reciclas en nuestros contenedores de tu ciudad, recibes <b>EcoPoints</b>, que puedes canjear por premios.
+          <br /> <br /> Nuestro enfoque combina la tecnología con el compromiso de construir un mundo más sostenible a través del reciclaje inteligente y accesible para todos.
+          Con <b>EcoPoints</b> ganas tú y gana el medio ambiente, porque cada pequeña acción cuenta en la construcción de un mundo más verde y sostenible. Únete a la comunidad <b>EcoPoints</b> y sé parte
+          del cambio hacia un futuro mejor.</p>
+
       </div>
 
-
-
-
-
-
-
+{/* <Chatbot/> */}
 
       {/* Footer */}
       <footer className="  bg-green-500">
@@ -201,7 +203,7 @@ function WelcomePage() {
             <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white">Sobre Nosotros</h1>
             <ul className="">
               <li>
-                <a href='#' className=' text-center col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-center text-white'>Quienes Somos</a>
+                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-center text-white'>Quienes Somos</a>
               </li>
             </ul>
             <ul className="">
@@ -228,6 +230,8 @@ function WelcomePage() {
             <ul className="">
               <li>
                 <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-white'>Inicio</a>
+                
+
               </li>
             </ul>
           </div>

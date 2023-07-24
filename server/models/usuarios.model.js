@@ -136,12 +136,12 @@ const findAll = async () => {
 };
 
 // Actualizar un usuario
-const updateByEmail = async (email, datosActualizados) => {
+const updateById = async (id, datosActualizados) => {
   try {
     const [numFilasActualizadas, usuariosActualizados] = await Usuario.update(datosActualizados, {
-      where: { email }
+      where: { id }
     });
-    console.log(`Se actualizó el usuario con EMAIL ${email}. Filas afectadas: ${numFilasActualizadas}`);
+    console.log(`Se actualizó el usuario con ID ${id}. Filas afectadas: ${numFilasActualizadas}`);
     return usuariosActualizados;
   } catch (error) {
     console.error("Error al actualizar el usuario:", error);

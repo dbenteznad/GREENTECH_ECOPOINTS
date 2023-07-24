@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-
-import '../styles/Prediccion.css';
+import "../styles/Prediccion.css"
 
 const getEstadoCivil = (value) => {
   switch (value) {
@@ -162,7 +161,7 @@ function Prediccion() {
   useEffect(() => {
     if (resultsReady && Object.keys(userInputs).length > 0) {
       setShowResults(true);
-      setShowMessage(true);
+      setShowMessage(true); 
       setTimeout(() => {
         window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
       }, 100);

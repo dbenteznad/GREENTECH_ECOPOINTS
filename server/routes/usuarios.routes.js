@@ -11,7 +11,7 @@ router.post("/login", usuariosController.login);
 // Rutas adicionales para obtener, actualizar y eliminar usuarios
 router.get("/", usuariosController.findAll);
 router.get("/:id", usuariosController.findById);
-router.put("/:email", usuariosController.updateUser);
+router.put("/:id", usuariosController.updateById);
 router.delete("/:id", usuariosController.deleteById);
 
 module.exports = router;
