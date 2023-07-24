@@ -58,10 +58,10 @@ function Premios() {
 
                 </div>
                 {/* premio6 */}
-                <div className="py-5 col-span-1 rounded-lg  hover:scale-110  mr-4 mb-6 font-mono" >
+                <div className="py-5 col-span-1 rounded-lg  hover:scale-110  mr-4 mb-6 font-mono " >
 
                     <h1 className="text-center text-lg mb-2 ">Premio 6</h1>
-                    <img className=" h-2/3 mx-auto rounded-xl" src="premio6.png" />
+                    <img className=" h-2/3 mx-auto rounded-xl bg-green-500" src="premio6.png" />
                     <h1 className="text-center">Puntos:</h1>
                     <h1 className="text-center">6000</h1>
                 </div>

@@ -56,7 +56,7 @@ function NavBar_Home() {
                             <div id="dropdownOffset" className="z-10 rounded-xl hidden bg-white divide-y divide-gray-100  w-35 ">
                                 <ul class="py-2 text-sm " aria-labelledby="dropdownDefault">
                                     <li>
-                                        <a href="Sesion" class="block px-4 py-2 hover:bg-green-400  ">Inicio</a>
+                                        <a href="Home" class="block px-4 py-2 hover:bg-green-400  ">Inicio</a>
                                     </li>
                                     <li>
                                         <a href="Perfil" class="block px-4 py-2 hover:bg-green-400  " >Ajustes</a>
