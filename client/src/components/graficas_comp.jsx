@@ -36,7 +36,7 @@ function GraficaComp() {
         line: { color: colores['España']['linea'], width: 3 },
         marker: { symbol: 'circle', size: 8, color: colores['España']['linea'] },
         text: año_es_1.map((x, i) => (x === 2012 || x === 2020) ? `${rs_rc_percent_es_1[i]}%` : ''),
-        hovertemplate: '%{y:.2f}%', // Usar solo el valor de Y en el hover
+        hovertemplate: '%{y:.2f}%', 
         textfont: { color: colores['España']['texto'], size: 14 },
         textposition: 'bottom center',
         showlegend: true,
@@ -103,10 +103,10 @@ function GraficaComp() {
         legendgroup: 'ONU',
     };
 
-    // Definir el orden deseado de las trazas en la leyenda
+
     const order = ['España (2012-2020)', 'Predicción España (2021-2035)', 'ONU', 'Cataluña (2000-2021)', 'Predicción Cataluña (2022-2035)'];
 
-    // Reorganizar las trazas en el orden deseado
+
     const datacomp = [traceEspaña1, traceEspaña2, traceONU, traceCataluña1, traceCataluña2].sort((a, b) => {
         return order.indexOf(a.name) - order.indexOf(b.name);
     });
@@ -131,11 +131,11 @@ function GraficaComp() {
             },
             itemsizing: 'constant',
         },
-        plot_bgcolor: 'rgba(0, 0, 0,0)', //color de fondo
+        plot_bgcolor: 'rgba(0, 0, 0,0)', 
     };
 
     const config2 = {
-        displayModeBar: false, // Desactivar la barra de herramientas en la imagen
+        displayModeBar: false, 
     };
 
 

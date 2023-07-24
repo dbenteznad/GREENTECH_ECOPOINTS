@@ -38,7 +38,7 @@ function GraficaEsp() {
                 hoverBorderColor: 'rgba(75, 192, 192, 2)',
                 hoverBackgroundColor: 'rgba(75, 192, 192, 0.4)',
                 datalabels: {
-                    align: 'end',
+                    align: 'bottom',
                     anchor: 'end',
                     formatter: function (value, context) {
                         return value.toFixed(0) + '%';
@@ -74,7 +74,7 @@ function GraficaEsp() {
                 hoverBorderColor: 'rgba(255, 159, 64, 2)',
                 hoverBackgroundColor: 'rgba(255, 159, 64, 0.4)',
                 datalabels: {
-                    align: 'end',
+                    align: 'bottom',
                     anchor: 'end',
                     formatter: function (value, context) {
                         return value.toFixed(0) + '%';

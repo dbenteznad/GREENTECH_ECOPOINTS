@@ -1,10 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
 import "../styles/Style_Chatbot.css";
 
 function Chat() {
   const [isChatOpen, setChatOpen] = useState(false);
   const [userInput, setUserInput] = useState("");
   const [messages, setMessages] = useState([]);
+  const chatBodyRef = useRef(null);
+
+  useEffect(() => {
+    setMessages([
+      {
+        text: "Hola soy Quimi, tu asistente virtual. ¿En qué puedo ayudarte?",
+        fromUser: false,
+      },
+    ]);
+  }, []);
+
+  useEffect(() => {
+    if (chatBodyRef.current) {
+      chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
+    }
+  }, [messages]);
 
   const handleChatbotIconClick = () => {
     setChatOpen(!isChatOpen);
@@ -17,10 +33,6 @@ function Chat() {
       setMessages((prevMessages) => [
         ...prevMessages,
         { text: userInput, fromUser: true },
-      ]);
-
-      setMessages((prevMessages) => [
-        ...prevMessages,
         { text: botResponse, fromUser: false },
       ]);
 
@@ -39,30 +51,30 @@ function Chat() {
       {
         pattern: /(hola|buenas|hol|holi)/i,
         response:
-          "Hola, soy Quimi tu asistente virtual, esta es la información que te puedo ofrecer:\n\n" +
-          "^ GreenTech\n" +
-          "^ Contenedor inteligente\n" +
-          "^ Como funcionan?\n" +
-          "^ EcoPoints\n" +
-          "^ Registrarse\n" +
-          "^ Reciclaje\n" +
-          "^ Gráficas\n" +
-          "^ Privacidad\n" +
-          "^ Contacto\n",
+          "Hola, soy Quimi tu asistente virtual, esta es la información que te puedo ofrecer:\n" +
+          "- GreenTech\n" +
+          "- Contenedor inteligente\n" +
+          "- ¿Cómo funciona?\n" +
+          "- EcoPoints\n" +
+          "- Registrarse\n" +
+          "- Reciclaje\n" +
+          "- Gráficas\n" +
+          "- Privacidad\n" +
+          "- Contacto\n",
       },
       {
         pattern: /(que tal|como estas|como te encuentras)/i,
         response:
-          "Muy bien!! Muchas gracias por preguntar! Espero que estés genial también! Me presento, soy Quimi tu asistente virtual, esta es la información que te puedo ofrecer:\n\n" +
-          "^ GreenTech\n" +
-          "^ Contenedor inteligente\n" +
-          "^ Como funcionan?\n" +
-          "^ EcoPoints\n" +
-          "^ Registrarse\n" +
-          "^ Reciclaje\n" +
-          "^ Gráficas\n" +
-          "^ Privacidad\n" +
-          "^ Contacto\n",
+          "Muy bien!! Muchas gracias por preguntar! Espero que estés genial también! Me presento, soy Quimi tu asistente virtual, esta es la información que te puedo ofrecer:\n" +
+          "- GreenTech\n" +
+          "- Contenedor inteligente\n" +
+          "- ¿Cómo funciona?\n" +
+          "- EcoPoints\n" +
+          "- Registrarse\n" +
+          "- Reciclaje\n" +
+          "- Gráficas\n" +
+          "- Privacidad\n" +
+          "- Contacto\n",
       },
       {
         pattern: /(empresa|greentech)/i,
@@ -113,36 +125,29 @@ function Chat() {
         response: "¿Qué Óscar?",
       },
       {
-        pattern: /.*/i, // Matches any input (default response)
+        pattern: /.*/i,
         response:
-          "Lo siento pero no tengo información sobre el tema descrito. \n\n" +
-          "^ Recuerda que soy Quimi tu asistente virtual y solo dispongo información para poder responderte sobre: \n" +
-          "^ GreenTech\n" +
-          "^ Contenedor inteligente\n" +
-          "^ Como funcionan?\n" +
-          "^ EcoPoints\n" +
-          "^ Registrarse\n" +
-          "^ Reciclaje\n" +
-          "^ Gráficas\n" +
-          "^ Privacidad\n" +
-          "^ Contacto\n",
+          "Lo siento pero no tengo información sobre el tema descrito. \n" +
+          "- GreenTech\n" +
+          "- Contenedor inteligente\n" +
+          "- ¿Cómo funciona?\n" +
+          "- EcoPoints\n" +
+          "- Registrarse\n" +
+          "- Reciclaje\n" +
+          "- Gráficas\n" +
+          "- Privacidad\n" +
+          "- Contacto\n",
       },
     ];
 
-    // Search for a matching pattern and return the corresponding response
     for (const { pattern, response } of patternsAndResponses) {
       if (userInput.match(pattern)) {
         return response;
       }
     }
-    useEffect(() => {
-        if (chatMessagesRef.current) {
-          chatMessagesRef.current.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, [messages])
   };
 
-  return (
+    return (
     <div>
       <img
         id="chatbot-icon"
@@ -158,7 +163,7 @@ function Chat() {
             </div>
             <div id="chat-title">Asistente Virtual Quimi</div>
           </div>
-          <div id="chat-body">
+          <div id="chat-body" ref={chatBodyRef}>
             <div id="chat-messages">
               {messages.map((message, index) => (
                 <div
