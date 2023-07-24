@@ -162,8 +162,7 @@ function Prediccion() {
   useEffect(() => {
     if (resultsReady && Object.keys(userInputs).length > 0) {
       setShowResults(true);
-      setShowMessage(true); // Set showMessage to true when showResults is true
-      // Scroll hacia el final de la página después de 100ms
+      setShowMessage(true);
       setTimeout(() => {
         window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
       }, 100);
