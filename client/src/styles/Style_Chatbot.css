@@ -32,12 +32,12 @@ body {
 #chat-header {
     display: flex; 
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     background-color: #075e54;
     color: #ffffff;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    cursor: move;
+    
     flex-shrink: 0; 
 }
 

@@ -6,6 +6,7 @@ import videoBG from '../assets/chica_reciclando.mp4';
 import GraficaCat from "../charts/GraficaCat";
 import GraficaEsp from "../charts/GraficaEs";
 import GraficaComp from "../charts/GraficaComp";
+import Chat from "../partials/ChatBot";
 
 
 
@@ -200,7 +201,7 @@ function WelcomePage() {
 
 
 
-
+      <Chat/>
       {/* Footer */}
       <footer className="  bg-green-500">
         <div className="  grid md:grid-cols-3  ">
