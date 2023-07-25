@@ -19,6 +19,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.10.1",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^5.2.0",
     "rivescript": "^2.2.1",
     "universal-cookie": "^4.0.4"

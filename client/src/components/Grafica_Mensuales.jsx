@@ -7,10 +7,10 @@ const Grafica_Mensual = () => {
 
     useEffect(() => {
         const data = {
-            labels: ['Dato 1', 'Dato 2', 'Dato 3', 'Dato 4', 'Dato 5'],
+            labels: [' Plástico', 'Papel', 'Aluminio', 'Cristal', 'Orgánico'],
             datasets: [
                 {
-                    data: [30, 25, 15, 20, 10],
+                    data: [35, 24, 18, 13, 12],
                     backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#33FF99', '#9966FF'],
                 },
             ],
@@ -46,7 +46,7 @@ const Grafica_Mensual = () => {
 
     return( 
         
-        <div className='col-span-1'><canvas className='w-1/2 ' ref={chartRef} /></div>)
+        <div className='col-span-1 mb-5 hover:scale-110 '><canvas className='w-1/2 ' ref={chartRef} /></div>)
    
       
  
