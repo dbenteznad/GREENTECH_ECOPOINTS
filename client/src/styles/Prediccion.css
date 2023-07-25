@@ -1,0 +1,226 @@
+.bloque {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgb(34 197 94);;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.titulo {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.titulo_color {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #054375;
+}
+
+.pred {
+    text-decoration: underline;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 7px;
+}
+
+.pred_2 {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.explicacion {
+    line-height: 1.5;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.linia {
+    border-top-width: 3px;
+    border-top-color: white;
+}
+
+
+.variable-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.variable-table th {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: center;
+
+}
+
+.variable-table td {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: center;
+}
+
+.variable-table input {
+    margin: auto;
+    display: block;
+    text-align: center;
+    width: 50px;
+}
+
+.variable-table .valores {
+    color: #054375;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 17px;
+}
+
+
+.button {
+    margin-top: 20px;
+    border: 2px solid #054375;
+    background-color: white;
+    color: #054375;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+    background-color: #4682B4;
+    color: white;
+}
+
+
+
+.titulo_resultados {
+    color: #054375;
+    margin-top: 10px;
+    text-align: justify;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 18px;
+}
+
+.elecciones{
+    text-align: justify;
+}
+.elecciones span{
+    font-weight: bold;
+    color:#054375;
+}
+
+.resultados {
+    text-align: justify;
+    margin-top: 5px;
+    font-weight: bold;
+    color: black;
+    line-height: 2;
+}
+
+.resultados .color_resultados {
+    font-weight: bold;
+    color: #0a7a07;
+}
+
+.resultados ul {
+    list-style-type: square;
+    padding-left: 25px;
+}
+
+.resultados li {
+    margin-bottom: 5px;
+}
+
+
+.titulo_resultados {
+    color: #054375;
+    margin-top: 20px;
+    text-align: justify;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 18px;
+}
+
+.resultados {
+    text-align: justify;
+    font-weight: bold;
+    color: black;
+    line-height: 2;
+}
+
+.resultados .color_resultados {
+    font-weight: bold;
+    color: #0a7a07;
+}
+
+.resultados ul {
+    list-style-type: square;
+    padding-left: 25px;
+}
+
+.resultados li {
+    margin-bottom: 5px;
+}
+
+/* Estilos para el contenedor principal */
+.contenedor-principal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Centrar horizontalmente los elementos */
+    align-items: center;
+    /* Centrar verticalmente los elementos */
+    text-align: center;
+    /* Centrar el texto dentro del contenedor principal */
+}
+
+/* Estilos para el contenedor de resultados */
+.resultados-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* Centrar horizontalmente los elementos dentro del contenedor de resultados */
+}
+
+/* Estilos para el título de resultados */
+.titulo_resultados {
+    margin-bottom: 10px;
+}
+
+/* Estilos para la lista de resultados */
+.resultados {
+    margin-bottom: 10px;
+}
+
+/* Estilos para el mensaje adicional */
+.mensaje-adicional {
+    flex: 1;
+    background-color: #72b481;
+    padding: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: justify;
+    border: 2px dashed red;
+    font-style: italic;
+    color: #6b0f12;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.mensaje-adicional p {
+    margin-bottom: 10px;
+}
+
+.mensaje-adicional p:last-child {
+    margin-bottom: 0;
+}

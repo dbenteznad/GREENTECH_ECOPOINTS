@@ -1,9 +1,11 @@
 import { useState } from "react";
 import Navbar_WelcomePage from "./Navbar_WelcomePage";
 import axios from "axios";
-import '../styles/WelcomePages.css'
-import videoBG from '../assets/chica_reciclando.mp4'
-
+import '../styles/WelcomePages.css';
+import videoBG from '../assets/chica_reciclando.mp4';
+import GraficaCat from "../charts/GraficaCat";
+import GraficaEsp from "../charts/GraficaEs";
+import GraficaComp from "../charts/GraficaComp";
 
 
 
@@ -47,8 +49,8 @@ function WelcomePage() {
 
 
       <div id="hero" className=" mx-auto grid md:grid-cols-2 items-center  pt-1000">
-      <video id="video-hero" src={videoBG} autoPlay loop  muted></video>
-      
+        <video id="video-hero" src={videoBG} autoPlay loop muted></video>
+
 
         <div id="hero-eslogan" className="ml-0 col-span-1">
           <h1 id="hero-h1" className=" text-center font-bold text-5xl text-white mt-6" >¡Recicla, gana premios y salva el planeta con nuestra app!</h1>
@@ -107,43 +109,44 @@ function WelcomePage() {
       <div id='Por_que_proyecto' className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" ></div>
       <div id="about-project" className="  mb-2"
       >
-        <h1 className=" text-center items-center text-6xl py-5 font-bold">Sabías que...?</h1>
-        <p className="text-center items-center text-xl py-5">Optar por una app de gestión de residuos ofrece numerosos beneficios. En primer lugar, proporciona información precisa y actualizada sobre la separación y el manejo adecuado de los residuos, lo que ayuda a evitar errores y maximizar el reciclaje. Además, estas aplicaciones suelen ser intuitivas y fáciles de usar, lo que facilita su adopción por parte de los usuarios.
-          Al utilizar una app de gestión de residuos, contribuimos activamente a cuidar el medio ambiente y promover prácticas sostenibles en nuestra comunidad.</p>
+        <h1 className=" text-center items-center text-4xl py-5 font-bold">EcoPoints: un aliado para un futuro sostenible</h1>
+        <p className="text-center items-center text-xl py-5">¿Sabían que el reciclaje es una de las piezas clave para construir un futuro más sostenible con el medio ambiente?</p>
+        <p className="text-center items-center text-xl py-5 italic"> <b>EcoPoints</b> es una innovadora aplicación que está revolucionando la forma en que reciclamos en <b>Cataluña</b> y <b>España</b>.</p>      
       </div>
       {/* Graficos  */}
       <div className="container mx-auto items-center  rounded-md " >
         <div >
-          <h2 className=" text-center items-center mx-auto text-5xl py-5  mb-10 mt-10 ">Evolución Reciclaje España</h2>
+          <GraficaEsp />
         </div  >
       </div>
 
-      <div  >
-
+      <div className="container mx-auto items-center  rounded-md " >
+        <h2 className=" text-center items-center mx-auto text-5xl py-5  mb-10 mt-10 ">Evolución Reciclaje Cataluña</h2>
         <div >
-          <h2 className=" text-center w-1/2 items-center text-5xl  mx-auto py-5 mb-10 mt-10 ">Evolución Reciclaje Cataluña</h2>
-        </div>
-        <div>
-
-          {/* <Prueba /> */}
-
-
-        </div>
-
-
+          <GraficaCat />
+        </div  >
       </div>
 
       <div className="container mx-auto items-center  rounded-md " >
+        <h2 className=" text-center items-center mx-auto text-5xl py-5  mb-10 mt-10 ">Predicción % Residuos Selectivos</h2>
         <div >
-
-          <h2 className=" text-center items-center text-5xl py-5 mb-10 mt-10 ">Predicción % Residuos Selectivos</h2>
-        </div>
+          <GraficaComp />
+        </div  >
       </div>
+
+      <div>
+        <p>En GreenTech no nos conformamos con estos datos y para mejorar estas cifras y promover el reciclaje, GreenTech ha desarrollado 
+          una aplicación llamada EcoPoints, que busca incentivar y facilitar el proceso de reciclaje tanto en España como en Cataluña.
+          Con iniciativas como EcoPoints, se espera que más personas se involucren en el reciclaje y se contribuya a alcanzar los ambiciosos 
+          objetivos de la ONU para un futuro más sostenible y amigable con el medio ambiente. </p>
+          <br />
+      </div>
+
       <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" id="Como_funciona" ></div>
       {/* Como Funciona */}
       <div>
 
-        <h1 className=" text-center items-center text-6xl py-5 mb-20 font-bold">¿Cómo funciona?</h1>
+        <h1 className=" text-center items-center text-4xl py-5 mb-20 font-bold">¿Cómo funciona?</h1>
         <div className="  mb-20 grid md:flex-auto md:grid-cols-6 rounded-md " >
           <div >
             <img className=" w-1/4 py-2 px-2 mx-auto mb-2 hover:scale-105 " src="ecological-house.png" />
@@ -176,7 +179,7 @@ function WelcomePage() {
       <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" id="sobre_nosotros"  ></div>
 
       {/* Sobre Nosotros */}
-      <h1 className=" text-center items-center text-6xl py-5 mb-5 font-bold ">Un proyecto de GreenTech</h1>
+      <h1 className=" text-center items-center text-4xl py-5 mb-5 font-bold ">Un proyecto de GreenTech</h1>
 
 
       <div className="container mx-auto grid md:grid-cols-2 items-center  mb-40  rounded-md" >

@@ -7,7 +7,7 @@ import '../styles/Navbar_WelcomePage.css'
 function Navbar_WelcomePage() {
   return (
     <>
-      <nav className='  py-5 bg-green-500 sticky top-0 shadow-md'>
+      <nav className='  py-5 bg-green-500 sticky top-0 shadow-md z-10'>
         <div className='container mx-auto flex px-8 lg:px-0 ' >
           <button
            className='flex flex-grow items-center'>

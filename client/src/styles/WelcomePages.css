@@ -1,7 +1,3 @@
-body {
-    background-color: #F5F6F6;
-}
-
 #hero {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -92,6 +88,7 @@ body {
 
 #frase-greentech {
    padding-left: 10%;
+   text-align: right;
 }         
 
 @media screen and (max-width: 720px) {
