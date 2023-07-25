@@ -36,7 +36,7 @@ function GraficaComp() {
         line: { color: colores['España']['linea'], width: 3 },
         marker: { symbol: 'circle', size: 8, color: colores['España']['linea'] },
         text: año_es_1.map((x, i) => (x === 2012 || x === 2020) ? `${rs_rc_percent_es_1[i]}%` : ''),
-        hovertemplate: '%{y:.2f}%', 
+        hovertemplate: '%{y:.2f}%', // Usar solo el valor de Y en el hover
         textfont: { color: colores['España']['texto'], size: 14 },
         textposition: 'bottom center',
         showlegend: true,
@@ -103,10 +103,10 @@ function GraficaComp() {
         legendgroup: 'ONU',
     };
 
-
+    // Definir el orden deseado de las trazas en la leyenda
     const order = ['España (2012-2020)', 'Predicción España (2021-2035)', 'ONU', 'Cataluña (2000-2021)', 'Predicción Cataluña (2022-2035)'];
 
-
+    // Reorganizar las trazas en el orden deseado
     const datacomp = [traceEspaña1, traceEspaña2, traceONU, traceCataluña1, traceCataluña2].sort((a, b) => {
         return order.indexOf(a.name) - order.indexOf(b.name);
     });
@@ -131,11 +131,11 @@ function GraficaComp() {
             },
             itemsizing: 'constant',
         },
-        plot_bgcolor: 'rgba(0, 0, 0,0)', 
+        plot_bgcolor: 'rgba(0, 0, 0,0)', //color de fondo
     };
 
     const config2 = {
-        displayModeBar: false, 
+        displayModeBar: false, // Desactivar la barra de herramientas en la imagen
     };
 
 
@@ -146,17 +146,20 @@ function GraficaComp() {
     return (
 
         <div className='grid md:grid-cols-2'>
-
-          
-            <div className='span-col-1 '>
-
-                <div className='w-1/3' id="comparativa" ></div>
+            <div className='span-col-1 relative z-0'>
+                <div className='w-1/2 relative' id="comparativa"></div>
                 
             </div>
-  <h1 className=' span-col-1  items-center text-center mx-auto '>hola mundo</h1>
-
-
-
+            <div className="span-col-1  items-center text-center relative">
+            <h1>La ONU nos dice que para 2020 se debe llegar al 50% del total selectivo, 2025 al 55%, 2030 al 60% y 2035 al 65%.
+                Analizando los datos oficiales, para el año 2020 no hemos cumplido. Y conseguiremos llegar a los objetivos planteados?
+                Para ello, hemos realizado una predicción con los datos oficiales tanto de España como Cataluña para saber de manera estimada si lo conseguiremos.
+                En el mejor de los casos:
+                -	Cataluña, y se siguiese la dinamica siempre se quedaría un pelín por debajo a excepción del año 2035 que lo lograria con un 66%!!
+                -	En cambio, España siempre iria por debajo llegando al 57% para el 2035… vs el 65% de la ONU.
+                Para mejorar estas cifras y promover el reciclaje, GreenTech ha desarrollado una aplicación llamada EcoPoints, que busca incentivar y facilitar el proceso de reciclaje tanto en España como en Cataluña.
+                Con iniciativas como EcoPoints, se espera que más personas se involucren en el reciclaje y se contribuya a alcanzar los ambiciosos objetivos de la ONU para un futuro más sostenible y amigable con el medio ambiente.</h1>
+            </div>
         </div>
 
 

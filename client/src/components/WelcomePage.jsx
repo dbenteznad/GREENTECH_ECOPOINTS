@@ -8,7 +8,7 @@ import GraficaComp from "./graficas_comp"
 import Chat from "./chat";
 
 
-
+// import Chatbot from "./chat";
 
 
 
@@ -44,7 +44,7 @@ function WelcomePage() {
   }
 
   return (
-    <div className="  h-full bg-public scroll-auto" >
+    <div className="  h-full bg-public scroll-auto  bg-white " >
       <Navbar_WelcomePage />
 
 
@@ -117,8 +117,9 @@ function WelcomePage() {
 
       <div className="container mx-auto items-center  rounded-md " >
         <h2 className=" text-center items-center mx-auto text-5xl py-5  mb-10 mt-10 ">Evolución Reciclaje España</h2>
-        <div >
-          <GraficaEsp/>
+        <div
+>
+          <GraficaEsp />
 
         </div  >
       </div>
@@ -129,22 +130,19 @@ function WelcomePage() {
           <h2 className=" text-center w-1/2 items-center text-5xl  mx-auto py-5 mb-10 mt-10 ">Evolución Reciclaje Cataluña</h2>
         </div>
         <div>
-
           <GraficaCat />
-
-
-        </div>
-
-
-      </div>
-
-      <div className="container mx-auto items-center  rounded-md " >
-      <h2 className=" text-center items-center text-5xl py-5 mb-10 mt-10 ">Predicción % Residuos Selectivos</h2>
-        <div >
-<GraficaComp/>
-       
         </div>
       </div>
+
+      
+
+        <div>
+          <h2 className=" text-center items-center text-5xl py-5 mb-10 mt-10 ">Predicción % Residuos Selectivos</h2>
+        </div>
+
+        <div> <GraficaComp /></div>
+         
+     
       <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" id="Como_funciona" ></div>
       {/* Como Funciona */}
       <div>
@@ -197,8 +195,7 @@ function WelcomePage() {
 
       </div>
 
-      <Chat/>
-
+<Chat/>
       {/* Footer */}
       <footer className="  bg-green-500">
         <div className="  grid md:grid-cols-3  ">
@@ -233,7 +230,7 @@ function WelcomePage() {
             <ul className="">
               <li>
                 <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-white'>Inicio</a>
-                
+
 
               </li>
             </ul>
