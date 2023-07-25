@@ -38,7 +38,7 @@ function GraficaEsp() {
                 hoverBorderColor: 'rgba(75, 192, 192, 2)',
                 hoverBackgroundColor: 'rgba(75, 192, 192, 0.4)',
                 datalabels: {
-                    align: 'end',
+                    align: 'bottom',
                     anchor: 'end',
                     formatter: function (value, context) {
                         return value.toFixed(0) + '%';
@@ -74,7 +74,7 @@ function GraficaEsp() {
                 hoverBorderColor: 'rgba(255, 159, 64, 2)',
                 hoverBackgroundColor: 'rgba(255, 159, 64, 0.4)',
                 datalabels: {
-                    align: 'end',
+                    align: 'bottom',
                     anchor: 'end',
                     formatter: function (value, context) {
                         return value.toFixed(0) + '%';
@@ -170,11 +170,15 @@ function GraficaEsp() {
     }, []);
 
     return (
-        <div className='grid md:grid-cols-2'>
+        <div className='grid md:grid-cols-2 
+
+        '>
 
       
-            <div className='span-col-1 '>  <canvas  className='w-1/2 ' id="espana" width="400" height="200" ></canvas></div>
-                  <h1 className='span-col-1 items-center text-center mx-auto'>hola mundo</h1>
+            <div className='span-col-1 '>  <canvas  className='w-1/2  ' id="espana" width="400" height="200" ></canvas></div>
+                  <h1 className='span-col-1 items-center text-center mx-auto'>Sabias que en españa los datos oficiales sobre el reciclaje datan del año 2012 hasta el 2020. 
+En ellos se pueden ver una progresión del 30% al 41%, Total Selectivo, en 8 años del material que si se ha reciclado respecto al total que se ha generado. Aquel material que no se ha reciclado es el Total Resto.
+Y Cataluña, cual ha sido su evolución en comparación a España???</h1>
           
         </div>
     );

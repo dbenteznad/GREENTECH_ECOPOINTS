@@ -53,7 +53,7 @@ const chartRef = useRef(null);
           hoverBorderColor: 'rgba(75, 192, 192, 2)',
           hoverBackgroundColor: 'rgba(75, 192, 192, 0.4)',
           datalabels: {
-            align: 'end',
+            align: 'bottom',
             anchor: 'end',
             formatter: function (value, context) {
               return value.toFixed(0) + '%';
@@ -199,7 +199,10 @@ const chartRef = useRef(null);
   return (
     <div className='grid md:grid-cols-2'>
 
-       <h1 className='span-col-1 items-center text-center mx-auto'>hola mundo</h1>
+       <h1 className='span-col-1 items-center text-center mx-auto'>En Cataluña los datos oficiales datan del año 2000 al 2021.
+Se puede observar una mejor historia de la progresión, del  14% al 47%, en 21 años del material que si se ha reciclado.
+Es decir, en 2012 Catalunya estaba reciclando el 39% y España el 30%. Y si comparamos con los últimos datos seria respectivamente un 46% CAT vs un 41% ESP. 
+Y la ONU, que datos registra que deberian tener los paises miembros a FUTUROS AÑOS…??</h1>
      <div className='span-col-1 '>  <canvas className='w-1/2 ' ref={chartRef} />   </div>
      
 

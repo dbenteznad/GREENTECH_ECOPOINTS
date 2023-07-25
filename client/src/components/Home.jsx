@@ -2,6 +2,10 @@ import NavBar_Home from "./NavBar_Home";
 import '../styles/Home.css'
 import axios from "axios";
 import Cookies from "universal-cookie";
+import Grafica_Semanal from "./Grafica_Semanal";
+import Grafica_Mensual from "./Grafica_Mensuales";
+import Grafica_Total from "./Grafica_Total";
+
 const cookies = new Cookies();
 
 
@@ -90,23 +94,19 @@ function Home() {
 
 
             <div className=" container mx-auto grid md:grid-cols-2">
-                <div className="py-5 col-span-1 rounded-lg   mr-4 mb-6 font-mono" >
-
-
-                    <img className=" h-2/3 mx-auto" src="grafico-sesion.png" />
-
-
-
-
+             
+          
+           
+                <div className=" col-span-1 rounded-lg   font-mono" >
+                  <h1 className="text-center">Semanal</h1>
+                    <Grafica_Semanal/>
                 </div>
-                <div className="py-5 col-span-1 rounded-lg   mr-4 mb-6 font-mono" >
-
-                    <h1 className="text-center text-lg mb-2 ">Total</h1>
-                    <img className=" h-2/3 mx-auto" src="grafico-sesion.png" />
-
-
-
+                <div className=" col-span-1 rounded-lg    font-mono" >
+                  <h1 className="text-center">Mensual</h1>
+                    <Grafica_Mensual/>
                 </div>
+              
+                
 
             </div>
 

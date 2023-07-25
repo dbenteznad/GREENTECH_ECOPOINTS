@@ -5,6 +5,9 @@ import '../styles/WelcomePages.css';
 import GraficaEsp from "./graficas_esp"
 import GraficaCat from "./GraficaCat"
 import GraficaComp from "./graficas_comp"
+import Chat from "./chat";
+
+
 // import Chatbot from "./chat";
 
 
@@ -114,7 +117,8 @@ function WelcomePage() {
 
       <div className="container mx-auto items-center  rounded-md " >
         <h2 className=" text-center items-center mx-auto text-5xl py-5  mb-10 mt-10 ">Evolución Reciclaje España</h2>
-        <div >
+        <div
+>
           <GraficaEsp />
 
         </div  >
@@ -191,8 +195,7 @@ function WelcomePage() {
 
       </div>
 
-      {/* <Chatbot /> */}
-
+<Chat/>
       {/* Footer */}
       <footer className="  bg-green-500">
         <div className="  grid md:grid-cols-3  ">

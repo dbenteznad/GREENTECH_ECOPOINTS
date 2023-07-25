@@ -22,7 +22,7 @@ function NavBar_Home() {
 
     return (
         <>
-            <nav className=' py-4 bg-green-500 static top-0 pt-3 shadow-md  '>
+            <nav className=' py-4 bg-green-500 sticky top-0 pt-3 shadow-md z-10  '>
 
                 <div className='container mx-auto flex px-8 lg:px-0 '>
 
