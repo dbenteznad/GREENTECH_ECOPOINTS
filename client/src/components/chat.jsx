@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../styles/Style_Chatbot.css";
 
 function Chat() {
@@ -7,6 +7,7 @@ function Chat() {
   const [messages, setMessages] = useState([]);
   const chatBodyRef = useRef(null);
 
+// Mensaje por defecto al abrir el chat
   useEffect(() => {
     setMessages([
       {
@@ -16,16 +17,19 @@ function Chat() {
     ]);
   }, []);
 
+  //El chat baja de manera autómatica después de cada input. 
   useEffect(() => {
     if (chatBodyRef.current) {
       chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
     }
   }, [messages]);
 
+  // El chat inicialmente esta cerrado.
   const handleChatbotIconClick = () => {
     setChatOpen(!isChatOpen);
   };
 
+  // Funcionamiento inputs-outputs chat con el bot.
   const handleSendMessage = () => {
     if (userInput.trim() !== "") {
       const botResponse = getBotResponse(userInput);
@@ -46,6 +50,7 @@ function Chat() {
     }
   };
 
+  // Texto del bot
   const getBotResponse = (userInput) => {
     const patternsAndResponses = [
       {
@@ -53,28 +58,20 @@ function Chat() {
         response:
           "Hola, soy Quimi tu asistente virtual, esta es la información que te puedo ofrecer:\n" +
           "- GreenTech\n" +
-          "- Contenedor inteligente\n" +
-          "- ¿Cómo funciona?\n" +
-          "- EcoPoints\n" +
-          "- Registrarse\n" +
-          "- Reciclaje\n" +
-          "- Gráficas\n" +
-          "- Privacidad\n" +
-          "- Contacto\n",
+          "- Contenedor inteligente | ¿Cómo funciona?\n" +
+          "- EcoPoints | Registrarse\n" +
+          "- Reciclaje | Gráficas\n" +
+          "- Privacidad | Contacto\n",
       },
       {
         pattern: /(que tal|como estas|como te encuentras)/i,
         response:
-          "Muy bien!! Muchas gracias por preguntar! Espero que estés genial también! Me presento, soy Quimi tu asistente virtual, esta es la información que te puedo ofrecer:\n" +
+          "Muy bien!! Muchas gracias por preguntar! Espero que estés genial también! Esta es la información que te puedo ofrecer:\n" +
           "- GreenTech\n" +
-          "- Contenedor inteligente\n" +
-          "- ¿Cómo funciona?\n" +
-          "- EcoPoints\n" +
-          "- Registrarse\n" +
-          "- Reciclaje\n" +
-          "- Gráficas\n" +
-          "- Privacidad\n" +
-          "- Contacto\n",
+          "- Contenedor inteligente | ¿Cómo funciona?\n" +
+          "- EcoPoints | Registrarse\n" +
+          "- Reciclaje | Gráficas\n" +
+          "- Privacidad | Contacto\n",
       },
       {
         pattern: /(empresa|greentech)/i,
@@ -99,7 +96,8 @@ function Chat() {
       {
         pattern: /(registrarse|registro|inicio|iniciar|formulario)/i,
         response:
-          "A continuación te dejo el link para poder iniciar el registro... El formulario consta de dos partes: una obligatoria para crear el usuario y otra para saber si reciclamos, la cual premiamos con EcoPoints al rellenarla al completo.",
+          "A continuación te dejo el link: http://localhost:5173/Registro \n" +
+          "El formulario consta de dos partes: una obligatoria para crear el usuario y otra para saber si reciclas, la cual premiamos con EcoPoints al rellenarla al completo.",
       },
       {
         pattern: /(reciclaje|residuos)/i,
@@ -118,7 +116,7 @@ function Chat() {
       },
       {
         pattern: /(contacto)/i,
-        response: "Nuestro correo: greentech@gmail.com",
+        response: "Nuestro correo es: greentech@gmail.com",
       },
       {
         pattern: /(oscar)/i,
@@ -129,17 +127,14 @@ function Chat() {
         response:
           "Lo siento pero no tengo información sobre el tema descrito. \n" +
           "- GreenTech\n" +
-          "- Contenedor inteligente\n" +
-          "- ¿Cómo funciona?\n" +
-          "- EcoPoints\n" +
-          "- Registrarse\n" +
-          "- Reciclaje\n" +
-          "- Gráficas\n" +
-          "- Privacidad\n" +
-          "- Contacto\n",
+          "- Contenedor inteligente | ¿Cómo funciona?\n" +
+          "- EcoPoints | Registrarse\n" +
+          "- Reciclaje | Gráficas\n" +
+          "- Privacidad | Contacto\n",
       },
     ];
 
+    // Lógica interna para buscar en el texto la respuesta en función del input del usuario.
     for (const { pattern, response } of patternsAndResponses) {
       if (userInput.match(pattern)) {
         return response;
@@ -147,7 +142,9 @@ function Chat() {
     }
   };
 
-    return (
+
+  // Contenedor del chat con estilos css.
+  return (
     <div>
       <img
         id="chatbot-icon"
