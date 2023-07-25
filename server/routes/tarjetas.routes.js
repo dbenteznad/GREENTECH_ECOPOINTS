@@ -6,7 +6,7 @@ const tarjetasController = require('../controllers/tarjetas.controller.js');
 router.get("/", tarjetasController.findAll);
 router.post("/", tarjetasController.create);
 router.get("/:id", tarjetasController.findById);
-router.put("/:id", tarjetasController.update);
-router.delete("/:id", tarjetasController.delete);
+router.put("/:id", tarjetasController.updateById);
+router.delete("/:id", tarjetasController.deleteById);
 
 module.exports = router;

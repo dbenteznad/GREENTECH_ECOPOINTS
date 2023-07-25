@@ -43,7 +43,7 @@ exports.findById = async function (req, res) {
 
 
 // Actualizar una tarjeta
-exports.update = async function (req, res) {
+exports.updateById = async function (req, res) {
     try {
         // Obtener el id de la tarjeta a actualizar desde los parámetros de la URL
         const idTarjeta = req.params.id;
@@ -67,7 +67,7 @@ exports.update = async function (req, res) {
 };
 
 // Eliminar una tarjeta
-exports.delete = async function (req, res) {
+exports.deleteById = async function (req, res) {
     try {
         const idTarjeta = req.params.id;
         const opciones = {

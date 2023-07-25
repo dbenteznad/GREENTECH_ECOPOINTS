@@ -35,11 +35,13 @@ app.get('/', (req, res) => {
 const usuariosRoutes = require("./routes/usuarios.routes.js");
 const tarjetasRoutes = require("./routes/tarjetas.routes.js");
 const contenedoresRoutes = require("./routes/contenedores.routes.js");
+const accionesRoutes = require("./routes/acciones.routes.js");
 
 // Utilizando el enrutador como middleware
 app.use('/api/v1/usuarios', usuariosRoutes);
 app.use('/api/v1/tarjetas', tarjetasRoutes);
 app.use('/api/v1/contenedores', contenedoresRoutes);
+app.use('/api/v1/acciones', accionesRoutes);
 
 // Endpoint libre
 app.get("/free-endpoint", (request, response) => {

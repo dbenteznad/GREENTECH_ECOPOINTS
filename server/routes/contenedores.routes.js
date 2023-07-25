@@ -6,7 +6,7 @@ const contenedoresController = require('../controllers/contenedores.controller.j
 router.get("/", contenedoresController.findAll);
 router.post("/", contenedoresController.create);
 router.get("/:id", contenedoresController.findById);
-router.put("/:id", contenedoresController.update);
-router.delete("/:id", contenedoresController.delete);
+router.put("/:id", contenedoresController.updateById);
+router.delete("/:id", contenedoresController.deleteById);
 
 module.exports = router;

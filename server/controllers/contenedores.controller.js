@@ -43,7 +43,7 @@ exports.findById = async function (req, res) {
 
 
 // Actualizar un contenedor
-exports.update = async function (req, res) {
+exports.updateById = async function (req, res) {
     try {
         // Obtener el id del contenedor a actualizar desde los parámetros de la URL
         const idContenedor = req.params.id;
@@ -67,7 +67,7 @@ exports.update = async function (req, res) {
 };
 
 // Eliminar un contenedor
-exports.delete = async function (req, res) {
+exports.deleteById = async function (req, res) {
     try {
         const idContenedor = req.params.id;
         const opciones = {
