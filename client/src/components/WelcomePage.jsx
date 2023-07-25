@@ -2,13 +2,11 @@ import { useState } from "react";
 import Navbar_WelcomePage from "./Navbar_WelcomePage";
 import axios from "axios";
 import '../styles/WelcomePages.css';
-import GraficaEsp from "./graficas_esp"
-import GraficaCat from "./GraficaCat"
-import GraficaComp from "./graficas_comp"
-import Chat from "./chat";
+import videoBG from '../assets/chica_reciclando.mp4';
+import GraficaCat from "../charts/GraficaCat";
+import GraficaEsp from "../charts/GraficaEs";
+import GraficaComp from "../charts/GraficaComp";
 
-
-// import Chatbot from "./chat";
 
 
 
@@ -37,6 +35,8 @@ function WelcomePage() {
     axios(configuration)
       .then((result) => {
         setRegister(true);
+        // Redirige al usuario a la página principal del usuario
+        window.location.href = "/registro-formulario";
       })
       .catch((error) => {
         error = new Error();
@@ -44,17 +44,18 @@ function WelcomePage() {
   }
 
   return (
-    <div className="  h-full bg-public scroll-auto  bg-white " >
+    <div className="  h-full bg-public scroll-auto" >
       <Navbar_WelcomePage />
 
 
-      <div id="hero" className=" mx-auto grid md:grid-cols-2 items-center bg-green-500 pt-1000">
+      <div id="hero" className=" mx-auto grid md:grid-cols-2 items-center  pt-1000">
+        <video id="video-hero" src={videoBG} autoPlay loop muted></video>
+
 
         <div id="hero-eslogan" className="ml-0 col-span-1">
           <h1 id="hero-h1" className=" text-center font-bold text-5xl text-white mt-6" >¡Recicla, gana premios y salva el planeta con nuestra app!</h1>
-          <h2 id="hero-h2" className=" text-center font-bold text-2xl mt-6">Únete a la revolución verde, ¡hazte eco-héroe!<br />Construye un futuro mejor.</h2>
-          <img className="w-2/3 md:h-1/3 py-5 hover:scale-105 ease-in duration-300 " src="bolsa_basura.png" />
-
+          <h2 id="hero-h2" className=" text-center font-bold text-2xl mt-6 text-white">Únete a la revolución verde, ¡hazte eco-héroe!<br />Construye un futuro mejor.</h2>
+          {/* <img className="w-2/3 md:h-1/3 py-5 hover:scale-105 ease-in duration-300 " src="bolsa_basura.png" /> */}
         </div>
 
         {/* Formulario */}
@@ -108,46 +109,45 @@ function WelcomePage() {
       <div id='Por_que_proyecto' className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" ></div>
       <div id="about-project" className="  mb-2"
       >
-        <h1 className=" text-center items-center text-6xl py-5 font-bold">Sabías que...?</h1>
-        <p className="text-center items-center text-xl py-5">Optar por una app de gestión de residuos ofrece numerosos beneficios. En primer lugar, proporciona información precisa y actualizada sobre la separación y el manejo adecuado de los residuos, lo que ayuda a evitar errores y maximizar el reciclaje. Además, estas aplicaciones suelen ser intuitivas y fáciles de usar, lo que facilita su adopción por parte de los usuarios.
-          Al utilizar una app de gestión de residuos, contribuimos activamente a cuidar el medio ambiente y promover prácticas sostenibles en nuestra comunidad.</p>
+        <h1 className=" text-center items-center text-4xl py-5 font-bold">EcoPoints: un aliado para un futuro sostenible</h1>
+        <p className="text-center items-center text-xl py-5">¿Sabían que el reciclaje es una de las piezas clave para construir un futuro más sostenible con el medio ambiente?</p>
+        <p className="text-center items-center text-xl py-5 italic"> <b>EcoPoints</b> es una innovadora aplicación que está revolucionando la forma en que reciclamos en <b>Cataluña</b> y <b>España</b>.</p>      
       </div>
       {/* Graficos  */}
-
-
-      <div className="container mx-auto items-center  rounded-md " >
-        <h2 className=" text-center items-center mx-auto text-5xl py-5  mb-10 mt-10 ">Evolución Reciclaje España</h2>
-        <div
->
+      <div className=" mx-auto items-center  rounded-md " >
+      <h2 className=" text-center items-center mx-auto text-5xl py-5  mb-10 mt-10 ">Evolución Reciclaje España</h2>
+        
           <GraficaEsp />
-
-        </div  >
+        
       </div>
 
-      <div  >
-
-        <div >
-          <h2 className=" text-center w-1/2 items-center text-5xl  mx-auto py-5 mb-10 mt-10 ">Evolución Reciclaje Cataluña</h2>
-        </div>
-        <div>
+      <div className=" mx-auto items-center  rounded-md " >
+        <h2 className=" text-center items-center mx-auto text-5xl py-5  mb-10 mt-10 ">Evolución Reciclaje Cataluña</h2>
+        
           <GraficaCat />
-        </div>
+       
       </div>
 
-      
+      <div className=" mx-auto items-center  rounded-md " >
+        <h2 className=" text-center items-center mx-auto text-5xl py-5  mb-10 mt-10 ">Predicción % Residuos Selectivos</h2>
+        
+          <GraficaComp />
+       
+      </div>
 
-        <div>
-          <h2 className=" text-center items-center text-5xl py-5 mb-10 mt-10 ">Predicción % Residuos Selectivos</h2>
-        </div>
+      <div>
+        <p>En GreenTech no nos conformamos con estos datos y para mejorar estas cifras y promover el reciclaje, GreenTech ha desarrollado 
+          una aplicación llamada EcoPoints, que busca incentivar y facilitar el proceso de reciclaje tanto en España como en Cataluña.
+          Con iniciativas como EcoPoints, se espera que más personas se involucren en el reciclaje y se contribuya a alcanzar los ambiciosos 
+          objetivos de la ONU para un futuro más sostenible y amigable con el medio ambiente. </p>
+          <br />
+      </div>
 
-        <div> <GraficaComp /></div>
-         
-     
       <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" id="Como_funciona" ></div>
       {/* Como Funciona */}
       <div>
 
-        <h1 className=" text-center items-center text-6xl py-5 mb-20 font-bold">¿Cómo funciona?</h1>
+        <h1 className=" text-center items-center text-4xl py-5 mb-20 font-bold">¿Cómo funciona?</h1>
         <div className="  mb-20 grid md:flex-auto md:grid-cols-6 rounded-md " >
           <div >
             <img className=" w-1/4 py-2 px-2 mx-auto mb-2 hover:scale-105 " src="ecological-house.png" />
@@ -180,14 +180,14 @@ function WelcomePage() {
       <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" id="sobre_nosotros"  ></div>
 
       {/* Sobre Nosotros */}
-      <h1 className=" text-center items-center text-6xl py-5 mb-5 font-bold ">Un proyecto de GreenTech</h1>
+      <h1 className=" text-center items-center text-4xl py-5 mb-5 font-bold ">Un proyecto de GreenTech</h1>
 
 
       <div className="container mx-auto grid md:grid-cols-2 items-center  mb-40  rounded-md" >
         <div >
-          <img id="img-empresa" src="Empresa.png" />
+          <img id="img-empresa" src="gg.png" />
         </div>
-        <p id="frase-greentech" className="col-span-1  text-right items-center"><b>EcoPoints</b> es una iniciativa de <b>GreenTech</b>, una empresa IoT dedicada a la sostenibilidad, que premia
+        <p id="frase-greentech" className="col-span-1  text-center items-center"><b>EcoPoints</b> es una iniciativa de <b>GreenTech</b>, una empresa IoT dedicada a la sostenibilidad, que premia
           tu responsabilidad medioambiental a través de un Sistema de Devolución y Recompensa. Cada vez que reciclas en nuestros contenedores de tu ciudad, recibes <b>EcoPoints</b>, que puedes canjear por premios.
           <br /> <br /> Nuestro enfoque combina la tecnología con el compromiso de construir un mundo más sostenible a través del reciclaje inteligente y accesible para todos.
           Con <b>EcoPoints</b> ganas tú y gana el medio ambiente, porque cada pequeña acción cuenta en la construcción de un mundo más verde y sostenible. Únete a la comunidad <b>EcoPoints</b> y sé parte
@@ -195,7 +195,13 @@ function WelcomePage() {
 
       </div>
 
-<Chat/>
+
+
+
+
+
+
+
       {/* Footer */}
       <footer className="  bg-green-500">
         <div className="  grid md:grid-cols-3  ">
@@ -203,7 +209,7 @@ function WelcomePage() {
             <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white">Sobre Nosotros</h1>
             <ul className="">
               <li>
-                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-center text-white'>Quienes Somos</a>
+                <a href='#' className=' text-center col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-center text-white'>Quienes Somos</a>
               </li>
             </ul>
             <ul className="">
@@ -230,8 +236,6 @@ function WelcomePage() {
             <ul className="">
               <li>
                 <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-white'>Inicio</a>
-
-
               </li>
             </ul>
           </div>
