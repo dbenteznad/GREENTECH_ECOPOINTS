@@ -6,8 +6,8 @@ import Premios from "./components/Premios";
 import Formulario from "./components/Registro_Formulario";
 import Login from "./components/Login";
 import Registro from "./components/Registro";
-import Prueba from "./components/Prueba";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+
 
 
 function App() { 
@@ -19,7 +19,6 @@ function App() {
           <Route exact path="/registro-formulario" component={Formulario}/>  
           <Route exact path="/login"  component={Login}/>
           <ProtectedRoutes path="/home" component={Home} />
-          <Route exact path="/prueba" component={Prueba} />
           <Route exact path="/premios" component={Premios}/>
         </Switch>
     </>

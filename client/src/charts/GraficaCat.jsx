@@ -55,8 +55,11 @@ const chartRef = useRef(null);
           datalabels: {
             align: 'bottom',
             anchor: 'end',
-            formatter: function (value, context) {
-              return value.toFixed(0) + '%';
+            formatter: function(value, context) {
+              if (context.dataIndex % 3 === 0) {
+                return value.toFixed(0) + "%";
+              }
+              return "";
             },
           },
         },
@@ -99,8 +102,11 @@ const chartRef = useRef(null);
           datalabels: {
             align: 'end',
             anchor: 'end',
-            formatter: function (value, context) {
-              return value.toFixed(0) + '%';
+            formatter: function(value, context) {
+              if (context.dataIndex % 3 === 0) {
+                return value.toFixed(0) + "%";
+              }
+              return "";
             },
           },
         },
