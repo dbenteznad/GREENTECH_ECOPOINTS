@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "../styles/Style_Chatbot.css";
+import "../styles/Style_ChatBot.css";
 
 function Chat() {
   const [isChatOpen, setChatOpen] = useState(false);
@@ -148,7 +148,7 @@ function Chat() {
     <div>
       <img
         id="chatbot-icon"
-        src="../../public/icon.png"
+        src="icon.png"
         alt="Chatbot Icon"
         onClick={handleChatbotIconClick}
       />

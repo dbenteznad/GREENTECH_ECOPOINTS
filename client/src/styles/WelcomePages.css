@@ -10,6 +10,8 @@
     }
 }
 
+
+
 #video-hero {
     position: absolute;
     top: 0;
@@ -106,4 +108,10 @@
         text-align: center;
         padding-left: 0;
      }
+}
+
+@media screen and (max-width: 720px) {
+    .Grafico {
+        display: none;
+    }
 }

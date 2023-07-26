@@ -92,3 +92,9 @@
  
 }
 
+@media screen and (max-width: 720px) {
+    .Grafico2 {
+        display: none;
+    }
+}
+

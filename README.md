@@ -28,7 +28,7 @@
 
 - **Back-End:** The Back-End utilizes Node.js, Express, and Sequelize to manage logic and communication with the MySQL database.
 
-- **Data Science:** For statistical analysis, we have employed Python and Anaconda, making use of libraries such as Numpy, Pandas, and Matplotlib, Scikit-Learn.
+- **Data Science:** For statistical analysis, we have employed Python and Anaconda, making use of libraries such as Numpy, Pandas, and Matplotlib, Scikit-Learnand; for the graphs, the Chart.js, Plotly libraries have been used.
 
 ## Registration Requirements
 
@@ -89,7 +89,7 @@ Join us on this journey towards a more sustainable and eco-friendly future!"
 
 - **Back-End:** En el Back-End, se ha empleado Node.js, Express y Sequelize para gestionar la lógica y la comunicación con la base de datos MySQL.
 
-- **Data Science:** Para los análisis estadísticos, se ha utilizado Python y Anaconda, aprovechando las librerías Numpy, Pandas y Matplotlib, Scikit-Learn.
+- **Data Science:** Para los análisis estadísticos, se ha utilizado Python y Anaconda, aprovechando las librerías Numpy, Pandas y Matplotlib, Scikit-Learn; y para las gráficas, se ha empleado las librerías de Chart.js, Plotly.
 
 ## Requisitos de Registro
 

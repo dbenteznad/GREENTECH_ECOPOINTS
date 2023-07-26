@@ -13,6 +13,11 @@ import Chat from "../partials/ChatBot";
 
 function WelcomePage() {
 
+  const linkedInProfileUrlNestor = 'https://www.linkedin.com/in/néstorolivera';
+  const linkedInProfileUrlDaniCasanova = 'https://www.linkedin.com/in/daniel-ben%C3%ADtez-nadal-85388126b/';
+  const linkedInProfileUrlDaniBenitez = 'https://www.linkedin.com/in/danicf/';
+
+
   const [correo_electronico, setEmail] = useState("");
   const [contrasena, setPassWord] = useState("");
   const [login, setLogin] = useState(false);
@@ -62,10 +67,6 @@ function WelcomePage() {
         {/* Formulario */}
         <form id="formulario-registro" className="ml-4 mr-4  col-span-1 bg-white p-4 rounded-md "
           onSubmit={handleSubmit}>
-
-
-
-
           <div id="Registro" className="">
             <label className="block text-black uppercase font-bold">
               Correo Electronico
@@ -79,8 +80,6 @@ function WelcomePage() {
               className=" mb-5 border-2 w-full p-2 mt-2  placeholder-gray-400 border-  rounded-md"
               placeholder="Correo Electronico"></input>
           </div>
-
-
           <div className="">
             <label className="block text-black uppercase font-bold">
               Contraseña
@@ -111,43 +110,42 @@ function WelcomePage() {
       <div id="about-project" className="  mb-2"
       >
         <h1 className=" text-center items-center text-4xl py-5 font-bold">EcoPoints: un aliado para un futuro sostenible</h1>
-        <p className="text-center items-center text-xl py-5">¿Sabían que el reciclaje es una de las piezas clave para construir un futuro más sostenible con el medio ambiente?</p>
-        <p className="text-center items-center text-xl py-5 italic"> <b>EcoPoints</b> es una innovadora aplicación que está revolucionando la forma en que reciclamos en <b>Cataluña</b> y <b>España</b>.</p>      
+        <p className="text-center items-center text-lg mx-auto py-5">¿Sabían que el reciclaje es una de las piezas clave para construir un futuro más sostenible con el medio ambiente?</p>
+        <p className="text-center items-center text-lg mx-auto py-5 italic"> <b>EcoPoints</b> es una innovadora aplicación que está revolucionando la forma en que reciclamos en <b>Cataluña</b> y <b>España</b>.</p>
       </div>
       {/* Graficos  */}
-      <div className="container mx-auto items-center  rounded-md " >
-        <div >
+      <div className="Grafico">
+        <div className=" mx-auto items-center  rounded-md " >
+          <h2 className=" text-center items-center text-4xl mb-10  mt-5 py-5 font-bold ">Evolución Reciclaje España</h2>
           <GraficaEsp />
-        </div  >
-      </div>
+        </div>
 
-      <div className="container mx-auto items-center  rounded-md " >
-        <h2 className=" text-center items-center mx-auto text-5xl py-5  mb-10 mt-10 ">Evolución Reciclaje Cataluña</h2>
-        <div >
-          <GraficaCat />
-        </div  >
-      </div>
+        <div className="  mx-auto items-center  rounded-md " >
+          <h2 className="text-center items-center text-4xl mb-10  mt-5 py-5 font-bold ">Evolución Reciclaje Cataluña</h2>
+          < GraficaCat />
+        </div>
 
-      <div className="container mx-auto items-center  rounded-md " >
-        <h2 className=" text-center items-center mx-auto text-5xl py-5  mb-10 mt-10 ">Predicción % Residuos Selectivos</h2>
-        <div >
+        <div className=" mx-auto items-center  rounded-md " >
+          <h2 className="text-center items-center text-4xl
+          mt-5 py-5 font-bold">Predicción % Residuos Selectivos</h2>
           <GraficaComp />
-        </div  >
+        </div>
       </div>
 
+      <div className=" border-solid border border-black w-1/2 items-center mt-10 mx-auto mb-10"  ></div>
       <div>
-        <p>En GreenTech no nos conformamos con estos datos y para mejorar estas cifras y promover el reciclaje, GreenTech ha desarrollado 
-          una aplicación llamada EcoPoints, que busca incentivar y facilitar el proceso de reciclaje tanto en España como en Cataluña.
-          Con iniciativas como EcoPoints, se espera que más personas se involucren en el reciclaje y se contribuya a alcanzar los ambiciosos 
-          objetivos de la ONU para un futuro más sostenible y amigable con el medio ambiente. </p>
-          <br />
+        <p className="text-center items-center text-lg mx-auto py-5 ml-16 mr-16 "  >En <b>GreenTech</b> no nos conformamos con estos datos y para mejorar estas cifras y promover el reciclaje, GreenTech ha desarrollado
+          una aplicación llamada <b>EcoPoints</b>, que busca incentivar y facilitar el proceso de reciclaje tanto en <b>España</b> como en <b>Cataluña</b>.
+          Con iniciativas como EcoPoints, se espera que más personas se involucren en el reciclaje y se contribuya a alcanzar los ambiciosos
+          objetivos de la <b>UE</b> para un futuro más sostenible y amigable con el medio ambiente. </p>
+        <br />
       </div>
 
       <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" id="Como_funciona" ></div>
       {/* Como Funciona */}
       <div>
 
-        <h1 className=" text-center items-center text-4xl py-5 mb-20 font-bold">¿Cómo funciona?</h1>
+        <h1 className=" text-center items-center text-4xl py-5 mb-16 font-bold">¿Cómo funciona?</h1>
         <div className="  mb-20 grid md:flex-auto md:grid-cols-6 rounded-md " >
           <div >
             <img className=" w-1/4 py-2 px-2 mx-auto mb-2 hover:scale-105 " src="ecological-house.png" />
@@ -187,7 +185,7 @@ function WelcomePage() {
         <div >
           <img id="img-empresa" src="gg.png" />
         </div>
-        <p id="frase-greentech" className="col-span-1  text-center items-center"><b>EcoPoints</b> es una iniciativa de <b>GreenTech</b>, una empresa IoT dedicada a la sostenibilidad, que premia
+        <p id="frase-greentech" className="col-span-1 text-center items-center text-base mx-auto  "><b>EcoPoints</b> es una iniciativa de <b>GreenTech</b>, una empresa IoT dedicada a la sostenibilidad, que premia
           tu responsabilidad medioambiental a través de un Sistema de Devolución y Recompensa. Cada vez que reciclas en nuestros contenedores de tu ciudad, recibes <b>EcoPoints</b>, que puedes canjear por premios.
           <br /> <br /> Nuestro enfoque combina la tecnología con el compromiso de construir un mundo más sostenible a través del reciclaje inteligente y accesible para todos.
           Con <b>EcoPoints</b> ganas tú y gana el medio ambiente, porque cada pequeña acción cuenta en la construcción de un mundo más verde y sostenible. Únete a la comunidad <b>EcoPoints</b> y sé parte
@@ -201,47 +199,79 @@ function WelcomePage() {
 
 
 
-      <Chat/>
+
       {/* Footer */}
       <footer className="  bg-green-500">
-        <div className="  grid md:grid-cols-3  ">
+        <Chat />
+        <div className="  grid md:grid-cols-4  ">
           <div className=" col-span-1 text-xl mb-8  lg:mr-7 text-center items-center "  >
-            <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white">Sobre Nosotros</h1>
+            <h1 className="pt-4 col-span-1 text-sm mb-5 lg:mr-7 font-bold text-white">Sobre Nosotros</h1>
             <ul className="">
               <li>
-                <a href='#' className=' text-center col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-center text-white'>Quienes Somos</a>
+                <a href='#' className=' col-span-1 text-sm mb-5  lg:mr-7 hover:text-black text-center text-white'>Quienes Somos</a>
               </li>
             </ul>
             <ul className="">
               <li>
-                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-center text-white'>Blog</a>
+                <a href='#' className=' col-span-1 text-sm mb-5  lg:mr-7 hover:text-black text-center text-white'>Blog</a>
               </li>
+
             </ul>
+
           </div>
           <div className=" col-span-1 text-xl mb-8 lg:mr-7 text-center items-center "  >
-            <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white" >GreenTech</h1>
+            <h1 className="pt-4 col-span-1 text-sm mb-5 lg:mr-7 font-bold text-white" >GreenTech</h1>
             <ul className=" ">
               <li>
-                <a href='#' className=' col-span-1 text-xl mb-8 lg:mr-7 hover:text-black text-white'>Productos</a>
+                <a href='#' className=' col-span-1 text-sm mb-8 lg:mr-7 hover:text-black text-white'>Productos</a>
               </li>
             </ul>
           </div>
           <div className=" col-span-1 text-xl mb-8 lg:mr-7 text-center items-center "  >
-            <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white"  >Ayuda y soporte</h1>
+            <h1 className="pt-4 col-span-1 text-sm mb-5 lg:mr-7 font-bold text-white"  >Ayuda y soporte</h1>
             <ul className="">
               <li>
-                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-white'>Contacto</a>
+                <a href='#' className=' col-span-1 text-sm mb-5  lg:mr-7 hover:text-black text-white'>Contacto</a>
               </li>
             </ul>
             <ul className="">
               <li>
-                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-white'>Inicio</a>
+                <a href='#' className=' col-span-1 text-sm mb-5  lg:mr-7 hover:text-black text-white'>Inicio</a>
               </li>
             </ul>
+          </div>
+          <div className=" col-span-1 text-xl mb-8  lg:mr-7 text-center items-center "  >
+            <h1 className="pt-4 col-span-1 text-sm mb-5 lg:mr-7 font-bold text-white">Equipo</h1>
+
+
+            <ul className="">
+              <li>
+                <a href={linkedInProfileUrlNestor} target="_blank" className=' col-span-1 text-sm mb-5 hover:text-black lg:mr-7  text-white'>FrontEnd: Nestor OLivera</a>
+              </li>
+            </ul>
+            <ul className="">
+              <li>
+                <a href={linkedInProfileUrlDaniBenitez} target="_blank" className=' col-span-1 text-sm mb-5  lg:mr-7 hover:text-black text-white'>BackEnd: Daniel Benitez</a>
+              </li>
+            </ul>
+            <ul className="">
+              <li>
+                <a href={linkedInProfileUrlDaniCasanova} target="_blank" className=' col-span-1 text-sm mb-5  lg:mr-7 hover:text-black text-white'>Data Science: Daniel Casanova</a>
+              </li>
+            </ul>
+
+
+
           </div>
         </div>
         <div>
 
+
+
+
+
+          <p className="ml-5 text-center "> <b>© 2023 Greentech. Todos los derechos reservados.</b>
+          </p>
         </div>
 
       </footer >
