@@ -1,0 +1,31 @@
+<!-- VERSIÓN PRUEBA CHATBOT CON API JS, TEXO RIVESCRIPT E IMPLEMENTACIÓN HTML -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://unpkg.com/rivescript/dist/rivescript.min.js"></script>
+</head>
+
+<body>
+  <img id="chatbot-icon" src="icon.png" alt="Chatbot Icon">
+  <div id="chat-container" class="hidden">
+    <div id="chat-header">
+      <div id="chat-toggle-header">
+        <span id="chat-toggle-icon">&#x1F4AC;</span>
+      </div>
+      <div id="chat-title">Asistente Virtual Quimi</div>
+    </div>
+    <div id="chat-body">
+      <div id="chat-messages"></div>
+      <div id="chat-input">
+        <input type="text" id="user-input" placeholder="Escribe un mensaje...">
+        <button id="send-button">Enviar</button>
+      </div>
+    </div>
+  </div>
+  <script src="chatbot.js"></script>
+</body>
+
+</html>

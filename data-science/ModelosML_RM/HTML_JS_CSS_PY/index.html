@@ -1,0 +1,132 @@
+<!-- FRONTEND VISUAL PARA FORMULARIO Y PREDECIR CON LOS MODELOS LA CANTIDAD DE RESIDUOS
+GENERADOS EN UN AÑO PARA UNA PERSONA CON "x" CARACTERÍSTICAS. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción de Reciclaje</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1><u>Predicción de Reciclaje Residuos</u> ♻️</h1>
+        <p>La siguiente predicción muestra la cantidad de material reciclado y su peso estimado de manera ANUAL según el
+            perfil de la persona.</p>
+        <p><u>Cómo funciona la predicción:</u> Debes el número correspondiente de la palabra, en las celdas blancas.</p>
+        <form id="prediction-form" method="post" action="http://localhost:5000/predict">
+
+            <table class="variable-table">
+                <tr>
+                    <th>Edad:</th>
+                    <td>entre 12 y 100</td>
+                    <td><input type="number" id="edad" min="12" max="100" required></td>
+                </tr>
+                <tr class="linia">
+                    <th>Género:</th>
+                    <td>masculino: 0</td>
+                    <td>Femenino: 1</td>
+                    <td><input type="number" id="genero" min="0" max="1" required></td>
+                </tr>
+                <tr class="linia">
+                    <th>Estado Civil:</th>
+                    <td>soltero/soltera: 0</td>
+                    <td>separado/separada: 1</td>
+                    <td>casado/casada: 2</td>
+                    <td>viudo/viuda: 3</td>
+                    <td><input type="number" id="estado_civil" min="0" max="3" required></td>
+                </tr>
+                <tr class="linia">
+                    <th>Número de hijos:</th>
+                    <td>entre 0 y 4.</td>
+                    <td><input type="number" id="num_hijos" min="0" max="4" required></td>
+                </tr>
+                <tr class="linia">
+                    <th>Tipo de vivienda:</th>
+                    <td>piso: 0</td>
+                    <td>apartamento: 1</td>
+                    <td>chalet: 2</td>
+                    <td>loft: 3</td>
+                    <td><input type="number" id="tipo_vivienda" min="0" max="3" required></td>
+                </tr>
+                <tr class="linia">
+                    <th rowspan="2">Nivel de estudios:</th>
+                    <td>sin estudios: 0</td>
+                    <td>educación primaria: 1</td>
+                    <td>educación secundaria: 2</td>
+                    <td>bachillerato: 3</td>
+                    <td rowspan="2"><input type="number" id="nivel_estudios" min="0" max="7" required></td>
+                </tr>
+                <tr>
+                    <td>técnico o formación profesional: 4</td>
+                    <td>universidad (licenciatura/grado): 5</td>
+                    <td>posgrado (maestría/máster): 6</td>
+                    <td>doctorado: 7</td>
+                    
+                    
+                </tr>
+                <tr class="linia">
+                    <th rowspan="7">Profesión:</th>
+                    <td>administrativo/a: 0</td>
+                    <td>arquitecto/a: 1</td>
+                    <td>asistente administrativo/a: 2</td>
+                    <td>contador/a: 3</td>
+                    <td rowspan="7"><input type="number" id="profesion" min="0" max="23" required></td>
+                </tr>
+                <tr>
+                    <td>diseñador/a: 4</td>
+                    <td>ingeniero/a: 5</td>
+                    <td>médico/a: 6</td>
+                    <td>profesor/a: 7</td>
+                    
+                </tr>
+                <tr>
+                    <td>programador/a: 8</td>
+                    <td>estudiante: 9</td>
+                    <td>trabajador/a social: 10</td>
+                    <td>empresario/a: 11</td>
+                    
+                </tr>
+                <tr>
+                    <td>abogado/a: 12</td>
+                    <td>comerciante: 13</td>
+                    <td>periodista: 14</td>
+                    <td>investigador/a: 15</td>
+                    
+                </tr>
+                <tr>
+                    <td>artista: 16</td>
+                    <td>obrero/a: 17</td>
+                    <td>agricultor/a: 18</td>
+                    <td>fontanero/a: 19</td>
+                    
+                </tr>
+                <tr>
+                    <td>jardinero/a: 20</td>
+                    <td>repartidor/a: 21</td>
+                    <td>electricista: 22</td>
+                    <td>otro: 23</td>
+                    
+                    
+                </tr>
+            </table>
+
+            <button type="submit">Obtener predicción</button>
+        </form>
+
+        <h2>Resultados de la predicción:</h2>
+        <div class="results">
+            <p>Cantidad de aluminio: <span id="cant_aluminio"></span></p>
+            <p>Cantidad de plástico: <span id="cant_plastico"></span></p>
+            <p>Cantidad de cristal: <span id="cant_cristal"></span></p>
+            <p>Peso de papel: <span id="kg_papel"></span> </p>
+            <p>Peso de orgánico: <span id="kg_organico"></span></p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
