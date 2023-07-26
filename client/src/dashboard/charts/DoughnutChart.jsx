@@ -111,7 +111,7 @@ function DoughnutChart({
 
   useEffect(() => {
     if (!chart) return;
-
+  
     if (darkMode) {
       chart.options.plugins.tooltip.titleColor = tooltipTitleColor.dark;
       chart.options.plugins.tooltip.bodyColor = tooltipBodyColor.dark;
@@ -123,8 +123,11 @@ function DoughnutChart({
       chart.options.plugins.tooltip.backgroundColor = tooltipBgColor.light;
       chart.options.plugins.tooltip.borderColor = tooltipBorderColor.light;
     }
+    
+    // Actualizar los datos del gráfico
+    chart.data = data;
     chart.update('none');
-  }, [currentTheme]);
+  }, [currentTheme, chart, data]);
 
   return (
     <div className="grow flex flex-col justify-center">
