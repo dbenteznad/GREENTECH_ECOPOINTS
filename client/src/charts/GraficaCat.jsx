@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from "react";
 import Chart from "chart.js/auto";
 import "chartjs-plugin-datalabels";
@@ -38,8 +39,8 @@ const GraficaCat = () => {
       datasets: [
         {
           label: "Total Selectivo",
-          backgroundColor: "rgba(75, 192, 192, 0.2)",
-          borderColor: "rgba(75, 192, 192, 1)",
+          backgroundColor: 'rgba(144,238,144, 0.2)',
+          borderColor: 'rgba(60,179,113, 1)',
           borderWidth: 1,
           type: "bar",
           data: [
@@ -68,8 +69,8 @@ const GraficaCat = () => {
           ],
           yAxisID: "bar-y-axis",
           stack: "Stack 2",
-          hoverBackgroundColor: "rgba(75, 192, 192, 0.4)",
-          hoverBorderColor: "rgba(75, 192, 192, 2)",
+          hoverBackgroundColor: 'rgba(144,238,144, 0.4)',
+          hoverBorderColor: 'rgba(60,179,113, 2)',
           datalabels: {
             align: "center",
             anchor: "center",
@@ -81,8 +82,8 @@ const GraficaCat = () => {
         },
         {
           label: "% Selectivo",
-          backgroundColor: "rgba(75, 192, 192, 0.2)",
-          borderColor: "rgba(75, 192, 192, 1)",
+          backgroundColor: 'rgba(144,238,144, 0.2)',
+          borderColor: 'rgba(60,179,113, 1)',
           data: [
             13.96,
             16.85,
@@ -109,8 +110,8 @@ const GraficaCat = () => {
           ],
           yAxisID: "line-y-axis",
           type: "line",
-          hoverBorderColor: "rgba(75, 192, 192, 2)",
-          hoverBackgroundColor: "rgba(75, 192, 192, 0.4)",
+          hoverBorderColor: 'rgba(144,238,144, 2)',
+          hoverBackgroundColor: 'rgba(60,179,113, 0.4)',
           datalabels: {
             align: "bottom",
             anchor: "end",

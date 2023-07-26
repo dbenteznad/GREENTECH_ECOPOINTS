@@ -6,7 +6,7 @@ const auth = require("./auth");
 const app = express();
 
 // Setup server port 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4000;
 
 // Curb Cores Error agregando un encabezado aquí
 app.use((req, res, next) => {
@@ -33,9 +33,15 @@ app.get('/', (req, res) => {
 
 // Configurar las rutas
 const usuariosRoutes = require("./routes/usuarios.routes.js");
+const tarjetasRoutes = require("./routes/tarjetas.routes.js");
+const contenedoresRoutes = require("./routes/contenedores.routes.js");
+const accionesRoutes = require("./routes/acciones.routes.js");
 
 // Utilizando el enrutador como middleware
 app.use('/api/v1/usuarios', usuariosRoutes);
+app.use('/api/v1/tarjetas', tarjetasRoutes);
+app.use('/api/v1/contenedores', contenedoresRoutes);
+app.use('/api/v1/acciones', accionesRoutes);
 
 // Endpoint libre
 app.get("/free-endpoint", (request, response) => {

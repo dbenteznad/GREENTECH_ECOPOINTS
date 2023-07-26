@@ -2,10 +2,18 @@
     height: 70px;
 }
 
+@media screen and (max-width: 390px) {
+    #EcopointsLogo {
+        height: 40px;
+    }
+}
+
 @media screen and (max-width: 720px) {
     #menu {
         margin-top: 20%;
+        
     }
+ 
 }
 
 @media screen and (max-width: 720px) {

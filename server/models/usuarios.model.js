@@ -136,7 +136,7 @@ const findAll = async () => {
 };
 
 // Actualizar un usuario
-const updateByEmail = async (email, datosActualizados) => {
+const updateUser = async (email, datosActualizados) => {
   try {
     const [numFilasActualizadas, usuariosActualizados] = await Usuario.update(datosActualizados, {
       where: { email }

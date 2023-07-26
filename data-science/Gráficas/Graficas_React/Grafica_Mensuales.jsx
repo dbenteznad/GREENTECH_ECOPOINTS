@@ -1,5 +1,3 @@
-// GRÁFICA QUESITO CON CHART.JS CON DATOS RECICLAJE USUARIO VISIBLE PARA ELLOS.
-
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import 'chartjs-plugin-datalabels';
@@ -50,11 +48,10 @@ const Grafica_Mensual = () => {
     }, []);
 
     return (
-        <div className='col-span-1 mb-5 hover:scale-110'>
-            <canvas className='w-1/2' ref={chartRef} />
+        <div className='col-span-1 mb-5 '>
+            <canvas className=' hover:scale-105 w-1/2 sm:w-1/3' ref={chartRef} />
         </div>
     );
 };
 
 export default Grafica_Mensual;
-

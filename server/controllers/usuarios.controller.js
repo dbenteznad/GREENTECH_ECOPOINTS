@@ -104,7 +104,7 @@ exports.findById = async function (req, res) {
     }
 };
 
-exports.updateUser = async function (req, res) {
+exports.updateUserByEmail = async function (req, res) {
     try {
         // Obtener el email del usuario a actualizar desde los parámetros de la URL
         const email = req.params.email;
@@ -142,5 +142,31 @@ exports.deleteById = async function (req, res) {
     } catch (error) {
         console.error('Error al eliminar el usuario:', error);
         res.status(500).json({ error: true, message: 'Error al eliminar el usuario' });
+    }
+};
+
+
+// Otros controladores
+exports.getGenderDistribution = async function (req, res) {
+    try {
+        const { gender } = req.query; // Obtener el género seleccionado desde los parámetros de la URL
+
+        // Si se selecciona un género específico, filtrar por ese género
+        // De lo contrario, obtener todos los usuarios
+        const usuarios = gender
+            ? await Usuario.findAll({ where: { genero: gender } })
+            : await Usuario.findAll();
+
+        // Contar la cantidad de usuarios masculinos y femeninos
+        let maleCount = usuarios.filter((user) => user.genero === 'masculino').length;
+        let femaleCount = usuarios.filter((user) => user.genero === 'femenino').length;
+
+        res.json({
+            maleCount,
+            femaleCount,
+        });
+    } catch (error) {
+        console.error('Error al obtener la distribución de género:', error);
+        res.status(500).json({ error: true, message: 'Error al obtener la distribución de género' });
     }
 };

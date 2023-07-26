@@ -7,7 +7,10 @@ import videoBG from '../assets/video_home1.mp4'
 import Grafica_Semanal from "../charts/Grafica_Semanal";
 import Grafica_Mensual from "../charts/Grafica_Mensuales"
 import { Carousel } from 'react-responsive-carousel';
+import Chat from "../partials/ChatBot";
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
+// Frases del Carrusel
 
 const phrases = [
     "Reciclar es la oportunidad de transformar el pasado en un futuro sostenible.",
@@ -40,20 +43,21 @@ const phrases = [
 
 
 function Home() {
-
+    const linkedInProfileUrlNestor = 'https://www.linkedin.com/in/néstorolivera';
+    const linkedInProfileUrlDaniCasanova = 'https://www.linkedin.com/in/daniel-ben%C3%ADtez-nadal-85388126b/';
+    const linkedInProfileUrlDaniBenitez = 'https://www.linkedin.com/in/danicf/';
     return (
 
         <>
 
             <NavBar_Home />
             {/* tarjeta */}
-            <div id="Sesion" className="mb-10" >
+            <div id="Sesion" className="mb-10 " >
 
                 <div class="contenedor">
                     <section className="tarjeta" id="tarjeta">
                         <div className="delantera">
                             <div className="logo-marca" id="logo-marca">
-                                {/* <img src="img/logos/visa.png" alt="" /> */}
                             </div>
                             <img src=".../../public/EcoPoint.png" className="chip" alt="" />
                             <div className="datos">
@@ -84,11 +88,11 @@ function Home() {
                     </div>
                     <video id="video-hero" src={videoBG} autoPlay loop muted></video>
                 </div>
-                {/* <a href='Premios' className='text-black uppercase text-left mx-auto hover:text-blue-600 lg:mr-7 mb-8 lg:mb-0'>Ver Mas</a> */}
             </div>
-            <div id="premios" className="container mx-auto grid md:grid-cols-3">
 
-                <div className="py-5 col-span-1 rounded-lg mr-4 mb-6  hover:scale-110 bg-emerald-500" >
+            <div id="premios" className="container mx-auto grid mt-20 md:grid-cols-3">
+
+                <div className="py-5 col-span-1 rounded-lg mr-4  mb-6  hover:scale-105 bg-emerald-500" >
                     {/* premio1 */}
                     <h1 className="text-center text-lg mb-2 "><b>Premio 1</b></h1>
                     <img className=" h-2/3 mx-auto rounded-xl" src="premio1.png" />
@@ -97,14 +101,14 @@ function Home() {
 
                 </div>
                 {/* premio2 */}
-                <div className=" py-5 col-span-1 rounded-lg  mr-4 mb-6 hover:scale-110  bg-emerald-500" >
+                <div className=" py-5 col-span-1 rounded-lg  mr-4 mb-6 hover:scale-105  bg-emerald-500" >
                     <h1 className="text-center text-lg mb-2 " ><b>Premio 2</b></h1>
                     <img className=" h-2/3 mx-auto rounded-xl" src="premio2.jpg" />
                     <h1 className="text-center"><b>Puntos:</b></h1>
                     <h1 className="text-center">2000</h1>
                 </div>
                 {/* Premio3 */}
-                <div className="py-5 col-span-1 rounded-md hover:scale-110    mr-4 mb-6 bg-emerald-500" >
+                <div className="py-5 col-span-1 rounded-md hover:scale-105    mr-4 mb-6 bg-emerald-500" >
 
                     <h1 className="text-center text-lg mb-2 text"><b>Premio 3</b></h1>
                     <img className=" h-2/3 mx-auto rounded-xl" src="premio3.jpg" />
@@ -114,7 +118,7 @@ function Home() {
             </div >
             <a href="Premios" className="hover:text-blue-600 text-lg flex flex-row-reverse mr-12 ">Ver Mas</a>
             <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" ></div>
-            <h1 className="text-center mt-25 items-center text-7xl py-5 font-mono ">Sabias que?</h1>
+            <h1 className="text-center items-center text-4xl mb-10  mt-5 py-5 font-bold ">¿Sabias que?</h1>
             <div className="App  border-solid text-2xl bg-green-500 italic rounded-3xl p-5">
                 <Carousel showThumbs={false}>
                     {phrases.map((phrase, index) => (
@@ -126,85 +130,101 @@ function Home() {
             </div>
             <div className=" border-solid border border-black w-1/2 items-center mx-auto mt-10 mb-10" ></div>
 
-            <h1 className="text-center mt-25 items-center text-7xl py-5 font-mono mb-5 ">Estadisticas</h1>
+            <h1 className="text-center items-center text-4xl mb-10  mt-5 py-5 font-bold">Estadisticas</h1>
 
 
             <div className="bg-gradient-to-r from-green-700 from-10% via-green-500 via-30% to-emerald-500 to-90% mb-2">
 
             </div>
 
+{/* Graficos  */}
 
-
-            <div className=" container mx-auto grid md:grid-cols-2">
-
-
-
-                <div className=" col-span-1 rounded-lg   font-mono" >
-                    <h1 className="text-center text-lg mb-10 ">Semanal</h1>
+            <div className="Grafico2 container mx-auto grid md:grid-cols-2">
+                <div className=" col-span-1 rounded-lg   " >
+                    <h1 className="text-center text-lg mb-10"> <b>Semanal</b></h1>
                     <Grafica_Semanal />
                 </div>
-                <div className=" col-span-1 rounded-lg    font-mono" >
-                    <h1 className="text-center text-lg mb-10">Mensual</h1>
+                <div className=" col-span-1 rounded-lg " >
+                    <h1 className="text-center text-lg mb-10"> <b>Mensual</b></h1>
                     <Grafica_Mensual />
                 </div>
-
-
-
             </div>
-
-
-
-
-
-
-
-
-
-
             {/* Footer */}
+            
             <footer className="  bg-green-500">
-                <div className="  grid md:grid-cols-3  ">
-                    <div className=" col-span-1 text-xl mb-8  lg:mr-7 text-center items-center "  >
-                        <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white">Sobre Nosotros</h1>
-                        <ul className="">
-                            <li>
-                                <a href='#' className='  col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-center text-white'>Quienes Somos</a>
-                            </li>
-                        </ul>
-                        <ul className="">
-                            <li>
-                                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-center text-white'>Blog</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className=" col-span-1 text-xl mb-8 lg:mr-7 text-center items-center "  >
-                        <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white" >GreenTech</h1>
-                        <ul className=" ">
-                            <li>
-                                <a href='#' className=' col-span-1 text-xl mb-8 lg:mr-7 hover:text-black text-white'>Productos</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className=" col-span-1 text-xl mb-8 lg:mr-7 text-center items-center "  >
-                        <h1 className="pt-4 col-span-1 text-xl mb-8 lg:mr-7 font-bold text-white"  >Ayuda y soporte</h1>
-                        <ul className="">
-                            <li>
-                                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-white'>Contacto</a>
-                            </li>
-                        </ul>
-                        <ul className="">
-                            <li>
-                                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-black text-white'>Inicio</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
+        <Chat />
+        <div className="  grid md:grid-cols-4  ">
+          <div className=" col-span-1 text-xl mb-8  lg:mr-7 text-center items-center "  >
+            <h1 className="pt-4 col-span-1 text-sm mb-5 lg:mr-7 font-bold text-white">Sobre Nosotros</h1>
+            <ul className="">
+              <li>
+                <a href='#' className=' col-span-1 text-sm mb-5  lg:mr-7 hover:text-black text-center text-white'>Quienes Somos</a>
+              </li>
+            </ul>
+            <ul className="">
+              <li>
+                <a href='#' className=' col-span-1 text-sm mb-5  lg:mr-7 hover:text-black text-center text-white'>Blog</a>
+              </li>
 
-                </div>
+            </ul>
 
-            </footer >
+          </div>
+          <div className=" col-span-1 text-xl mb-8 lg:mr-7 text-center items-center "  >
+            <h1 className="pt-4 col-span-1 text-sm mb-5 lg:mr-7 font-bold text-white" >GreenTech</h1>
+            <ul className=" ">
+              <li>
+                <a href='#' className=' col-span-1 text-sm mb-8 lg:mr-7 hover:text-black text-white'>Productos</a>
+              </li>
+            </ul>
+          </div>
+          <div className=" col-span-1 text-xl mb-8 lg:mr-7 text-center items-center "  >
+            <h1 className="pt-4 col-span-1 text-sm mb-5 lg:mr-7 font-bold text-white"  >Ayuda y soporte</h1>
+            <ul className="">
+              <li>
+                <a href='#' className=' col-span-1 text-sm mb-5  lg:mr-7 hover:text-black text-white'>Contacto</a>
+              </li>
+            </ul>
+            <ul className="">
+              <li>
+                <a href='#' className=' col-span-1 text-sm mb-5  lg:mr-7 hover:text-black text-white'>Inicio</a>
+              </li>
+            </ul>
+          </div>
+          <div className=" col-span-1 text-xl mb-8  lg:mr-7 text-center items-center "  >
+              <h1 className="pt-4 col-span-1 text-sm mb-5 lg:mr-7 font-bold text-white">Equipo</h1>
 
+
+              <ul className="">
+              <li>
+                <a href={linkedInProfileUrlNestor}  target="_blank" className=' col-span-1 text-sm mb-5 hover:text-black lg:mr-7  text-white'>FrontEnd: Nestor OLivera</a>
+              </li>
+            </ul>
+            <ul className="">
+              <li>
+                <a href={linkedInProfileUrlDaniBenitez} target="_blank"  className=' col-span-1 text-sm mb-5  lg:mr-7 hover:text-black text-white'>BackEnd: Daniel Benitez</a>
+              </li>
+            </ul>
+            <ul className="">
+              <li>
+                <a href={linkedInProfileUrlDaniCasanova} target="_blank"  className=' col-span-1 text-sm mb-5  lg:mr-7 hover:text-black text-white'>Data Science: Daniel Casanova</a>
+              </li>
+            </ul>
+             
+              
+              
+            </div>
+        </div>
+        <div>
+          
+            
+         
+
+
+          <p className="ml-5 text-center "> <b>© 2023 Greentech. Todos los derechos reservados.</b>
+          </p>
+        </div>
+
+      </footer >
 
 
 

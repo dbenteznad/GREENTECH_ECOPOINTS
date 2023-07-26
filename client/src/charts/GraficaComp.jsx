@@ -1,4 +1,3 @@
-// GRÁFICA COMPARATIVA (esp-cat-ue) CON PLOTLY.JS
 
 import React, { useEffect } from "react";
 import Plotly from "plotly.js-dist";
@@ -196,20 +195,21 @@ function GraficaComp() {
         <div className="w-full relative" id="comparativa"></div>
       </div>
       <div className="span-col-1 items-center text-center relative">
-        <p className="mt-44 mr-4 items-center text-right ">
-          Pero, ¿qué nos depara el futuro? La UE ha establecido objetivos
+        <p className="mt-14 mr-4 items-center text-right text-xl">
+          Pero, ¿qué nos depara el futuro? La <b>UE</b> ha establecido objetivos
           ambiciosos para el reciclaje, y es necesario que los países miembros
           los alcancen. Para el año 2020, se esperaba llegar al 50% del total
           selectivo, y lamentablemente no lo hemos cumplido. ¿Seremos capaces de
           alcanzar el 55% para el 2025, el 60% para el 2030 y finalmente el 65%
           para el 2035?
           <br />
-          Es ahí donde entra en juego EcoPoints. Hemos realizado predicciones
-          con datos oficiales tanto de España como de Cataluña para estimar si
-          alcanzaremos estos objetivos. Si seguimos la dinámica actual, Cataluña
+          <br />
+          Es ahí donde entra en juego <b>EcoPoints</b> . Hemos realizado predicciones
+          con datos oficiales tanto de <b>España</b> como de <b>Cataluña</b> para estimar si
+          alcanzaremos estos objetivos. Si seguimos la dinámica actual, <b>Cataluña</b>
           se quedaría un poco por debajo de los objetivos, alcanzando un
-          admirable 66% para el 2035. En cambio, España se encontraría en un
-          57%, por debajo del ambicioso 65% propuesto por la UE
+          admirable 66% para el 2035. En cambio, <b>España</b> se encontraría en un
+          57%, por debajo del ambicioso 65% propuesto por la <b>UE</b>.
         </p>
       </div>
     </div>

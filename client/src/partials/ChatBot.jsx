@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "Style_Chatbot.css";
+import "../styles/Style_ChatBot.css";
 
 function Chat() {
   const [isChatOpen, setChatOpen] = useState(false);
@@ -7,7 +7,7 @@ function Chat() {
   const [messages, setMessages] = useState([]);
   const chatBodyRef = useRef(null);
 
-  // Mensaje por defecto al abrir el chat
+// Mensaje por defecto al abrir el chat
   useEffect(() => {
     setMessages([
       {
@@ -17,7 +17,7 @@ function Chat() {
     ]);
   }, []);
 
-  //El chat baja de manera autómatica después de cada input.
+  //El chat baja de manera autómatica después de cada input. 
   useEffect(() => {
     if (chatBodyRef.current) {
       chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
@@ -141,6 +141,7 @@ function Chat() {
       }
     }
   };
+
 
   // Contenedor del chat con estilos css.
   return (
