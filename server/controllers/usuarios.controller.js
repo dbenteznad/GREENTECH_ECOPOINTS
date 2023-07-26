@@ -147,7 +147,6 @@ exports.deleteById = async function (req, res) {
 
 
 // Otros controladores
-
 exports.getGenderDistribution = async function (req, res) {
     try {
         const { gender } = req.query; // Obtener el género seleccionado desde los parámetros de la URL
@@ -159,15 +158,8 @@ exports.getGenderDistribution = async function (req, res) {
             : await Usuario.findAll();
 
         // Contar la cantidad de usuarios masculinos y femeninos
-        let maleCount = 0;
-        let femaleCount = 0;
-        usuarios.forEach((user) => {
-            if (user.genero === 'masculino') {
-                maleCount++;
-            } else if (user.genero === 'femenino') {
-                femaleCount++;
-            }
-        });
+        let maleCount = usuarios.filter((user) => user.genero === 'masculino').length;
+        let femaleCount = usuarios.filter((user) => user.genero === 'femenino').length;
 
         res.json({
             maleCount,

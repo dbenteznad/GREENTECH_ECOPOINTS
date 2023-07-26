@@ -1,16 +1,15 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useThemeProvider } from '../utils/ThemeContext';
-
 import { chartColors } from './ChartjsConfig';
 import {
-  Chart, BarController, BarElement, LinearScale, TimeScale, Tooltip, Legend,
+  Chart, BarController, BarElement, LinearScale, CategoryScale, Tooltip, Legend,
 } from 'chart.js';
 import 'chartjs-adapter-moment';
 
 // Import utilities
 import { tailwindConfig, formatValue } from '../utils/Utils';
 
-Chart.register(BarController, BarElement, LinearScale, TimeScale, Tooltip, Legend);
+Chart.register(BarController, BarElement, LinearScale, CategoryScale, Tooltip, Legend);
 
 function BarChart01({
   data,
@@ -18,8 +17,7 @@ function BarChart01({
   height,
   formatValue
 }) {
-
-  const [chart, setChart] = useState(null)
+  const [chart, setChart] = useState(null);
   const canvas = useRef(null);
   const legend = useRef(null);
   const { currentTheme } = useThemeProvider();
@@ -30,7 +28,7 @@ function BarChart01({
     const ctx = canvas.current;
     // eslint-disable-next-line no-unused-vars
     const newChart = new Chart(ctx, {
-      type: 'bar',
+      type: 'bar', // Usa 'bar' para gráfico de barras verticales
       data: data,
       options: {
         layout: {
@@ -56,14 +54,7 @@ function BarChart01({
             },
           },
           x: {
-            type: 'time',
-            time: {
-              parser: 'MM-DD-YYYY',
-              unit: 'month',
-              displayFormats: {
-                month: 'MMM YY',
-              },
-            },
+            type: 'category', // Usa 'category' para gráfico de barras verticales
             border: {
               display: false,
             },
@@ -81,7 +72,7 @@ function BarChart01({
           },
           tooltip: {
             callbacks: {
-              title: () => false, // Disable tooltip title
+              title: () => false, // Deshabilita el título del tooltip
               label: (context) => formatValue(context.parsed.y),
             },
             bodyColor: darkMode ? tooltipBodyColor.dark : tooltipBodyColor.light,
@@ -203,3 +194,4 @@ function BarChart01({
 }
 
 export default BarChart01;
+

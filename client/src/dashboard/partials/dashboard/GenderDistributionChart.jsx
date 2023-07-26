@@ -12,14 +12,20 @@ const GenderDistributionChart = () => {
 
   const fetchData = async (gender) => {
     try {
-      let url = 'http://127.0.0.1:5000/api/v1/usuarios'; // Replace with your API endpoint for fetching user data
+      let url = `http://127.0.0.1:5000/api/v1/usuarios`;
       if (gender !== 'all') {
-        url += `?gender=${gender}`;
+        url += `?genero=${gender}`;
       }
       const response = await axios.get(url);
       const data = response.data;
+
+      // Contar la cantidad de usuarios masculinos y femeninos
       const maleCount = data.filter((user) => user.genero === 'masculino').length;
       const femaleCount = data.filter((user) => user.genero === 'femenino').length;
+
+      
+
+  
       setChartData({
         labels: ['Masculino', 'Femenino'],
         datasets: [

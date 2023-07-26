@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import BarChart from '../../charts/BarChart01';
+import BarChart01 from '../../charts/BarChart01'; // Actualiza la ruta de importación si es necesario
 
 const AgeDistributionChart = () => {
   const [chartData, setChartData] = useState(null);
@@ -47,7 +47,12 @@ const AgeDistributionChart = () => {
         <h2 className="font-semibold text-slate-800 dark:text-slate-100">Distribución de Edades</h2>
       </header>
       {chartData ? (
-        <BarChart data={chartData} formatValue={(value) => value.toString()} />
+        <BarChart01
+          data={chartData}
+          formatValue={(value) => value.toString()}
+          width={400} // Ajusta el ancho según tus necesidades
+          height={300} // Ajusta la altura según tus necesidades
+        />
       ) : (
         <p className="text-center p-4 text-slate-800 dark:text-slate-100">Cargando datos...</p>
       )}
@@ -56,3 +61,4 @@ const AgeDistributionChart = () => {
 };
 
 export default AgeDistributionChart;
+

@@ -5,17 +5,33 @@ import DoughnutChart from '../../charts/DoughnutChart';
 const RecyclingChart = () => {
   const [chartData, setChartData] = useState(null);
   const [selectedRecyclingType, setSelectedRecyclingType] = useState('all');
+  const [selectedGender, setSelectedGender] = useState('all');
 
   useEffect(() => {
-    fetchData(selectedRecyclingType);
-  }, [selectedRecyclingType]);
+    fetchData(selectedRecyclingType, selectedGender);
+  }, [selectedRecyclingType, selectedGender]);
 
-  const fetchData = async (recyclingType) => {
+  const fetchData = async (recyclingType, gender) => {
     try {
-      let url = 'http://127.0.0.1:5000/api/v1/usuarios/gender-distribution'; // Replace with your API endpoint for fetching user data
+      let url = 'http://127.0.0.1:5000/api/v1/usuarios'; // Replace with your API endpoint for fetching user data
+      
+      // Crear un array para almacenar los filtros
+      const filters = [];
+
       if (recyclingType !== 'all') {
-        url += `?recyclingType=${recyclingType}`;
+        filters.push(`recyclingType=${recyclingType}`);
       }
+
+      if (gender !== 'all') {
+        filters.push(`genero=${gender}`);
+      }
+
+      // Concatenar los filtros en la URL
+      if (filters.length > 0) {
+        url += `?${filters.join('&')}`;
+      }
+
+      
       const response = await axios.get(url);
       const data = response.data;
       const types = ['basura_papel', 'basura_plastico', 'basura_resto', 'basura_organico', 'basura_cristal'];
@@ -56,6 +72,15 @@ const RecyclingChart = () => {
           <option value="basura_resto">Resto</option>
           <option value="basura_organico">Orgánico</option>
           <option value="basura_cristal">Cristal</option>
+        </select>
+        <select
+          className="border rounded-md px-3 py-1 ml-4"
+          value={selectedGender}
+          onChange={(e) => setSelectedGender(e.target.value)}
+        >
+          <option value="all">Todos</option>
+          <option value="masculino">Masculino</option>
+          <option value="femenino">Femenino</option>
         </select>
       </div>
       {chartData ? (
