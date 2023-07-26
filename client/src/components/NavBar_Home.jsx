@@ -43,7 +43,7 @@ function NavBar_Home() {
                             <a href='Premios' className='text-white  hover:text-black lg:mr-7 mb-8 lg:mb-0 uppercase'>Premios</a>
                             <a href='#' className='text-white  hover:text-black lg:mr-7 mb-8 lg:mb-0 uppercase'>Mapa</a>
                             <a href='Foro' className='text-white  hover:text-black lg:mr-7 mb-8 lg:mb-0 uppercase'>Foro</a>
-                            <a href='Prediccion_Home' className='text-white   hover:text-black '>Estadistica</a>
+                            <a href='Prediccion_Home' className='text-white   hover:text-black uppercase '>Prediccion</a>
 
                         </div>
 
@@ -59,7 +59,7 @@ function NavBar_Home() {
                                         <a href="home" class="block px-4 py-2 hover:bg-green-400  ">Inicio</a>
                                     </li>
                                     <li>
-                                        <a href="Perfil" class="block px-4 py-2 hover:bg-green-400  " >Ajustes</a>
+                                        <a href="#" class="block px-4 py-2 hover:bg-green-400  " >Ajustes</a>
                                     </li>
                                     {/* logout */}
                                     <button type="submit" variant="danger" class="block px-4 py-2 hover:bg-green-400" onClick={() => logout()}>

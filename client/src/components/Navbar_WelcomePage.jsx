@@ -7,12 +7,14 @@ import '../styles/Navbar_WelcomePage.css'
 function Navbar_WelcomePage() {
   return (
     <>
-      <nav className='  py-5 bg-green-500 sticky top-0 shadow-md z-10'>
-        <div className='container mx-auto flex px-8 lg:px-0 ' >
+      <nav className='  py-5 sm:py-2 bg-green-500 sticky top-0 shadow-md z-20'>
+        <div className='container mx-auto flex px-8 sm:px-4 lg:px-0 ' >
           <button
            className='flex flex-grow items-center'>
+            {/* link para rederigirse a la welcomePage */}
            <Link to="/" rel="stylesheet" href='WelcomePage' > <img id='EcopointsLogo' className='hover:scale-110' src='EcoPointsLogo2.png' /> </Link>
           </button>
+          {/* hidden para que desaparezca cuando se minimiza */}
           <div className='flex lg:hidden'>
             <img id='menu-burguer' className='h-10 hover:scale-110' src='menu.png' onClick={openMenu} />
           </div>
@@ -22,7 +24,10 @@ function Navbar_WelcomePage() {
               <a href='#Por_que_proyecto'  className='  hover:text-black lg:mr-7 mb-8 lg:mb-0 text-white  '>Por qué el proyecto</a>
               <a href='#Como_funciona' className=' hover:text-black lg:mr-7 mb-8 lg:mb-0 text-white'>Cómo funciona</a>
               <a href='#sobre_nosotros' className=' hover:text-black lg:mr-7 mb-8 lg:mb-0 text-white'>Sobre nosotros </a>
-              <a href='Prediccion_WelcomePage' className='  hover:text-black text-white '>Estadistica</a>
+                  <a href='Prediccion_WelcomePage' className=' hover:text-black lg:mr-7 mb-8 lg:mb-0 text-white '>Prediccion</a>
+              <a href='#' className=' hover:text-black text-white '>Dashboard</a>
+          
+              
             </div>
             <div className='flex flex-col lg:flex-row text-center font-bold'>
               <a className='  text-white   py-2.5 px-4 rounded-md bg-emerald-800  hover:scale-110 lg:mr-4 mb-8 lg:mb-0' href='Login'>Iniciar sesión</a>

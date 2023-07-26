@@ -7,11 +7,11 @@ const Grafica_Semanal = () => {
 
   useEffect(() => {
     const data = {
-      labels: [' Plástico', 'Papel', 'Aluminio', 'Cristal', 'Orgánico'],
+      labels: ['Plástico', 'Cristal', 'Aluminio', 'Papel', 'Orgánico',],
       datasets: [
         {
-          data: [40, 20, 25, 5, 5],
-          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#33FF99', '#9966FF'],
+          data: [14, 7, 2, 4, 2],
+          backgroundColor: ['#FF6384', '#33FF99', '#FFCE56', '#36A2EB', '#9966FF', ],
         },
       ],
     };
@@ -23,12 +23,15 @@ const Grafica_Semanal = () => {
         legend: {
           position: 'bottom',
           align: 'center',
+          labels: {
+            usePointStyle: true,
+            boxWidth: 10,
+          },
         },
         datalabels: {
-          display: function (context) {
-            const dataset = data.datasets[context.datasetIndex];
-            return dataset.type === 'pie' || !dataset.hidden;
-          },
+          color: 'white',
+          anchor: 'end',
+          align: 'end',
         },
       },
     };
@@ -44,7 +47,10 @@ const Grafica_Semanal = () => {
     };
   }, []);
 
-  return (<div className='col-span-1 hover:scale-110 '><canvas className='w-1/2' ref={chartRef} /></div>)
+  return (
+    <div className='col-span-1 mb-5 '>
+      <canvas className=' hover:scale-105 w-1/2 sm:w-1/3' ref={chartRef} />
+    </div>
+  );
 };
-
 export default Grafica_Semanal;
