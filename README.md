@@ -2,7 +2,7 @@
 
 # EcoPoints - Sustainable Recycling Web Application
 
-![EcoPoints Logo]("./client/public/EcoPointsLogo.png")
+![EcoPoints Logo](./client/public/EcoPointsLogo.png)
 
 ## Project Description
 
@@ -28,7 +28,7 @@
 
 - **Back-End:** The Back-End utilizes Node.js, Express, and Sequelize to manage logic and communication with the MySQL database.
 
-- **Data Science:** For statistical analysis, we have employed Python and Anaconda, making use of libraries such as Numpy, Pandas, and Matplotlib.
+- **Data Science:** For statistical analysis, we have employed Python and Anaconda, making use of libraries such as Numpy, Pandas, and Matplotlib, Scikit-Learn.
 
 ## Registration Requirements
 
@@ -63,7 +63,7 @@ Join us on this journey towards a more sustainable and eco-friendly future!"
 
 # EcoPoints - Aplicación Web para el Reciclaje Sostenible
 
-![EcoPoints Logo]("./client/public/EcoPointsLogo.png")
+![EcoPoints Logo](./client/public/EcoPointsLogo.png)
 
 ## Descripción del Proyecto
 
@@ -89,7 +89,7 @@ Join us on this journey towards a more sustainable and eco-friendly future!"
 
 - **Back-End:** En el Back-End, se ha empleado Node.js, Express y Sequelize para gestionar la lógica y la comunicación con la base de datos MySQL.
 
-- **Data Science:** Para los análisis estadísticos, se ha utilizado Python y Anaconda, aprovechando las librerías Numpy, Pandas y Matplotlib.
+- **Data Science:** Para los análisis estadísticos, se ha utilizado Python y Anaconda, aprovechando las librerías Numpy, Pandas y Matplotlib, Scikit-Learn.
 
 ## Requisitos de Registro
 
