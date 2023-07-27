@@ -6,7 +6,7 @@ const auth = require("./auth");
 const app = express();
 
 // Setup server port 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5001;
 
 // Curb Cores Error agregando un encabezado aquí
 app.use((req, res, next) => {

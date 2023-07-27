@@ -9,15 +9,15 @@ function GraficaEsp() {
         datasets: [
             {
                 label: 'Total Selectivo',
-                backgroundColor: 'rgba(144,238,144, 0.2)',
-                borderColor: 'rgba(60,179,113, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 1,
                 type: 'bar',
                 data: [6522002, 6419769, 6343909, 7294915, 7950973, 7797424, 8451121, 8919822],
                 yAxisID: 'bar-y-axis',
                 stack: 'Stack 2',
-                hoverBackgroundColor: 'rgba(144,238,144, 0.4)',
-                hoverBorderColor: 'rgba(60,179,113, 2)',
+                hoverBackgroundColor: 'rgba(75, 192, 192, 0.4)',
+                hoverBorderColor: 'rgba(75, 192, 192, 2)',
                 datalabels: {
                     align: 'center',
                     anchor: 'center',
@@ -28,13 +28,13 @@ function GraficaEsp() {
             },
             {
                 label: '% Selectivo',
-                backgroundColor: 'rgba(144,238,144, 0.2)',
-                borderColor: 'rgba(60,179,113, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
                 data: [29.79, 30.81, 29.98, 33.86, 36.11, 35.02, 37.96, 40.56],
                 yAxisID: 'line-y-axis',
                 type: 'line',
-                hoverBorderColor: 'rgba(144,238,144, 2)',
-                hoverBackgroundColor: 'rgba(60,179,113, 0.4)',
+                hoverBorderColor: 'rgba(75, 192, 192, 2)',
+                hoverBackgroundColor: 'rgba(75, 192, 192, 0.4)',
                 datalabels: {
                     align: 'bottom',
                     anchor: 'bottom',
@@ -168,21 +168,17 @@ function GraficaEsp() {
     }, []);
 
     return (
-        <div className='grid md:grid-cols-2'>
-
-
-            <div className='span-col-1 '>  <canvas className='w-1/2 ' id="espana" width="400" height="200" ></canvas></div>
-            <p className='span-col-1 mt-14 items-center text-center '>¿Sabías que en España los datos oficiales sobre el reciclaje
-                datan solamente del año 2012 hasta el 2020? <br /> <br />
-                En esos informes, hemos visto una progresión significativa en el reciclaje, pasando
-                del 30% al 41% del material que efectivamente se ha reciclado respecto al total generado en España en tan solo 8 años. <br />
-                ¡Un gran avance!
-            </p>
-
+        <div className=' grid md:grid-cols-2'>
+            <div className='span-col-1  '>  <canvas  className=' ml-8 ' id="espana" width="400" height="200" ></canvas></div>
+            <div className='span-col-1 '> <p className=' mt-14 ml-14 mr-14 text-xl items-center text-right '>¿Sabías que en <b>España </b>los datos oficiales sobre el reciclaje
+                  datan solamente del año 2012 hasta el 2020? <br /> <br />
+                  En esos informes, hemos visto una progresión significativa en el reciclaje, pasando
+                  del 30% al 41% del material que efectivamente se ha reciclado respecto al total generado en España en tan solo 8 años. <br />
+                  <b>¡Un gran avance!</b>
+                  </p></div>
         </div>
     );
 }
 
 export default GraficaEsp;
-
 

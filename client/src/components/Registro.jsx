@@ -20,7 +20,7 @@ function Registro() {
     // Establecer la configuración de la solicitud al backend
     const configuration = {
       method: "post",
-      url: "http://localhost:5000/api/v1/usuarios/register",
+      url: "http://localhost:5001/api/v1/usuarios/register",
       data: {
         correo_electronico,
         contrasena,

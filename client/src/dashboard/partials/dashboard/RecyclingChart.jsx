@@ -12,7 +12,7 @@ const RecyclingChart = () => {
 
   const fetchData = async (gender) => {
     try {
-      let url = 'http://127.0.0.1:5000/api/v1/usuarios/recycling';
+      let url = 'http://127.0.0.1:5001/api/v1/usuarios/recycling';
 
       // Crear un array para almacenar los filtros
       const filters = [];

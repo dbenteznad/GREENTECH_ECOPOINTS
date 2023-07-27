@@ -38,8 +38,8 @@ const GraficaCat = () => {
       datasets: [
         {
           label: "Total Selectivo",
-          backgroundColor: 'rgba(144,238,144, 0.2)',
-          borderColor: 'rgba(60,179,113, 1)',
+          backgroundColor: "rgba(144, 238, 144, 0.2)",
+          borderColor: "rgba(60, 179, 113, 1)",
           borderWidth: 1,
           type: "bar",
           data: [
@@ -68,8 +68,8 @@ const GraficaCat = () => {
           ],
           yAxisID: "bar-y-axis",
           stack: "Stack 2",
-          hoverBackgroundColor: 'rgba(144,238,144, 0.4)',
-          hoverBorderColor: 'rgba(60,179,113, 2)',
+          hoverBackgroundColor: "rgba(144, 238, 144, 0.4)",
+          hoverBorderColor: "rgba(60, 179, 113, 2)",
           datalabels: {
             align: "center",
             anchor: "center",
@@ -81,8 +81,8 @@ const GraficaCat = () => {
         },
         {
           label: "% Selectivo",
-          backgroundColor: 'rgba(144,238,144, 0.2)',
-          borderColor: 'rgba(60,179,113, 1)',
+          backgroundColor: "rgba(144, 238, 144, 0.2)",
+          borderColor: "rgba(60, 179, 113, 1)",
           data: [
             13.96,
             16.85,
@@ -109,8 +109,8 @@ const GraficaCat = () => {
           ],
           yAxisID: "line-y-axis",
           type: "line",
-          hoverBorderColor: 'rgba(144,238,144, 2)',
-          hoverBackgroundColor: 'rgba(60,179,113, 0.4)',
+          hoverBorderColor: "rgba(144, 238, 144, 2)",
+          hoverBackgroundColor: "rgba(60, 179, 113, 0.4)",
           datalabels: {
             align: "bottom",
             anchor: "end",
@@ -330,18 +330,18 @@ const GraficaCat = () => {
 
   return (
     <div className="grid md:grid-cols-2">
-      <h1 className="span-col-1 items-center text-center mx-auto">
-        En Cataluña los datos oficiales datan del año 2000 al 2021. Se puede
+      <h1 className="span-col-1 items-center text-left mr-4 mt-10 text-xl ml-16  mx-auto tracking-wide">
+        En <b>Cataluña</b> los datos oficiales datan del año 2000 al 2021. Se puede
         observar una mejor historia de la progresión, del 14% al 47%, en 21 años
-        del material que si se ha reciclado. Es decir, en 2012 Catalunya estaba
-        reciclando el 39% y España el 30%. Y si comparamos con los últimos datos
-        seria respectivamente un 46% CAT vs un 41% ESP. Y la ONU, que datos
+        del material que si se ha reciclado. Es decir, en 2012 <b>Catalunya</b> estaba
+        reciclando el 39% y <b>España</b>  el 30%. <br /> <br /> Y si comparamos con los últimos datos
+        seria respectivamente un 46% CAT vs un 41% ESP. Y la <b> UE</b> ,que datos
         registra que deberian tener los paises miembros a FUTUROS AÑOS…??
       </h1>
       <div className="span-col-1 ">
         <canvas className="w-1/2 " ref={chartRef} />
         <div className="text-center mt-0">
-          <button
+        <button
             className="bg-green-300 hover:bg-green-400 text-sm text-black border-green-500 border border-solid border-2"
             onClick={handleToggleDataLabels}
           >
