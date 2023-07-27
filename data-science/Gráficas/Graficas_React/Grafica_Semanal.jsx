@@ -1,6 +1,3 @@
-// GRÁFICA QUESITO CON CHART.JS CON DATOS RECICLAJE USUARIO VISIBLE PARA ELLOS.
-
-
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import 'chartjs-plugin-datalabels';
@@ -10,11 +7,11 @@ const Grafica_Semanal = () => {
 
   useEffect(() => {
     const data = {
-      labels: ['Plástico', 'Cristal', 'Aluminio', 'Papel', 'Orgánico'],
+      labels: ['Plástico', 'Cristal', 'Aluminio', 'Papel', 'Orgánico',],
       datasets: [
         {
           data: [14, 7, 2, 4, 2],
-          backgroundColor: ['#FF6384', '#33FF99', '#FFCE56', '#36A2EB', '#9966FF'],
+          backgroundColor: ['#FF6384', '#33FF99', '#FFCE56', '#36A2EB', '#9966FF', ],
         },
       ],
     };
@@ -51,8 +48,8 @@ const Grafica_Semanal = () => {
   }, []);
 
   return (
-    <div className='col-span-1 mb-5 hover:scale-110'>
-      <canvas className='w-1/2' ref={chartRef} />
+    <div className='col-span-1 mb-5 '>
+      <canvas className=' hover:scale-105 w-1/2 sm:w-1/3' ref={chartRef} />
     </div>
   );
 };

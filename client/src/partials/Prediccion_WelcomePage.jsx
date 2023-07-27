@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../styles/Prediccion.css"
-import NavBar_Home from "../components/NavBar_Home";
+import Navbar_WelcomePage from "../components/Navbar_WelcomePage";
 import Chat from "../partials/ChatBot";
 const linkedInProfileUrlNestor = 'https://www.linkedin.com/in/néstorolivera';
 const linkedInProfileUrlDaniCasanova = 'https://www.linkedin.com/in/daniel-ben%C3%ADtez-nadal-85388126b/';
@@ -189,7 +189,7 @@ const linkedInProfileUrlDaniBenitez = 'https://www.linkedin.com/in/danicf/';
     }, [resultsReady, userInputs, showResults]);
     return (
       <>
-        <NavBar_Home />
+        <Navbar_WelcomePage />
         <div className="bloque">
           <div className="titulo">
             <h1 ><span className="titulo_color">Predicción de Reciclaje Residuos</span> ♻️</h1>

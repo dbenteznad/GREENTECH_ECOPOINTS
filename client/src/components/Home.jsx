@@ -118,7 +118,7 @@ function Home() {
             </div >
             <a href="Premios" className="hover:text-blue-600 text-lg flex flex-row-reverse mr-12 ">Ver Mas</a>
             <div className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" ></div>
-            <h1 className="text-center items-center text-4xl mb-10  mt-5 py-5 font-bold ">¿Sabias que?</h1>
+            <h1 className="text-center items-center text-4xl mb-10  mt-5 py-5 font-bold ">¿Sabías que?</h1>
             <div className="App  border-solid text-2xl bg-green-500 italic rounded-3xl p-5">
                 <Carousel showThumbs={false}>
                     {phrases.map((phrase, index) => (
@@ -130,7 +130,7 @@ function Home() {
             </div>
             <div className=" border-solid border border-black w-1/2 items-center mx-auto mt-10 mb-10" ></div>
 
-            <h1 className="text-center items-center text-4xl mb-10  mt-5 py-5 font-bold">Estadisticas</h1>
+            <h1 className="text-center items-center text-4xl mb-10  mt-5 py-5 font-bold">Estadísticas</h1>
 
 
             <div className="bg-gradient-to-r from-green-700 from-10% via-green-500 via-30% to-emerald-500 to-90% mb-2">

@@ -106,7 +106,7 @@ function WelcomePage() {
       </div  >
 
       {/* Informacion */}
-      <div id='Por_que_proyecto' className=" border-solid border border-black w-1/2 items-center mx-auto mb-10" ></div>
+      <div id='Por_que_proyecto' className=" border-solid border border-white w-1/2 items-center mx-auto mb-10" ></div>
       <div id="about-project" className="  mb-2"
       >
         <h1 className=" text-center items-center text-4xl py-5 font-bold">EcoPoints: un aliado para un futuro sostenible</h1>
@@ -132,7 +132,7 @@ function WelcomePage() {
         </div>
       </div>
 
-      <div className=" border-solid border border-black w-1/2 items-center mt-10 mx-auto mb-10"  ></div>
+     
       <div>
         <p className="text-center items-center text-lg mx-auto py-5 ml-16 mr-16 "  >En <b>GreenTech</b> no nos conformamos con estos datos y para mejorar estas cifras y promover el reciclaje, GreenTech ha desarrollado
           una aplicación llamada <b>EcoPoints</b>, que busca incentivar y facilitar el proceso de reciclaje tanto en <b>España</b> como en <b>Cataluña</b>.

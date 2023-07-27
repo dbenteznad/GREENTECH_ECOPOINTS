@@ -24,7 +24,7 @@ function Navbar_WelcomePage() {
               <a href='#Por_que_proyecto'  className='  hover:text-black lg:mr-7 mb-8 lg:mb-0 text-white  '>Por qué el proyecto</a>
               <a href='#Como_funciona' className=' hover:text-black lg:mr-7 mb-8 lg:mb-0 text-white'>Cómo funciona</a>
               <a href='#sobre_nosotros' className=' hover:text-black lg:mr-7 mb-8 lg:mb-0 text-white'>Sobre nosotros </a>
-              <a href='prediccion_welcomepage' className=' hover:text-black lg:mr-7 mb-8 lg:mb-0 text-white '>Prediccion</a>
+              <a href='prediccion_welcomepage' className=' hover:text-black lg:mr-7 mb-8 lg:mb-0 text-white '>Predicción</a>
               <a href='dashboard' className=' hover:text-black text-white '>Dashboard</a>
           
               

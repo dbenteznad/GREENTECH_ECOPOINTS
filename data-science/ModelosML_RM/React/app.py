@@ -1,5 +1,4 @@
 # SCRIPT PARA UTILIZARLO LOS MODELOS DE MACHINE LEARNING. 
-
 import joblib
 from flask import Flask, request, jsonify
 from flask_cors import CORS
