@@ -39,6 +39,51 @@
 - User location (city/town).
 - Recycling areas in their home (different types of waste they have)."
 
+## How to Run the Project
+
+Below are the steps to run each part of the project:
+
+### Front-End
+
+1. Open a terminal or command prompt.
+
+2. Navigate to the Front-End folder of the project using the command `cd client`.
+
+3. Install the dependencies by running `npm install`.
+
+4. Start the development server with the command `npm run dev`.
+
+5. Access the application in your web browser at http://localhost:3000.
+
+### Back-End
+
+1. Open a terminal or command prompt.
+
+2. Navigate to the Back-End folder of the project using the command `cd server`.
+
+3. Install the dependencies by running `npm install`.
+
+4. Start the server with the command `npm start`.
+
+5. The Back-End will be running at http://localhost:5000.
+
+### Data Science
+
+1. Open a terminal or command prompt.
+
+2. Navigate to the Data Science folder of the project using the command `cd data-science`.
+
+3. Navigate to the ModelosML_RM folder with the command `cd ModelosML_RM`.
+
+4. Navigate to the React folder with the command `cd React`.
+
+5. Run the Python application with the command `python app.py`.
+
+6. The analyses and results will be displayed in the console.
+
+Now you can run the EcoPoints project on your local environment.
+
+
 ## Privacy and Data Protection Policy
 
 "GreenTech is committed to ensuring the privacy and security of user data, complying with all applicable data protection regulations and policies. The data collected will be used to improve the service and conduct internal studies on recycling habits. Optional user-provided data, such as age, gender, marital status, children, type of housing, city, province, education level, and profession, will be used for statistical purposes only and always anonymously."
@@ -99,6 +144,50 @@ Join us on this journey towards a more sustainable and eco-friendly future!"
 - Nombre y número de teléfono.
 - Ubicación del usuario (ciudad/pueblo).
 - Áreas en su hogar destinadas al reciclaje (diferentes tipos de basura que tienen)."
+
+## Cómo Ejecutar el Proyecto
+
+A continuación se detallan los pasos para ejecutar cada una de las partes del proyecto:
+
+### Front-End
+
+1. Abre una terminal o línea de comandos.
+
+2. Navega hasta la carpeta del Front-End del proyecto utilizando el comando `cd client`.
+
+3. Instala las dependencias ejecutando `npm install`.
+
+4. Ejecuta el servidor de desarrollo con el comando `npm run dev`.
+
+5. Accede a la aplicación desde tu navegador web en la dirección http://localhost:3000.
+
+### Back-End
+
+1. Abre una terminal o línea de comandos.
+
+2. Navega hasta la carpeta del Back-End del proyecto utilizando el comando `cd server`.
+
+3. Instala las dependencias ejecutando `npm install`.
+
+4. Inicia el servidor con el comando `npm start`.
+
+5. El Back-End se ejecutará en http://localhost:5000.
+
+### Data Science
+
+1. Abre una terminal o línea de comandos.
+
+2. Navega hasta la carpeta de Data Science del proyecto utilizando el comando `cd data-science`.
+
+3. Navega hasta la carpeta ModelosML_RM con el comando `cd ModelosML_RM`.
+
+4. Navega hasta la carpeta React con el comando `cd React`.
+
+5. Ejecuta la aplicación de Python con el comando `python app.py`.
+
+6. Los análisis y resultados se mostrarán en la consola.
+
+¡Listo! Ahora puedes ejecutar el proyecto EcoPoints en tu entorno local.
 
 ## Política de Privacidad y Protección de Datos
 
