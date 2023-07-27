@@ -1,4 +1,6 @@
-import NavBar_sesion from "./NavBar_sesion"
+import NavBar_sesion from "./NavBar_Home";
+import Chat from "../partials/ChatBot";
+
 function Premios() {
 
     return (

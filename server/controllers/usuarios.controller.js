@@ -8,6 +8,15 @@ exports.register = async function (req, res) {
     try {
         const { correo_electronico, contrasena } = req.body;
 
+        // Verificar si el correo electrónico ya existe en la base de datos
+        const existingUser = await Usuario.findOne({ where: { correo_electronico } });
+
+        if (existingUser) {
+            // Si ya existe un usuario con el mismo correo electrónico, devolver un error
+            return res.status(400).json({ error: true, message: 'El correo electrónico ya está en uso' });
+        }
+
+
         // Hashear la contraseña antes de crear el usuario
         const hashedPassword = await bcrypt.hash(contrasena, 10);
 
@@ -95,12 +104,17 @@ exports.findById = async function (req, res) {
     }
 };
 
-exports.updateById = async function (req, res) {
+exports.updateUserByEmail = async function (req, res) {
     try {
-        const idUsuario = req.params.id;
-        const datosActualizados = req.body; // Datos actualizados enviados en el cuerpo de la solicitud
+        // Obtener el email del usuario a actualizar desde los parámetros de la URL
+        const email = req.params.email;
+
+        // Obtener los datos actualizados del usuario desde el cuerpo de la solicitud
+        const datosActualizados = req.body;
+
+        // Opciones para la actualización del usuario
         const opciones = {
-            where: { id_usuario: idUsuario } // Especificamos la cláusula where con el ID del usuario a actualizar
+            where: { correo_electronico: email } // Especificamos la cláusula where con el email del usuario a actualizar
         };
 
         // Llamamos a Usuario.update() con los datos actualizados y las opciones
@@ -109,7 +123,7 @@ exports.updateById = async function (req, res) {
         res.json({ error: false, message: 'Usuario actualizado exitosamente!', data: numFilasActualizadas });
     } catch (error) {
         console.error('Error al actualizar el usuario:', error);
-        res.status(500).json({ error: true, message: 'Error al actualizar el usuario' });
+        res.status(500).json({ error: true, message: 'Error al actualizar el usuario', errorDetails: error });
     }
 };
 
@@ -130,3 +144,74 @@ exports.deleteById = async function (req, res) {
         res.status(500).json({ error: true, message: 'Error al eliminar el usuario' });
     }
 };
+
+
+// Otros controladores
+
+// Obtener el género de los usuarios
+exports.getGenderDistribution = async function (req, res) {
+    try {
+        const { genero } = req.query; // Obtener el género seleccionado desde los parámetros de la URL
+
+        // Definir un objeto vacío para almacenar las condiciones de búsqueda
+        const whereCondition = {};
+
+        // Si se selecciona un género específico, agregar la condición de búsqueda por género
+        if (genero) {
+            whereCondition.genero = genero;
+            console.log(genero);
+        }
+
+        // Obtener todos los usuarios que cumplan con la condición de búsqueda
+        const usuarios = await Usuario.findAll({ where: whereCondition });
+
+        // Contar la cantidad de usuarios masculinos y femeninos
+        const maleCount = usuarios.filter((user) => user.genero === 'masculino').length;
+        const femaleCount = usuarios.filter((user) => user.genero === 'femenino').length;
+
+        res.json({
+            maleCount,
+            femaleCount,
+        });
+    } catch (error) {
+        console.error('Error al obtener la distribución de género:', error);
+        res.status(500).json({ error: true, message: 'Error al obtener la distribución de género' });
+    }
+};
+
+// Obtener el género de los usuarios y qué espacios de reciclaje tienen en su ámbito doméstico 
+exports.getGenderAndRecyclingDistribution = async function (req, res) {
+    try {
+      const { genero } = req.query; // Obtener el género seleccionado desde los parámetros de la URL
+      
+      
+      // Definir un objeto vacío para almacenar las condiciones de búsqueda
+      const whereCondition = {};
+  
+      // Si se selecciona un género específico, agregar la condición de búsqueda por género
+      if (genero && genero !== 'all') {
+        whereCondition.genero = genero;
+      }
+  
+      // Obtener solo las columnas relevantes relacionadas con el reciclaje
+      const usuarios = await Usuario.findAll({
+        attributes: ['basura_papel', 'basura_plastico', 'basura_resto', 'basura_organico', 'basura_cristal', 'no_recicla'],
+        where: whereCondition,
+      });
+  
+      // Obtener la cantidad de usuarios que disponen de cada tipo de reciclaje
+      const countsByType = ['basura_papel', 'basura_plastico', 'basura_resto', 'basura_organico', 'basura_cristal', 'no_recicla'].map((type) =>
+        usuarios.filter((user) => user[type] === 1).length
+      );
+  
+    
+  
+      res.json({
+        users: usuarios, // Enviar los datos de los usuarios bajo la propiedad "users"
+        recyclingCounts: countsByType,
+      });
+    } catch (error) {
+      console.error('Error al obtener la distribución de género y reciclaje:', error);
+      res.status(500).json({ error: true, message: 'Error al obtener la distribución de género y reciclaje' });
+    }
+  };

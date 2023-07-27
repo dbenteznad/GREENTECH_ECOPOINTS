@@ -1,0 +1,38 @@
+<!-- VERSIÓN PRUEBA HTML-JS DE LAS GRÁFICAS (SE MODIFICAN A REACT PORQUE NO SON COMPATIBLES CON JS) -->
+<!-- AQUÍ YA ESTÁN MODIFICADAS LAS GRÁFICAS DE ESP-CAT A CHART.JS -->
+<!-- GRÁFICA COMPARATIVA CON PLOTLY.JS MODIFICADA PARA LECTURA EN HTML CON JS. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <title>Document</title>
+
+</head>
+
+<body>
+
+
+    <h2>Evolución Reciclaje España</h2>
+    <canvas id="españa"></canvas>
+    <p></p>
+    <h2>Evolución Reciclaje Cataluña</h2>
+    <canvas id="cataluña"></canvas>
+    <h2>Predicción % Residuos Selectivos</h2>
+
+    <div id="comparativa"></div>
+
+
+
+    <script src="graficas_comp.js"></script>
+    <script src="graficas_esp.js"></script>
+    <script src="graficas_cat.js"></script>
+
+</body>
+
+</html>

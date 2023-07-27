@@ -1,0 +1,37 @@
+#EcopointsLogo {
+    height: 70px;
+}
+
+@media screen and (max-width: 390px) {
+    #EcopointsLogo {
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    #menu {
+        margin-top: 20%;
+        
+    }
+ 
+}
+
+@media screen and (max-width: 720px) {
+    #EcopointsLogo {
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    #menu-burguer {
+        margin-bottom: 50px;
+        font-size: 2rem;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+    }
+}
+
+
+
+

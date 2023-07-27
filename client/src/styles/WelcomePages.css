@@ -1,0 +1,117 @@
+#hero {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* background-image: url("../../public/Fondo_Hero.png"); */
+}
+
+@media screen and (max-width: 720px) {
+    #hero {
+        background-image: none;
+    }
+}
+
+
+
+#video-hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#hero-eslogan {
+    margin-top: 50px;
+    margin-bottom: 200px;
+    background-color: rgba(6, 95, 70, 0.4);
+    border-radius: 10px;
+}
+
+#hero-h1 {
+    font-size: 48px;
+    padding-left: 2%;
+    /* max-width: 600px; */
+    line-height: 56px;
+    text-align: left;
+}
+
+#hero-h2 {
+    font-size: 20px;
+    padding-left: 2%;
+    line-height: 30px;
+    /* max-width: 600px; */
+    text-align: left;
+    font-style: italic;
+    padding-bottom: 10px;
+}
+
+#formulario-registro {
+    margin-bottom: 150px;
+}
+
+@media screen and (max-width: 720px) {
+    #hero-eslogan {
+        margin-bottom: 16px;
+        margin-top: 10px;
+    }
+    
+    #hero-h1 {
+        font-size: 32px; /* Reducir el tamaño de la fuente */
+        line-height: 40px; /* Ajustar el interlineado */
+    }
+    
+    #hero-h2 {
+        font-size: 16px; /* Reducir el tamaño de la fuente */
+        line-height: 24px; /* Ajustar el interlineado */
+ 
+    }
+    
+    #formulario-registro {
+        margin-bottom: 100px; /* Ajustar el margen inferior */
+        margin-top: 10px;
+    }
+}
+
+
+#Por_que_proyecto {
+    background-color: #F5F6F6;
+    margin-top: 0px;
+}
+
+#about-project {
+    padding-bottom: 50px;
+}
+
+#img-empresa {
+   border-radius: 2%;
+}
+
+#frase-greentech {
+   padding-left: 10%;
+   text-align: right;
+}         
+
+@media screen and (max-width: 720px) {
+    #img-empresa {
+        border-radius: 2%;
+        margin-left: 10%;
+        padding-right: 0;
+        padding-bottom: 5%;
+        width: 80%;
+        height: 80%;
+        align-items: center;
+     }
+
+     #frase-greentech{
+        text-align: center;
+        padding-left: 0;
+     }
+}
+
+@media screen and (max-width: 720px) {
+    .Grafico {
+        display: none;
+    }
+}
