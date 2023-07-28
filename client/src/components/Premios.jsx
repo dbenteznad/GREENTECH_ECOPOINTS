@@ -3,6 +3,10 @@ import Chat from "../partials/ChatBot";
 
 function Premios() {
 
+  const linkedInProfileUrlNestor = 'https://www.linkedin.com/in/néstorolivera';
+  const linkedInProfileUrlDaniCasanova = 'https://www.linkedin.com/in/daniel-ben%C3%ADtez-nadal-85388126b/';
+  const linkedInProfileUrlDaniBenitez = 'https://www.linkedin.com/in/danicf/';
+
     return (
 
 
@@ -10,61 +14,61 @@ function Premios() {
             <NavBar_sesion />
 
 
-            <div className=" container mx-auto grid md:grid-cols-3">
+            <div className=" container mx-auto grid md:grid-cols-3 mt-10 mb-10">
 
 
                 {/* premio1 */}
 
-                <div className="py-5 col-span-1 rounded-lg hover:scale-110  mr-4 mb-6 font-mono " >
+                <div className="py-5 col-span-1 rounded-lg hover:scale-110  mr-4 mb-6  bg-emerald-500" >
 
-                    <h1 className="text-center text-lg mb-2 ">Premio 1</h1>
+                    <h1 className="text-center text-lg mb-2 font-bold">Premio 1</h1>
                     <img className=" h-2/3 mx-auto rounded-xl" src="premio1.png" />
-                    <h1 className="text-center">Puntos:</h1>
+                    <h1 className="text-center font-bold">Puntos:</h1>
                     <h1 className="text-center">1000</h1>
 
                 </div>
                 {/* premio2 */}
-                <div className=" py-5 col-span-1 rounded-lg hover:scale-110  mr-4 mb-6 font-mono " >
-                    <h1 className="text-center text-lg mb-2 " >Premio 2</h1>
+                <div className=" py-5 col-span-1 rounded-lg hover:scale-110  mr-4 mb-6  bg-emerald-500" >
+                    <h1 className="text-center text-lg mb-2 font-bold" >Premio 2</h1>
                     <img className=" h-2/3 mx-auto rounded-xl" src="premio2.jpg" />
-                    <h1 className="text-center">Puntos:</h1>
+                    <h1 className="text-center font-bold">Puntos:</h1>
                     <h1 className="text-center">2000</h1>
 
                 </div>
                 {/* Premio3 */}
-                <div className="py-5 col-span-1 rounded-lg  hover:scale-110  mr-4 mb-6 font-mono" >
+                <div className="py-5 col-span-1 rounded-lg  hover:scale-110  mr-4 mb-6 bg-emerald-500" >
 
-                    <h1 className="text-center text-lg mb-2 ">Premio 3</h1>
+                    <h1 className="text-center text-lg mb-2 font-bold">Premio 3</h1>
                     <img className=" h-2/3 mx-auto rounded-xl" src="premio3.jpg" />
-                    <h1 className="text-center">Puntos:</h1>
+                    <h1 className="text-center font-bold">Puntos:</h1>
                     <h1 className="text-center">3000</h1>
                 </div>
 
 
 
                 {/* premio4 */}
-                <div className="py-5  col-span-1 rounded-lg hover:scale-110   mr-4 mb-6 font-mono " >
+                <div className="py-5  col-span-1 rounded-lg hover:scale-110   mr-4 mb-6 bg-emerald-500" >
 
-                    <h1 className="text-center text-lg mb-2  ">Premio 4</h1>
+                    <h1 className="text-center text-lg mb-2  font-bold">Premio 4</h1>
                     <img className="h-2/3 mx-auto rounded-xl " src="premio4.jpg" />
-                    <h1 className="text-center">Puntos:</h1>
+                    <h1 className="text-center font-bold">Puntos:</h1>
                     <h1 className="text-center">4000</h1>
 
                 </div>
                 {/* premio5 */}
-                <div className=" py-5 col-span-1 rounded-lg hover:scale-110  mr-4 mb-6 font-mono" >
-                    <h1 className="text-center text-lg mb-2 " >Premio 5</h1>
+                <div className=" py-5 col-span-1 rounded-lg hover:scale-110  mr-4 mb-6 bg-emerald-500" >
+                    <h1 className="text-center text-lg mb-2 font-bold" >Premio 5</h1>
                     <img className="h-2/3 mx-auto rounded-xl" src="premio5.jpg" />
-                    <h1 className="text-center">Puntos:</h1>
+                    <h1 className="text-center font-bold">Puntos:</h1>
                     <h1 className="text-center">5000</h1>
 
                 </div>
                 {/* premio6 */}
-                <div className="py-5 col-span-1 rounded-lg  hover:scale-110  mr-4 mb-6 font-mono" >
+                <div className="py-5 col-span-1 rounded-lg  hover:scale-110  mr-4 mb-6 bg-emerald-500" >
 
-                    <h1 className="text-center text-lg mb-2 ">Premio 6</h1>
+                    <h1 className="text-center text-lg mb-2 font-bold">Premio 6</h1>
                     <img className=" h-2/3 mx-auto rounded-xl" src="premio6.png" />
-                    <h1 className="text-center">Puntos:</h1>
+                    <h1 className="text-center font-bold">Puntos:</h1>
                     <h1 className="text-center">6000</h1>
                 </div>
                
