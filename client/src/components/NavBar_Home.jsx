@@ -28,7 +28,15 @@ function NavBar_Home() {
                     <button
                         className='flex flex-grow items-center'>
                         {/* link para rederigirse a la welcomePage */}
-                        <Link to="/" rel="stylesheet" href='WelcomePage' > <img id='EcopointsLogo' className='hover:scale-110' src='EcoPointsLogo2.png' /> </Link>
+                        {/* link para redirigirse a la página Home */}
+                        <a href="/home" className="flex items-center">
+                            <img
+                                id='EcopointsLogo'
+                                className='hover:scale-110'
+                                src='EcoPointsLogo2.png'
+                                alt='EcoPoints Logo'
+                            />
+                        </a>
                     </button>
 
                     <div className='flex lg:hidden'>

@@ -331,12 +331,9 @@ const GraficaCat = () => {
   return (
     <div className="grid md:grid-cols-2">
       <h1 className="span-col-1 items-center text-left mr-4 mt-10 text-xl ml-16  mx-auto tracking-wide">
-        En <b>Cataluña</b> los datos oficiales datan del año 2000 al 2021. Se puede
-        observar una mejor historia de la progresión, del 14% al 47%, en 21 años
-        del material que si se ha reciclado. Es decir, en 2012 <b>Catalunya</b> estaba
-        reciclando el 39% y <b>España</b>  el 30%. <br /> <br /> Y si comparamos con los últimos datos
-        seria respectivamente un 46% CAT vs un 41% ESP. Y la <b> UE</b> ,que datos
-        registra que deberian tener los paises miembros a FUTUROS AÑOS…??
+        En <b>Cataluña</b> los datos oficiales datan del año 2000 al 2021. Se puede observar una mejor historia de la progresión, del 14% al 47%, en 21 años del material que si se ha reciclado. Es decir, en 2012 <b>Catalunya</b> estaba
+        reciclando el 39% y <b>España</b>  el 30%. <br /> <br /> Si comparamos con los últimos datos
+        seria respectivamente un 46% en Cataluña frente a un 41% en España. ¿Y la <b> UE</b>? ¿Qué datos registra que deberían tener los países miembros en futuros años?
       </h1>
       <div className="span-col-1 ">
         <canvas className="w-1/2 " ref={chartRef} />

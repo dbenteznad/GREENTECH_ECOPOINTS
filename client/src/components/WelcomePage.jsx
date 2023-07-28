@@ -109,31 +109,32 @@ function WelcomePage() {
       <div id='Por_que_proyecto' className=" border-solid border border-white w-1/2 items-center mx-auto mb-10" ></div>
       <div id="about-project" className="  mb-2"
       >
-        <h1 className=" text-center items-center text-4xl py-5 font-bold">EcoPoints: un aliado para un futuro sostenible</h1>
         <p className="text-center items-center text-lg mx-auto py-5">¿Sabían que el reciclaje es una de las piezas clave para construir un futuro más sostenible con el medio ambiente?</p>
         <p className="text-center items-center text-lg mx-auto py-5 italic"> <b>EcoPoints</b> es una innovadora aplicación que está revolucionando la forma en que reciclamos en <b>Cataluña</b> y <b>España</b>.</p>
       </div>
       {/* Graficos  */}
       <div className="Grafico">
         <div className=" mx-auto items-center  rounded-md " >
-          <h2 className=" text-center items-center text-4xl mb-10  mt-5 py-5 font-bold ">Evolución Reciclaje España</h2>
+          <h2 className=" text-center items-center text-4xl mb-10  mt-5 py-5 font-bold ">Un avance significativo en el reciclaje en España</h2>
           <GraficaEsp />
         </div>
 
         <div className="  mx-auto items-center  rounded-md " >
-          <h2 className="text-center items-center text-4xl mb-10  mt-5 py-5 font-bold ">Evolución Reciclaje Cataluña</h2>
+          <h2 className="text-center items-center text-4xl mb-10  mt-5 py-5 font-bold ">El progreso del reciclaje en Cataluña</h2>
           < GraficaCat />
         </div>
 
         <div className=" mx-auto items-center  rounded-md " >
           <h2 className="text-center items-center text-4xl
-          mt-5 py-5 font-bold">Predicción % Residuos Selectivos</h2>
+          mt-5 py-5 font-bold">El desafío de alcanzar los objetivos de reciclaje de la UE</h2>
           <GraficaComp />
         </div>
       </div>
 
      
-      <div>
+      <div className="mt-20">
+      <h2 className="text-center items-center text-4xl
+          mt-10 py-5 font-bold">EcoPoints: impulsando el reciclaje para un futuro sostenible</h2>
         <p className="text-center items-center text-lg mx-auto py-5 ml-16 mr-16 "  >En <b>GreenTech</b> no nos conformamos con estos datos y para mejorar estas cifras y promover el reciclaje, GreenTech ha desarrollado
           una aplicación llamada <b>EcoPoints</b>, que busca incentivar y facilitar el proceso de reciclaje tanto en <b>España</b> como en <b>Cataluña</b>.
           Con iniciativas como EcoPoints, se espera que más personas se involucren en el reciclaje y se contribuya a alcanzar los ambiciosos

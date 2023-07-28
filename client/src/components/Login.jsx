@@ -39,7 +39,9 @@ function Login() {
   return (
     <div>
       <div className="py-10 px-5 mb-10 w-1/2 items-center mt-10  mx-auto rounded-lg bg-green-500 ">
-        <h1 className="text-center text-5xl mb-10 font-bold text-black">¡Bienvenido de nuevo!</h1>
+      <img src="EcoPointsLogo2.png" alt="" className="w-60 mx-auto block"/>
+        <br />
+        <h1 className="text-center text-5xl mb-10 font-bold text-white">¡Bienvenido de nuevo!</h1>
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">

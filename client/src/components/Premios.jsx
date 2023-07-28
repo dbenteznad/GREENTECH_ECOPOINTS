@@ -69,55 +69,83 @@ function Premios() {
                 </div>
                
             </div>
-            <footer className="  bg-gradient-to-r from-green-700 from-10% via-green-500 via-30% to-emerald-500 to-90%">
-                <div className="  grid md:grid-cols-3  ">
-                    <div className=" col-span-1 text-xl mb-8  lg:mr-7 text-center items-center "  >
-                        <h1 className="py-4">Sobre Nosotros</h1>
-                        <ul className="">
-                            <li>
-                                <a href='#' className=' text-center col-span-1 text-xl mb-8  lg:mr-7 hover:text-white'>Inicio</a>
-                            </li>
-                        </ul>
-                        <ul className="">
-                            <li>
-                                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-white'>Inicio</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className=" col-span-1 text-xl mb-8 lg:mr-7 text-center items-center "  >
-                        <h1 className="py-4" >Empresa</h1>
-                        <ul className=" ">
-                            <li>
-                                <a href='#' className=' col-span-1 text-xl mb-8 lg:mr-7 hover:text-white'>Inicio</a>
-                            </li>
-                        </ul>
-                        <ul className="">
-                            <li>
-                                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-white'>Inicio</a>
+           {/* Footer */}
+            
+           <footer className="  bg-green-500">
+        <Chat />
+        <div className="  grid md:grid-cols-4  ">
+          <div className=" col-span-1 text-xl mb-8  lg:mr-7 text-center items-center "  >
+            <h1 className="pt-4 col-span-1 text-sm mb-5 lg:mr-7 font-bold text-white">Sobre Nosotros</h1>
+            <ul className="">
+              <li>
+                <a href='#' className=' col-span-1 text-sm mb-5  lg:mr-7 hover:text-black text-center text-white'>Quienes Somos</a>
+              </li>
+            </ul>
+            <ul className="">
+              <li>
+                <a href='#' className=' col-span-1 text-sm mb-5  lg:mr-7 hover:text-black text-center text-white'>Blog</a>
+              </li>
 
-                            </li>
+            </ul>
 
-                        </ul>
-                    </div>
-                    <div className=" col-span-1 text-xl mb-8 lg:mr-7 text-center items-center "  >
-                        <h1 className="py-4" >Ayuda y soporte</h1>
-                        <ul className="">
-                            <li>
-                                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-white'>Inicio</a>
-                            </li>
-                        </ul>
-                        <ul className="">
-                            <li>
-                                <a href='#' className=' col-span-1 text-xl mb-8  lg:mr-7 hover:text-white'>Inicio</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
+          </div>
+          <div className=" col-span-1 text-xl mb-8 lg:mr-7 text-center items-center "  >
+            <h1 className="pt-4 col-span-1 text-sm mb-5 lg:mr-7 font-bold text-white" >GreenTech</h1>
+            <ul className=" ">
+              <li>
+                <a href='#' className=' col-span-1 text-sm mb-8 lg:mr-7 hover:text-black text-white'>Productos</a>
+              </li>
+            </ul>
+          </div>
+          <div className=" col-span-1 text-xl mb-8 lg:mr-7 text-center items-center "  >
+            <h1 className="pt-4 col-span-1 text-sm mb-5 lg:mr-7 font-bold text-white"  >Ayuda y soporte</h1>
+            <ul className="">
+              <li>
+                <a href='#' className=' col-span-1 text-sm mb-5  lg:mr-7 hover:text-black text-white'>Contacto</a>
+              </li>
+            </ul>
+            <ul className="">
+              <li>
+                <a href='#' className=' col-span-1 text-sm mb-5  lg:mr-7 hover:text-black text-white'>Inicio</a>
+              </li>
+            </ul>
+          </div>
+          <div className=" col-span-1 text-xl mb-8  lg:mr-7 text-center items-center "  >
+              <h1 className="pt-4 col-span-1 text-sm mb-5 lg:mr-7 font-bold text-white">Equipo</h1>
 
-                </div>
 
-            </footer >
+              <ul className="">
+              <li>
+                <a href={linkedInProfileUrlNestor}  target="_blank" className=' col-span-1 text-sm mb-5 hover:text-black lg:mr-7  text-white'>FrontEnd: Nestor OLivera</a>
+              </li>
+            </ul>
+            <ul className="">
+              <li>
+                <a href={linkedInProfileUrlDaniBenitez} target="_blank"  className=' col-span-1 text-sm mb-5  lg:mr-7 hover:text-black text-white'>BackEnd: Daniel Benitez</a>
+              </li>
+            </ul>
+            <ul className="">
+              <li>
+                <a href={linkedInProfileUrlDaniCasanova} target="_blank"  className=' col-span-1 text-sm mb-5  lg:mr-7 hover:text-black text-white'>Data Science: Daniel Casanova</a>
+              </li>
+            </ul>
+             
+              
+              
+            </div>
+        </div>
+        <div>
+          
+            
+         
+
+
+          <p className="ml-5 text-center "> <b>© 2023 Greentech. Todos los derechos reservados.</b>
+          </p>
+        </div>
+
+      </footer >
+
 
 
 

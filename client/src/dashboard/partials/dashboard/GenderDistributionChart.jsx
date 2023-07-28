@@ -45,15 +45,6 @@ const GenderDistributionChart = () => {
         <h2 className="font-semibold text-slate-800 dark:text-slate-100">Distribución de Género</h2>
       </header>
       <div className="flex justify-center p-4">
-        <select
-          className="border rounded-md px-3 py-1"
-          value={selectedGender}
-          onChange={(e) => setSelectedGender(e.target.value)}
-        >
-          <option value="all">Todos</option>
-          <option value="masculino">Masculino</option>
-          <option value="femenino">Femenino</option>
-        </select>
       </div>
       {chartData ? (
         <DoughnutChart data={chartData} width={389} height={260} />

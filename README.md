@@ -49,11 +49,9 @@ Below are the steps to run each part of the project:
 
 2. Navigate to the Front-End folder of the project using the command `cd client`.
 
-3. Install the dependencies by running `npm install`.
+3. Start the development server with the command `npm run dev`.
 
-4. Start the development server with the command `npm run dev`.
-
-5. Access the application in your web browser at http://localhost:3000.
+4. Access the application in your web browser at http://localhost:5173.
 
 ### Back-End
 
@@ -61,11 +59,9 @@ Below are the steps to run each part of the project:
 
 2. Navigate to the Back-End folder of the project using the command `cd server`.
 
-3. Install the dependencies by running `npm install`.
+3. Start the server with the command `npm start`.
 
-4. Start the server with the command `npm start`.
-
-5. The Back-End will be running at http://localhost:5000.
+4. The Back-End will be running at http://localhost:5001.
 
 ### Data Science
 
@@ -155,11 +151,9 @@ A continuación se detallan los pasos para ejecutar cada una de las partes del p
 
 2. Navega hasta la carpeta del Front-End del proyecto utilizando el comando `cd client`.
 
-3. Instala las dependencias ejecutando `npm install`.
+3. Ejecuta el servidor de desarrollo con el comando `npm run dev`.
 
-4. Ejecuta el servidor de desarrollo con el comando `npm run dev`.
-
-5. Accede a la aplicación desde tu navegador web en la dirección http://localhost:3000.
+4. Accede a la aplicación desde tu navegador web en la dirección http://localhost:5173.
 
 ### Back-End
 
@@ -167,11 +161,9 @@ A continuación se detallan los pasos para ejecutar cada una de las partes del p
 
 2. Navega hasta la carpeta del Back-End del proyecto utilizando el comando `cd server`.
 
-3. Instala las dependencias ejecutando `npm install`.
+3. Inicia el servidor con el comando `npm start`.
 
-4. Inicia el servidor con el comando `npm start`.
-
-5. El Back-End se ejecutará en http://localhost:5000.
+4. El Back-End se ejecutará en http://localhost:5001.
 
 ### Data Science
 

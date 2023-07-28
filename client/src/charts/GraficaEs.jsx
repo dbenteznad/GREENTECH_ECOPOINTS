@@ -168,14 +168,15 @@ function GraficaEsp() {
     }, []);
 
     return (
-        <div className=' grid md:grid-cols-2'>
+        <div className='ml-8 grid md:grid-cols-2'>
             <div className='span-col-1  '>  <canvas  className=' ml-8 ' id="espana" width="400" height="200" ></canvas></div>
-            <div className='span-col-1 '> <p className=' mt-14 ml-14 mr-14 text-xl items-center text-right '>¿Sabías que en <b>España </b>los datos oficiales sobre el reciclaje
-                  datan solamente del año 2012 hasta el 2020? <br /> <br />
-                  En esos informes, hemos visto una progresión significativa en el reciclaje, pasando
-                  del 30% al 41% del material que efectivamente se ha reciclado respecto al total generado en España en tan solo 8 años. <br />
-                  <b>¡Un gran avance!</b>
-                  </p></div>
+            <div className='text-container max-w-xl'>
+                <h1 className='text-xl text-right'>
+                    En <b>España</b> los datos oficiales sobre el reciclaje datan solamente del año 2012 hasta el 2020. <br /> <br />
+                    En esos informes, hemos visto una progresión significativa en el reciclaje, pasando del 30% al 41% del material que efectivamente se ha reciclado respecto al total generado en España en tan solo 8 años.<br />
+                    <b>¡Un gran avance!</b>
+                </h1>
+            </div>
         </div>
     );
 }

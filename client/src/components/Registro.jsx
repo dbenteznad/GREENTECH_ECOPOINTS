@@ -45,7 +45,9 @@ function Registro() {
         className="rounded-lg bg-green-500 py-10 px-5 mb-10 w-1/2 items-center mt-10 mx-auto"
         onSubmit={handleSubmit}
       >
-        <h1 className="text-center text-5xl mb-10 font-bold">¡Regístrate y únete al nuevo reciclaje!</h1>
+        <img src="EcoPointsLogo2.png" alt="" className="w-60 mx-auto block"/>
+        <br />
+        <h1 className="text-center text-5xl mb-10 font-bold text-white">¡Regístrate y únete al nuevo reciclaje!</h1>
 
         <div id="Registro" className="">
           <label className="block text-white uppercase font-bold">
