@@ -34,7 +34,7 @@ function Formulario(props) {
         // Establecer la configuración de la solicitud al backend
         const configuration = {
             method: "put",
-            url: `http://localhost:5000/api/v1/usuarios/${correo_electronico}`,
+            url: `http://localhost:5001/api/v1/usuarios/${correo_electronico}`,
             data: {
                 correo_electronico,
                 nombre,
@@ -75,7 +75,8 @@ function Formulario(props) {
 
                 className="  py-10 px-5 mb-10 w-1/2 items-center mx-auto rounded-lg bg-green-500  ">
                 <div className="mb-5">
-                    <label className="block text-black uppercase font-bold"
+                <img src="EcoPointsLogo2.png" alt="" className="w-60 mx-auto block mb-5"/>
+                    <label className="block text-white uppercase font-bold"
                         defaultChecked>
                         Por favor, verifique su correo electrónico:
                     </label> {""}
@@ -92,7 +93,7 @@ function Formulario(props) {
 
 
                 <div className="mb-5">
-                    <label className="block text-black uppercase font-bold"
+                    <label className="block text-white uppercase font-bold"
                         defaultChecked>
                         Nombre:
                     </label> {""}
@@ -110,7 +111,7 @@ function Formulario(props) {
                 </div>
 
                 <div className="mb-5">
-                    <label className="block text-black uppercase font-bold">
+                    <label className="block text-white uppercase font-bold">
                         Número de móvil:
                     </label> {""}
                     <input
@@ -128,7 +129,7 @@ function Formulario(props) {
                 </div>
 
                 <div className="mb-5">
-                    <label className="block text-black uppercase font-bold">
+                    <label className="block text-white uppercase font-bold">
                         Ubicación:
                     </label> {""}
                     <input
@@ -147,7 +148,7 @@ function Formulario(props) {
 
 
                 <div className="text-sm mb-2">
-                    <p className="mt-2 block text-black uppercase font-bold">
+                    <p className="mt-2 block text-white uppercase font-bold">
                         Basura Papel: </p>
                     <input
                         type="radio"
@@ -168,7 +169,7 @@ function Formulario(props) {
                 </div>
 
                 <div className="text-sm mb-2">
-                    <p className="mt-2 block text-black uppercase font-bold">
+                    <p className="mt-2 block text-white uppercase font-bold">
                         Basura Plástico: </p>
                     <input
                         type="radio"
@@ -189,7 +190,7 @@ function Formulario(props) {
                 </div>
 
                 <div className="text-sm mb-2">
-                    <p className="mt-2 block text-black uppercase font-bold">
+                    <p className="mt-2 block text-white uppercase font-bold">
                         Basura Resto: </p>
                     <input
                         type="radio"
@@ -210,7 +211,7 @@ function Formulario(props) {
                 </div>
 
                 <div className="text-sm mb-2">
-                    <p className="mt-2 block text-black uppercase font-bold">
+                    <p className="mt-2 block text-white uppercase font-bold">
                         Basura Orgánico: </p>
                     <input
                         type="radio"
@@ -231,7 +232,7 @@ function Formulario(props) {
                 </div>
 
                 <div className="text-sm mb-2">
-                    <p className="mt-2 block text-black uppercase font-bold">
+                    <p className="mt-2 block text-white uppercase font-bold">
                         Basura Vidrio: </p>
                     <input
                         type="radio"
@@ -252,7 +253,7 @@ function Formulario(props) {
                 </div>
 
                 <div className="text-sm mb-2">
-                    <p className="mt-2 block text-black uppercase font-bold">
+                    <p className="mt-2 block text-white uppercase font-bold">
                         No Recicla: </p>
                     <input
                         type="radio"

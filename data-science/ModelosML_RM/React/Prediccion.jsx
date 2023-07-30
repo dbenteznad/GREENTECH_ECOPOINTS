@@ -392,4 +392,4 @@ function Prediccion() {
   );
 }
 
-export default Prediccion;
+// export default Prediccion;

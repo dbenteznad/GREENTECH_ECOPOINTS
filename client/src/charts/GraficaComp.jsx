@@ -1,3 +1,4 @@
+// GRÁFICA COMPARATIVA DATOS ESP-CAT-UE CON PREDICCIONES
 
 import React, { useEffect } from "react";
 import Plotly from "plotly.js-dist";
@@ -190,12 +191,12 @@ function GraficaComp() {
   }, []);
 
   return (
-    <div className="container grid md:grid-cols-2">
-      <div className="span-col-1 relative z-0 mb-5 mr-5">
-        <div className="w-full relative" id="comparativa"></div>
+    <div className="container flex flex-col md:flex-row items-center gap-8">
+      <div className="w-full md:w-3/4 relative z-0 mb-5">
+        <div className="ml-20 w-full relative" id="comparativa"></div>
       </div>
-      <div className="span-col-1 items-center text-center relative">
-        <p className="mt-14 mr-4 items-center text-right text-xl">
+      <div className="w-full md:w-4/4 text-right">
+        <p className=" text-xl">
           Pero, ¿qué nos depara el futuro? La <b>UE</b> ha establecido objetivos
           ambiciosos para el reciclaje, y es necesario que los países miembros
           los alcancen. Para el año 2020, se esperaba llegar al 50% del total
@@ -204,8 +205,7 @@ function GraficaComp() {
           para el 2035?
           <br />
           <br />
-          Es ahí donde entra en juego <b>EcoPoints</b> . Hemos realizado predicciones
-          con datos oficiales tanto de <b>España</b> como de <b>Cataluña</b> para estimar si
+          Hemos realizado predicciones con datos oficiales tanto de <b>España</b> como de <b>Cataluña</b> para estimar si
           alcanzaremos estos objetivos. Si seguimos la dinámica actual, <b>Cataluña</b>
           se quedaría un poco por debajo de los objetivos, alcanzando un
           admirable 66% para el 2035. En cambio, <b>España</b> se encontraría en un

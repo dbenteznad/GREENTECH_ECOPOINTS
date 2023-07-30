@@ -12,20 +12,17 @@ const GenderDistributionChart = () => {
 
   const fetchData = async (gender) => {
     try {
-      let url = `http://127.0.0.1:5000/api/v1/usuarios`;
+      let url = `http://127.0.0.1:5001/api/v1/usuarios/gender`;
       if (gender !== 'all') {
-        url += `?genero=${gender}`;
+        url += `?genero=${gender}`; // Cambia "gender" por "genero" para que coincida con el nombre del campo en la tabla
       }
       const response = await axios.get(url);
       const data = response.data;
 
       // Contar la cantidad de usuarios masculinos y femeninos
-      const maleCount = data.filter((user) => user.genero === 'masculino').length;
-      const femaleCount = data.filter((user) => user.genero === 'femenino').length;
+      const maleCount = data.maleCount;
+      const femaleCount = data.femaleCount;
 
-      
-
-  
       setChartData({
         labels: ['Masculino', 'Femenino'],
         datasets: [
@@ -36,6 +33,7 @@ const GenderDistributionChart = () => {
           },
         ],
       });
+      console.log(chartData)
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -47,15 +45,6 @@ const GenderDistributionChart = () => {
         <h2 className="font-semibold text-slate-800 dark:text-slate-100">Distribución de Género</h2>
       </header>
       <div className="flex justify-center p-4">
-        <select
-          className="border rounded-md px-3 py-1"
-          value={selectedGender}
-          onChange={(e) => setSelectedGender(e.target.value)}
-        >
-          <option value="all">Todos</option>
-          <option value="masculino">Masculino</option>
-          <option value="femenino">Femenino</option>
-        </select>
       </div>
       {chartData ? (
         <DoughnutChart data={chartData} width={389} height={260} />

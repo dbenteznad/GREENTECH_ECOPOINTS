@@ -1,3 +1,6 @@
+
+// GRÁFICA QUESITO DATOS SEMANALES
+
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import 'chartjs-plugin-datalabels';

@@ -11,7 +11,7 @@ const AgeDistributionChart = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/api/v1/usuarios');
+      const response = await axios.get('http://127.0.0.1:5001/api/v1/usuarios');
       const data = response.data;
 
       // Obtener las edades únicas y la cantidad de usuarios en cada grupo de edad

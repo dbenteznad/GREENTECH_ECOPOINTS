@@ -25,9 +25,19 @@ function NavBar_Home() {
 
                 <div className='container mx-auto flex px-8 lg:px-0 '>
 
-                    <div className='flex flex-grow items-center'>
-                        <img id='EcoPointsLogo' className='hover:scale-110' src='EcoPointsLogo2.png' />
-                    </div>
+                    <button
+                        className='flex flex-grow items-center'>
+                        {/* link para rederigirse a la welcomePage */}
+                        {/* link para redirigirse a la página Home */}
+                        <a href="/home" className="flex items-center">
+                            <img
+                                id='EcopointsLogo'
+                                className='hover:scale-110'
+                                src='EcoPointsLogo2.png'
+                                alt='EcoPoints Logo'
+                            />
+                        </a>
+                    </button>
 
                     <div className='flex lg:hidden'>
                         <img id='menu-burguer' className='h-10' src='menu.png' onClick={openMenu} />
@@ -43,7 +53,7 @@ function NavBar_Home() {
                             <a href='Premios' className='text-white  hover:text-black lg:mr-7 mb-8 lg:mb-0 uppercase'>Premios</a>
                             <a href='#' className='text-white  hover:text-black lg:mr-7 mb-8 lg:mb-0 uppercase'>Mapa</a>
                             <a href='Foro' className='text-white  hover:text-black lg:mr-7 mb-8 lg:mb-0 uppercase'>Foro</a>
-                            <a href='Prediccion_Home' className='text-white   hover:text-black uppercase '>Prediccion</a>
+                            <a href='Prediccion_Home' className='text-white   hover:text-black uppercase '>Predicción</a>
 
                         </div>
 

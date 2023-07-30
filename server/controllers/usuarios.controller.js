@@ -147,19 +147,27 @@ exports.deleteById = async function (req, res) {
 
 
 // Otros controladores
+
+// Obtener el género de los usuarios
 exports.getGenderDistribution = async function (req, res) {
     try {
-        const { gender } = req.query; // Obtener el género seleccionado desde los parámetros de la URL
+        const { genero } = req.query; // Obtener el género seleccionado desde los parámetros de la URL
 
-        // Si se selecciona un género específico, filtrar por ese género
-        // De lo contrario, obtener todos los usuarios
-        const usuarios = gender
-            ? await Usuario.findAll({ where: { genero: gender } })
-            : await Usuario.findAll();
+        // Definir un objeto vacío para almacenar las condiciones de búsqueda
+        const whereCondition = {};
+
+        // Si se selecciona un género específico, agregar la condición de búsqueda por género
+        if (genero) {
+            whereCondition.genero = genero;
+            console.log(genero);
+        }
+
+        // Obtener todos los usuarios que cumplan con la condición de búsqueda
+        const usuarios = await Usuario.findAll({ where: whereCondition });
 
         // Contar la cantidad de usuarios masculinos y femeninos
-        let maleCount = usuarios.filter((user) => user.genero === 'masculino').length;
-        let femaleCount = usuarios.filter((user) => user.genero === 'femenino').length;
+        const maleCount = usuarios.filter((user) => user.genero === 'masculino').length;
+        const femaleCount = usuarios.filter((user) => user.genero === 'femenino').length;
 
         res.json({
             maleCount,
@@ -170,3 +178,40 @@ exports.getGenderDistribution = async function (req, res) {
         res.status(500).json({ error: true, message: 'Error al obtener la distribución de género' });
     }
 };
+
+// Obtener el género de los usuarios y qué espacios de reciclaje tienen en su ámbito doméstico 
+exports.getGenderAndRecyclingDistribution = async function (req, res) {
+    try {
+      const { genero } = req.query; // Obtener el género seleccionado desde los parámetros de la URL
+      
+      
+      // Definir un objeto vacío para almacenar las condiciones de búsqueda
+      const whereCondition = {};
+  
+      // Si se selecciona un género específico, agregar la condición de búsqueda por género
+      if (genero && genero !== 'all') {
+        whereCondition.genero = genero;
+      }
+  
+      // Obtener solo las columnas relevantes relacionadas con el reciclaje
+      const usuarios = await Usuario.findAll({
+        attributes: ['basura_papel', 'basura_plastico', 'basura_resto', 'basura_organico', 'basura_cristal', 'no_recicla'],
+        where: whereCondition,
+      });
+  
+      // Obtener la cantidad de usuarios que disponen de cada tipo de reciclaje
+      const countsByType = ['basura_papel', 'basura_plastico', 'basura_resto', 'basura_organico', 'basura_cristal', 'no_recicla'].map((type) =>
+        usuarios.filter((user) => user[type] === 1).length
+      );
+  
+    
+  
+      res.json({
+        users: usuarios, // Enviar los datos de los usuarios bajo la propiedad "users"
+        recyclingCounts: countsByType,
+      });
+    } catch (error) {
+      console.error('Error al obtener la distribución de género y reciclaje:', error);
+      res.status(500).json({ error: true, message: 'Error al obtener la distribución de género y reciclaje' });
+    }
+  };
