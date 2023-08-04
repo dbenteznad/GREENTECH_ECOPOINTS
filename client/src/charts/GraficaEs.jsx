@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+// GRÁFICA ESPAÑA CON REACT
+
+import React, { useEffect } from 'react';
 import Chart from 'chart.js/auto';
-import 'chartjs-plugin-datalabels';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 function GraficaEsp() {
@@ -9,15 +10,15 @@ function GraficaEsp() {
         datasets: [
             {
                 label: 'Total Selectivo',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: "rgba(144, 238, 144, 0.2)",
+                borderColor: "rgba(60, 179, 113, 1)",
                 borderWidth: 1,
                 type: 'bar',
                 data: [6522002, 6419769, 6343909, 7294915, 7950973, 7797424, 8451121, 8919822],
                 yAxisID: 'bar-y-axis',
                 stack: 'Stack 2',
-                hoverBackgroundColor: 'rgba(75, 192, 192, 0.4)',
-                hoverBorderColor: 'rgba(75, 192, 192, 2)',
+                hoverBackgroundColor: "rgba(144, 238, 144, 0.4)",
+                hoverBorderColor: "rgba(60, 179, 113, 2)",
                 datalabels: {
                     align: 'center',
                     anchor: 'center',
@@ -28,13 +29,13 @@ function GraficaEsp() {
             },
             {
                 label: '% Selectivo',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: "rgba(144, 238, 144, 0.2)",
+                borderColor: "rgba(60, 179, 113, 1)",
                 data: [29.79, 30.81, 29.98, 33.86, 36.11, 35.02, 37.96, 40.56],
                 yAxisID: 'line-y-axis',
                 type: 'line',
-                hoverBorderColor: 'rgba(75, 192, 192, 2)',
-                hoverBackgroundColor: 'rgba(75, 192, 192, 0.4)',
+                hoverBorderColor: "rgba(144, 238, 144, 2)",
+                hoverBackgroundColor: "rgba(60, 179, 113, 0.4)",
                 datalabels: {
                     align: 'bottom',
                     anchor: 'bottom',
@@ -169,7 +170,7 @@ function GraficaEsp() {
 
     return (
         <div className='ml-8 grid md:grid-cols-2'>
-            <div className='span-col-1  '>  <canvas  className=' ml-8 ' id="espana" width="400" height="200" ></canvas></div>
+            <div className='span-col-1  '>  <canvas className=' ml-8 ' id="espana" width="400" height="200" ></canvas></div>
             <div className='text-container max-w-xl'>
                 <h1 className='text-xl text-right'>
                     En <b>España</b> los datos oficiales sobre el reciclaje datan solamente del año 2012 hasta el 2020. <br /> <br />

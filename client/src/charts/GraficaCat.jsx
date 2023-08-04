@@ -1,9 +1,8 @@
+// GRÁFICA CATALUÑA CON REACT
+
 import React, { useEffect, useRef, useState } from "react";
 import Chart from "chart.js/auto";
-import "chartjs-plugin-datalabels";
 import ChartDataLabels from "chartjs-plugin-datalabels";
-
-// Gráfica de Cataluña
 
 const GraficaCat = () => {
   const [showDataLabels, setShowDataLabels] = useState(true);

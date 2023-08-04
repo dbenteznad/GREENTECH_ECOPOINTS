@@ -1,3 +1,6 @@
+
+// CHATBOT CON REACT
+
 import React, { useState, useEffect, useRef } from "react";
 import "Style_Chatbot.css";
 
@@ -191,4 +194,4 @@ function Chat() {
   );
 }
 
-export default Chat;
+// export default Chat;

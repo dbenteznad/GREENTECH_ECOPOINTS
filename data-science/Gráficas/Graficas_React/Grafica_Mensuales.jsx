@@ -1,3 +1,5 @@
+// GRÁFICA QUESITO DATOS MENSUALES
+
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import 'chartjs-plugin-datalabels';
@@ -54,4 +56,4 @@ const Grafica_Mensual = () => {
     );
 };
 
-export default Grafica_Mensual;
+// export default Grafica_Mensual;

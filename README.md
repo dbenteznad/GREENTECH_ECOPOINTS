@@ -55,6 +55,8 @@ Below are the steps to run each part of the project:
 
 ### Back-End
 
+0. Importing the Database: explained below in `# -- IMPORT DATABASE:`
+
 1. Open a terminal or command prompt.
 
 2. Navigate to the Back-End folder of the project using the command `cd server`.
@@ -62,6 +64,24 @@ Below are the steps to run each part of the project:
 3. Start the server with the command `npm start`.
 
 4. The Back-End will be running at http://localhost:5001.
+
+# -- IMPORT DATABASE:
+
+1. Download the file, location: `cd assets-project` - Download GreenTechDB.sql
+                 path - "\assets-project\GreenTechDB.sql"
+
+2. Open MySQL Workbench and create a connection with the name greentech_ecopoints.
+
+3. Create a database: "create database greentech_ecopoints;"
+
+4. Go to the server and import the database. Choose the option "Import options" below and select the downloaded file GreenTechDB.sql.
+
+5. Set Default Target Schema to the created database greentech_ecopoints.
+
+6. Click Start Import.
+
+**Additional. Inside the Importar_BD folder, there is an image showing how everything should be set up to import the DB.
+
 
 ### Data Science
 
@@ -75,7 +95,7 @@ Below are the steps to run each part of the project:
 
 5. Run the Python application with the command `python app.py`.
 
-6. The analyses and results will be displayed in the console.
+6. The analyses and results be running at http://localhost:5000.
 
 Now you can run the EcoPoints project on your local environment.
 
@@ -157,6 +177,8 @@ A continuación se detallan los pasos para ejecutar cada una de las partes del p
 
 ### Back-End
 
+0. Importar base de datos: explicación abajo en `# -- IMPORTAR BASE DE DATOS:`
+
 1. Abre una terminal o línea de comandos.
 
 2. Navega hasta la carpeta del Back-End del proyecto utilizando el comando `cd server`.
@@ -164,6 +186,27 @@ A continuación se detallan los pasos para ejecutar cada una de las partes del p
 3. Inicia el servidor con el comando `npm start`.
 
 4. El Back-End se ejecutará en http://localhost:5001.
+
+# -- IMPORTAR BASE DE DATOS:
+
+1. Descargar documento, ubicación: `cd assets-project` - Descargar `GreenTechDB.sql`
+    path - "\assets-project\GreenTechDB.sql" 
+
+2. Abrir workbench MySQL y crear conexión con el nombre `greentech_ecopoints`.
+
+3. Crear base de datos: "create database greentech_ecopoints;"
+
+4. Ir a server e importar base de datos. Import options, la opción de abajo y selecciona el fichero descargado `GreenTechDB.sql`.
+
+5. Poner en `Default Target Schema` selecionar la base de datos creada `greentech_ecopoints`.
+
+6. Pulsar `Start Import`.
+
+**Adicional. Dentro de la carpeta Importar_BD hay una imagen de como debe estar todo para importar la DB. 
+
+
+
+
 
 ### Data Science
 
@@ -177,7 +220,7 @@ A continuación se detallan los pasos para ejecutar cada una de las partes del p
 
 5. Ejecuta la aplicación de Python con el comando `python app.py`.
 
-6. Los análisis y resultados se mostrarán en la consola.
+6. Los análisis y resultados se ejectuarán en http://localhost:5000.
 
 ¡Listo! Ahora puedes ejecutar el proyecto EcoPoints en tu entorno local.
 

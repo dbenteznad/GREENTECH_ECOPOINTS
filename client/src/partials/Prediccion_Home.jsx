@@ -1,3 +1,6 @@
+
+// PREDICCIÓN CON MODELOS ENTRENADOS.
+
 import React, { useState, useEffect, useRef } from "react";
 import "../styles/Prediccion.css"
 import NavBar_Home from "../components/NavBar_Home";

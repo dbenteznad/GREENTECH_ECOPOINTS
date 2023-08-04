@@ -1,3 +1,4 @@
+// GRÁFICA COMPARATIVA DATOS ESP-CAT-UE CON PREDICCIONES
 
 import React, { useEffect } from "react";
 import Plotly from "plotly.js-dist";
